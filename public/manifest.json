@@ -1,0 +1,9 @@
+{
+  "name": "North Texas Bird Field Guide",
+  "short_name": "TX Bird Guide",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0d1b2a",
+  "theme_color": "#0d1b2a",
+  "description": "A field guide to birds of the Plano / DFW area — 44 species with field marks, flight ID, and North Texas context."
+}
