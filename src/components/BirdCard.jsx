@@ -57,7 +57,7 @@ export default function BirdCard({ bird, imageDataUrl, quickIdMode }) {
           className="absolute bottom-0 left-0 right-0 px-3 py-1.5 text-xs font-semibold text-white"
           style={{ background: `linear-gradient(transparent, ${bird.color}dd)` }}
         >
-          {bird.type} · {bird.season}
+          {bird.subtype || bird.type} · {bird.season}
         </div>
       </div>
 

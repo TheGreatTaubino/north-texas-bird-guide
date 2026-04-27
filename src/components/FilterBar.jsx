@@ -7,6 +7,8 @@ const FILTERS = [
   { id: 'waterbird', label: 'Waterbirds' },
   { id: 'shorebird', label: 'Shorebirds' },
   { id: 'woodpecker', label: 'Woodpeckers' },
+  { id: 'waterfowl', label: 'Ducks & Geese' },
+  { id: 'gulls', label: 'Gulls' },
   { id: 'year-round', label: 'Year-Round' },
   { id: 'summer', label: 'Summer' },
   { id: 'winter', label: 'Winter' },

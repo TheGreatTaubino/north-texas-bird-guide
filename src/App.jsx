@@ -7,16 +7,19 @@ import TriviaSection from './components/TriviaSection.jsx';
 import SpotsSection from './components/SpotsSection.jsx';
 
 const RAPTOR_TYPES = new Set(['Raptor', 'Owl']);
-const GROUP_ORDER = ['Songbird', 'Raptor', 'Owl', 'Waterbird', 'Shorebird', 'Woodpecker', 'Other'];
+const GROUP_ORDER = ['Songbird', 'Raptor', 'Owl', 'Waterbird', 'Shorebird', 'Woodpecker', 'Other', 'Duck', 'Goose', 'Gull'];
 
 const GROUP_LABELS = {
-  Songbird: { num: '01', title: 'Songbirds & Perching Birds', subtitle: 'Passerines, swallows, flycatchers, and more' },
-  Raptor: { num: '02', title: 'Raptors', subtitle: 'Hawks, falcons, eagles, and ospreys' },
-  Owl: { num: '03', title: 'Owls', subtitle: 'Nocturnal raptors of North Texas woodlands' },
+  Songbird:  { num: '01', title: 'Songbirds & Perching Birds', subtitle: 'Passerines, swallows, flycatchers, and more' },
+  Raptor:    { num: '02', title: 'Raptors', subtitle: 'Hawks, falcons, eagles, and ospreys' },
+  Owl:       { num: '03', title: 'Owls', subtitle: 'Nocturnal raptors of North Texas woodlands' },
   Waterbird: { num: '04', title: 'Waterbirds & Waders', subtitle: 'Herons, egrets, cormorants, pelicans, grebes, and coots' },
   Shorebird: { num: '05', title: 'Shorebirds', subtitle: 'Plovers, sandpipers, stilts, and avocets' },
-  Woodpecker: { num: '06', title: 'Woodpeckers', subtitle: 'Cavity-nesters that drill into bark for food' },
-  Other: { num: '07', title: 'Other Birds', subtitle: 'Hummingbirds, kingfishers, nighthawks, doves, and swifts' },
+  Woodpecker:{ num: '06', title: 'Woodpeckers', subtitle: 'Cavity-nesters that drill into bark for food' },
+  Other:     { num: '07', title: 'Other Birds', subtitle: 'Hummingbirds, kingfishers, nighthawks, doves, and swifts' },
+  Duck:      { num: '08', title: 'Ducks', subtitle: 'Dabbling, diving, whistling, and tree ducks of North Texas' },
+  Goose:     { num: '09', title: 'Geese', subtitle: 'Canada, White-fronted, and Snow Geese through the Central Flyway' },
+  Gull:      { num: '10', title: 'Gulls', subtitle: 'Year-round and migratory gulls — including your parking lot bird' },
 };
 
 function matchesFilter(bird, filter) {
@@ -26,6 +29,8 @@ function matchesFilter(bird, filter) {
   if (filter === 'waterbird') return bird.type === 'Waterbird';
   if (filter === 'shorebird') return bird.type === 'Shorebird';
   if (filter === 'woodpecker') return bird.type === 'Woodpecker';
+  if (filter === 'waterfowl') return bird.type === 'Duck' || bird.type === 'Goose';
+  if (filter === 'gulls') return bird.type === 'Gull';
   if (filter === 'year-round') return bird.season.toLowerCase().includes('year-round');
   if (filter === 'summer') {
     const s = bird.season;
