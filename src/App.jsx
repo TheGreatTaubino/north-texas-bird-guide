@@ -45,7 +45,7 @@ function matchesFilter(bird, filter) {
   return true;
 }
 
-function SectionHeader({ num, title, subtitle }) {
+function SectionHeader({ num, title, subtitle, collapsed, onToggle, birdCount }) {
   return (
     <div className="flex items-center gap-4 mb-6 mt-10 first:mt-0">
       <div className="text-xs font-mono font-bold text-gray-600 tracking-widest uppercase">{num}</div>
@@ -54,6 +54,19 @@ function SectionHeader({ num, title, subtitle }) {
         {subtitle && <p className="text-xs text-gray-500">{subtitle}</p>}
       </div>
       <div className="h-px flex-1 bg-gray-800" />
+      <button
+        onClick={onToggle}
+        className="flex items-center gap-1.5 text-xs text-gray-500 hover:text-gray-200 transition-colors px-2 py-1 rounded"
+        aria-label={collapsed ? 'Expand section' : 'Collapse section'}
+      >
+        <span>{birdCount}</span>
+        <svg
+          className={`w-4 h-4 transition-transform duration-150 ${collapsed ? '-rotate-90' : ''}`}
+          fill="none" stroke="currentColor" viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
     </div>
   );
 }
@@ -81,6 +94,15 @@ export default function App() {
   const [activeFilter, setActiveFilter] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [quickIdMode, setQuickIdMode] = useState(false);
+  const [collapsedGroups, setCollapsedGroups] = useState(new Set());
+
+  const toggleGroup = (type) => {
+    setCollapsedGroups(prev => {
+      const next = new Set(prev);
+      next.has(type) ? next.delete(type) : next.add(type);
+      return next;
+    });
+  };
 
   const filtered = useMemo(() => {
     const q = searchQuery.toLowerCase().trim();
@@ -138,9 +160,12 @@ export default function App() {
                 num={GROUP_LABELS[group.type].num}
                 title={GROUP_LABELS[group.type].title}
                 subtitle={GROUP_LABELS[group.type].subtitle}
+                collapsed={collapsedGroups.has(group.type)}
+                onToggle={() => toggleGroup(group.type)}
+                birdCount={group.birds.length}
               />
             )}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 ${collapsedGroups.has(group.type) ? 'hidden' : ''}`}>
               {group.birds.map(bird => (
                 <BirdCard
                   key={bird.id}

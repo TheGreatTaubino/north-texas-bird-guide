@@ -69,6 +69,15 @@ export default function BirdCard({ bird, imageDataUrl, quickIdMode }) {
           <p className="text-xs italic text-gray-400 mt-0.5">{bird.latin}</p>
         </div>
 
+        {/* Measurements */}
+        {(bird.size || bird.weight || bird.wingspan) && (
+          <div className="flex gap-3 text-xs text-gray-400">
+            {bird.size     && <span>📏 {bird.size}</span>}
+            {bird.weight   && <span>⚖ {bird.weight}</span>}
+            {bird.wingspan && <span>✈ {bird.wingspan}</span>}
+          </div>
+        )}
+
         {/* Field Marks */}
         <div>
           <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-1.5">Field Marks</p>
