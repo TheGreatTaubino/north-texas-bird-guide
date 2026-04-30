@@ -9,6 +9,10 @@ The app is designed for quick field identification and offline use. It includes 
 - Search by common name, scientific name, or bird type
 - Filter by group, season, waterfowl, gulls, raptors, and other categories
 - Quick ID mode for condensed field-mark cards
+- One-tap "seen today" sighting checkboxes on each species card
+- Local calendar tracker with daily sighting counts and species history
+- Export and restore sighting history as JSON (file download or clipboard)
+- Optional GitHub Gist sync — automatically backs up and merges sightings across devices
 - Collapsible bird-type sections with species counts
 - Embedded bird photos for offline builds
 - Seasonal "Here Now" badges based on each species' season field
@@ -66,20 +70,43 @@ npm run build:full
 
 The production build writes a single-file app to `dist/index.html`.
 
+## Sighting History
+
+Sightings are stored locally in the browser with `localStorage` under the key `northTexasBirdGuide.sightings.v1`.
+
+The tracker records one sighting per species per local calendar day. It does not require a login, backend, or network connection.
+
+### Backup and Restore
+
+The calendar section includes **Back Up** and **Restore** buttons to export and import sighting history as a JSON file. The app warns when a backup is more than 14 days old. Clipboard paste is supported as an alternative to file import on mobile.
+
+### GitHub Gist Sync
+
+The calendar section includes an optional **GitHub Sync** panel. When configured with a GitHub personal access token (requires `gist` scope only), the app automatically syncs sightings to a private GitHub Gist on a debounced push and pulls on startup. This allows sighting history to survive app updates and work across multiple devices.
+
+- Leave the Gist ID blank on first connect to create a new private Gist automatically.
+- The token is stored locally on the device only, never sent anywhere except the GitHub API.
+- Sightings are merged on import — no data is overwritten.
+
+Clearing browser site data will clear local sighting history and sync configuration for that device.
+
 ## Project Structure
 
 ```text
 src/
-  App.jsx                    Main application shell, filters, grouping, layout
+  App.jsx                    Main application shell, filters, grouping, layout, sighting state
   main.jsx                   React entry point
   index.css                  Tailwind/global styles
-  data/birds.js              Species and trivia data
+  data/birds.js              Species and trivia data (109 species)
   imageData.js               Generated embedded image data
   components/
-    BirdCard.jsx             Species card UI
+    BirdCard.jsx             Species card UI with seen-today toggle
     FilterBar.jsx            Search, filters, quick ID toggle
+    SightingCalendar.jsx     Monthly calendar tracker, backup/restore, GitHub Gist sync UI
     SpotsSection.jsx         Local birding spots
     TriviaSection.jsx        Trivia cards
+  hooks/
+    useGitHubSync.js         GitHub Gist sync — push/pull sighting data via GitHub API
   images/                    Source bird photos
 scripts/
   embed-images.js            Generates embedded image data
@@ -111,4 +138,3 @@ Each species record in `src/data/birds.js` generally includes:
 - `dist/` and `node_modules/` are intentionally ignored.
 - Windows metadata sidecar files such as `*:Zone.Identifier` are ignored and should not be committed.
 - Photo and species data attribution is shown in the app footer.
-

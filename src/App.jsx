@@ -1,13 +1,16 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { BIRDS } from './data/birds.js';
 import { images } from './imageData.js';
 import FilterBar from './components/FilterBar.jsx';
 import BirdCard from './components/BirdCard.jsx';
+import SightingCalendar from './components/SightingCalendar.jsx';
 import TriviaSection from './components/TriviaSection.jsx';
 import SpotsSection from './components/SpotsSection.jsx';
 
+const SIGHTINGS_STORAGE_KEY = 'northTexasBirdGuide.sightings.v1';
 const RAPTOR_TYPES = new Set(['Raptor', 'Owl']);
-const GROUP_ORDER = ['Songbird', 'Raptor', 'Owl', 'Waterbird', 'Shorebird', 'Woodpecker', 'Other', 'Duck', 'Goose', 'Gull'];
+const VALID_BIRD_IDS = new Set(BIRDS.map(b => b.id));
+const GROUP_ORDER = ['Songbird', 'Raptor', 'Owl', 'Waterbird', 'Shorebird', 'Woodpecker', 'Duck', 'Goose', 'Gull', 'Other'];
 
 const GROUP_LABELS = {
   Songbird:  { num: '01', title: 'Songbirds & Perching Birds', subtitle: 'Passerines, swallows, flycatchers, and more' },
@@ -16,10 +19,10 @@ const GROUP_LABELS = {
   Waterbird: { num: '04', title: 'Waterbirds & Waders', subtitle: 'Herons, egrets, cormorants, pelicans, grebes, and coots' },
   Shorebird: { num: '05', title: 'Shorebirds', subtitle: 'Plovers, sandpipers, stilts, and avocets' },
   Woodpecker:{ num: '06', title: 'Woodpeckers', subtitle: 'Cavity-nesters that drill into bark for food' },
-  Other:     { num: '07', title: 'Other Birds', subtitle: 'Hummingbirds, kingfishers, nighthawks, doves, and swifts' },
-  Duck:      { num: '08', title: 'Ducks', subtitle: 'Dabbling, diving, whistling, and tree ducks of North Texas' },
-  Goose:     { num: '09', title: 'Geese', subtitle: 'Canada, White-fronted, and Snow Geese through the Central Flyway' },
-  Gull:      { num: '10', title: 'Gulls', subtitle: 'Year-round and migratory gulls — including your parking lot bird' },
+  Duck:      { num: '07', title: 'Ducks', subtitle: 'Dabbling, diving, whistling, and tree ducks of North Texas' },
+  Goose:     { num: '08', title: 'Geese', subtitle: 'Canada, White-fronted, and Snow Geese through the Central Flyway' },
+  Gull:      { num: '09', title: 'Gulls', subtitle: 'Year-round and migratory gulls — including your parking lot bird' },
+  Other:     { num: '10', title: 'Other Birds', subtitle: 'Hummingbirds, doves, pigeons, kingfishers, nighthawks, and swifts' },
 };
 
 function matchesFilter(bird, filter) {
@@ -43,6 +46,34 @@ function matchesFilter(bird, filter) {
     return s.includes('Nov') || s.includes('Oct') || s.includes('Sept') || s.includes('Aug–May') || s.includes('Year-Round');
   }
   return true;
+}
+
+function getLocalDateKey(date = new Date()) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
+function loadStoredSightings() {
+  try {
+    const raw = window.localStorage.getItem(SIGHTINGS_STORAGE_KEY);
+    if (!raw) return {};
+    const parsed = JSON.parse(raw);
+    if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) return {};
+
+    return Object.fromEntries(
+      Object.entries(parsed)
+        .filter(([dateKey, birdIds]) => /^\d{4}-\d{2}-\d{2}$/.test(dateKey) && Array.isArray(birdIds))
+        .map(([dateKey, birdIds]) => [
+          dateKey,
+          [...new Set(birdIds.filter(id => typeof id === 'string' && VALID_BIRD_IDS.has(id)))],
+        ])
+        .filter(([, birdIds]) => birdIds.length > 0)
+    );
+  } catch {
+    return {};
+  }
 }
 
 function SectionHeader({ num, title, subtitle, collapsed, onToggle, birdCount }) {
@@ -95,11 +126,54 @@ export default function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [quickIdMode, setQuickIdMode] = useState(false);
   const [collapsedGroups, setCollapsedGroups] = useState(new Set());
+  const [sightings, setSightings] = useState(loadStoredSightings);
+  const todayKey = getLocalDateKey();
+
+  useEffect(() => {
+    try {
+      window.localStorage.setItem(SIGHTINGS_STORAGE_KEY, JSON.stringify(sightings));
+    } catch {
+      // Sighting history remains available in memory if browser storage is unavailable.
+    }
+  }, [sightings]);
 
   const toggleGroup = (type) => {
     setCollapsedGroups(prev => {
       const next = new Set(prev);
       next.has(type) ? next.delete(type) : next.add(type);
+      return next;
+    });
+  };
+
+  const importSightings = (incoming) => {
+    setSightings(prev => {
+      const merged = { ...prev };
+      for (const [dateKey, ids] of Object.entries(incoming)) {
+        if (/^\d{4}-\d{2}-\d{2}$/.test(dateKey) && Array.isArray(ids)) {
+          const existing = new Set(merged[dateKey] || []);
+          ids.filter(id => typeof id === 'string').forEach(id => existing.add(id));
+          merged[dateKey] = [...existing];
+        }
+      }
+      return merged;
+    });
+  };
+
+  const toggleSeenToday = (birdId) => {
+    setSightings(prev => {
+      const todaysSightings = new Set(prev[todayKey] || []);
+      if (todaysSightings.has(birdId)) {
+        todaysSightings.delete(birdId);
+      } else {
+        todaysSightings.add(birdId);
+      }
+
+      const next = { ...prev };
+      if (todaysSightings.size > 0) {
+        next[todayKey] = [...todaysSightings];
+      } else {
+        delete next[todayKey];
+      }
       return next;
     });
   };
@@ -172,12 +246,18 @@ export default function App() {
                   bird={bird}
                   imageDataUrl={images[bird.imageKey]}
                   quickIdMode={quickIdMode}
+                  seenToday={(sightings[todayKey] || []).includes(bird.id)}
+                  onToggleSeenToday={() => toggleSeenToday(bird.id)}
                 />
               ))}
             </div>
           </div>
         ))}
       </main>
+
+      <div className="border-t border-gray-800">
+        <SightingCalendar birds={BIRDS} sightings={sightings} todayKey={todayKey} onImportSightings={importSightings} />
+      </div>
 
       <div className="border-t border-gray-800">
         <TriviaSection />

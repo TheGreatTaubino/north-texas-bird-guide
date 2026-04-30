@@ -20,13 +20,14 @@ function PlaceholderImage({ name, color }) {
   );
 }
 
-export default function BirdCard({ bird, imageDataUrl, quickIdMode }) {
+export default function BirdCard({ bird, imageDataUrl, quickIdMode, seenToday, onToggleSeenToday }) {
   const [expanded, setExpanded] = useState(false);
   const currentlySeen = isCurrentlySeen(bird.season);
   const showFull = !quickIdMode || expanded;
 
   return (
     <div
+      id={bird.id}
       className="bg-gray-900 rounded-xl overflow-hidden border border-gray-800 flex flex-col"
       style={{ borderLeftColor: bird.color, borderLeftWidth: 4 }}
     >
@@ -64,9 +65,31 @@ export default function BirdCard({ bird, imageDataUrl, quickIdMode }) {
       {/* Content */}
       <div className="p-4 flex flex-col gap-3 flex-1">
         {/* Name */}
-        <div>
-          <h2 className="text-xl font-serif font-bold text-white leading-tight">{bird.name}</h2>
-          <p className="text-xs italic text-gray-400 mt-0.5">{bird.latin}</p>
+        <div className="flex items-start gap-3">
+          <div className="flex-1 min-w-0">
+            <h2 className="text-xl font-serif font-bold text-white leading-tight">{bird.name}</h2>
+            <p className="text-xs italic text-gray-400 mt-0.5">{bird.latin}</p>
+          </div>
+          <button
+            type="button"
+            onClick={onToggleSeenToday}
+            aria-pressed={seenToday}
+            aria-label={seenToday ? `Remove today's ${bird.name} sighting` : `Mark ${bird.name} seen today`}
+            className={`flex items-center gap-1.5 rounded-lg border px-2.5 py-1.5 text-xs font-semibold transition-colors whitespace-nowrap ${
+              seenToday
+                ? 'bg-bird-green border-bird-green text-white'
+                : 'border-gray-700 text-gray-400 hover:border-bird-green hover:text-gray-200'
+            }`}
+          >
+            <span
+              className={`flex h-4 w-4 items-center justify-center rounded border text-[10px] ${
+                seenToday ? 'border-white bg-white text-bird-green' : 'border-gray-500'
+              }`}
+            >
+              {seenToday ? '✓' : ''}
+            </span>
+            <span>{seenToday ? 'Seen today' : 'Seen today!'}</span>
+          </button>
         </div>
 
         {/* Measurements */}
