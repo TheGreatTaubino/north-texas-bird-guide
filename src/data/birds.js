@@ -20,6 +20,7 @@ export const BIRDS = [
       flight_id: "Steady rowing wingbeats with little gliding. Broad wings and fan-shaped tail. Often mobbing hawks and owls with loud cawing.",
       northTexas: "Common year-round in wooded neighborhoods, parks, campuses, fields, and riparian corridors. Less tied to parking lots than grackles and more often seen around mature trees.",
       funFact: "American Crows recognize individual human faces, use tools in some contexts, and hold long-term social knowledge within family groups. They are among North America's smartest birds.",
+      frequentFlier: true,
       badges: ["Year-Round", "Parks · Wooded Suburbs · Fields", "Common"],
     },
   {
@@ -152,6 +153,7 @@ export const BIRDS = [
       flight_id: "Undulating, strong flight. Blue back and white underparts visible. Pumps crest on landing. Often in small noisy groups.",
       northTexas: "Common year-round resident in wooded suburbs throughout Plano and DFW. Fall migration brings additional birds moving through.",
       funFact: "Blue Jays are expert mimics — they perfectly imitate Red-shouldered and Red-tailed Hawk calls, sometimes to clear competitors away from feeders. A jay imitating a hawk is almost always fake.",
+      frequentFlier: true,
       badges: ["Year-Round", "Wooded Suburbs · Feeders", "Common"],
     },
   {
@@ -416,6 +418,7 @@ export const BIRDS = [
       flight_id: "Male's long tail held in a distinctive V-keel shape in flight. Noisy, often calling in flight. Large and direct. Evening flights to roost sites.",
       northTexas: "Impossibly abundant in North Texas. Massive evening roosts number in the tens of thousands at established sites. Every parking lot, grocery store, and suburban park is claimed territory.",
       funFact: "The Great-tailed Grackle has expanded its range dramatically northward throughout the 20th century, following human development. Its breeding range has grown 6-fold since 1900.",
+      frequentFlier: true,
       badges: ["Year-Round", "Parking Lots · Parks · Suburbs", "Extremely Common"],
     },
   {
@@ -460,6 +463,7 @@ export const BIRDS = [
       flight_id: "Short, direct, slightly bounding flight. Often erupts from shrubs, rooflines, or restaurant patios in noisy flocks.",
       northTexas: "Abundant year-round around buildings, gas stations, grocery stores, parking lots, patio restaurants, and neighborhood feeders across North Texas.",
       funFact: "House Sparrows are not native to North America. Introduced in the 1800s, they adapted brilliantly to human settlement and now live on every continent except Antarctica.",
+      frequentFlier: true,
       badges: ["Year-Round", "Buildings · Parking Lots · Feeders", "Extremely Common"],
     },
   {
@@ -526,6 +530,7 @@ export const BIRDS = [
       flight_id: "Short, bounding flight between dense cover. Male blazes red even in shade. Never flies far from shrubs or trees.",
       northTexas: "Plano's most recognizable backyard bird. Year-round in any shrubby or wooded habitat, parks, and neighborhoods throughout DFW.",
       funFact: "The Northern Cardinal is the official state bird of 7 U.S. states — more than any other species. Females sing too, which is rare among North American songbirds.",
+      frequentFlier: true,
       badges: ["Year-Round", "Backyards · Thickets", "Very Common"],
     },
   {
@@ -548,6 +553,7 @@ export const BIRDS = [
       flight_id: "Long tail bobs constantly. Large white wing patches flash when disturbed. Undulating flight low to ground. Often raises wings in slow display on ground.",
       northTexas: "Texas's state bird, present in every Plano neighborhood year-round. Commonly sings from prominent exposed perches through the night during breeding season.",
       funFact: "A mockingbird can sing 200+ different songs and keeps adding new imitations throughout its life — it can mimic other birds, frogs, car alarms, and squeaky gates.",
+      frequentFlier: true,
       badges: ["Year-Round", "Backyards · Open Areas", "Very Common"],
     },
   {
@@ -968,6 +974,7 @@ export const BIRDS = [
       flight_id: "Graceful, buoyant, falcon-like flight. Rarely flaps when soaring. Hunts large insects (dragonflies, cicadas) in the air, transferring prey to bill mid-flight.",
       northTexas: "Spectacular summer resident. Large communal roost sites in Plano, Richardson, and Garland suburbs. Hundreds visible soaring together on warm summer evenings — a genuine North Texas spectacle.",
       funFact: "Mississippi Kites have exploded in Texas suburban areas since the 1970s, drawn by large shade trees in newer developments. Tree-lined golf courses and suburbs are now prime breeding habitat.",
+      frequentFlier: true,
       badges: ["April–Sept", "Suburban Trees · Parks", "Common Summer Visitor"],
     },
   {
@@ -1100,6 +1107,7 @@ export const BIRDS = [
       flight_id: "Unmistakable — rocks and tilts on updrafts with wings held in a pronounced V. Almost never flaps. Silvery flight feathers contrast with dark wing coverts from below.",
       northTexas: "One of the most commonly seen large birds in North Texas year-round. Flocks of 50+ soar on thermals over Plano on any warm afternoon. Communal roosts in large trees.",
       funFact: "Turkey Vultures find food almost entirely by smell — one of the largest olfactory systems of any bird. They can detect a single dead mouse from over a mile away. Black Vultures, which lack this ability, follow Turkey Vultures to find carcasses.",
+      frequentFlier: true,
       badges: ["Year-Round", "Open Sky · Roadsides", "Extremely Common"],
     },
 
@@ -1302,6 +1310,7 @@ export const BIRDS = [
       flight_id: "Slow, powerful wingbeats. Massive wingspan up to 6 feet. Neck held in a tight S-curve — unlike cranes which fly neck extended. Deep prehistoric croaking call.",
       northTexas: "The undisputed master of every suburban pond, lake, and drainage ditch in North Texas. A daily sight in any neighborhood with standing water.",
       funFact: "Great Blue Herons can strike fish at a speed fast enough to penetrate the water surface from the air. In winter, they can lower their metabolic rate to stand in freezing water for extended periods.",
+      frequentFlier: true,
       badges: ["Year-Round", "Every Pond & Lake", "Extremely Common"],
     },
   {
@@ -1957,6 +1966,7 @@ export const BIRDS = [
       flight_id: "Heavy body, broad wings. Blue speculum flashes. White tail borders. Male's green head visible even in flight.",
       northTexas: "Year-round on every pond, park, and river in Plano and DFW. Numbers swell heavily in winter.",
       funFact: "Only the female quacks. The male makes a soft raspy grunt. Mallards have hybridized with 40+ wild duck species — they're the promiscuous generalists of the duck world.",
+      frequentFlier: true,
       badges: ["Year-Round", "Lakes · Ponds · Parks", "Very Common"],
     },
   {
@@ -2119,6 +2129,7 @@ export const BIRDS = [
       flight_id: "V-formation with neck fully extended. Loud honking calls constant. Large and unmistakable. Heavy, powerful wingbeats.",
       northTexas: "Year-round resident on every suburban golf course, park, and lake in North Texas. Non-migratory resident flocks established decades ago stay year-round; migratory birds boost numbers in winter.",
       funFact: "North Texas Canada Geese are largely a non-migratory 'resident' population established by wildlife agencies in the mid-20th century. They adapted so well to suburban lawns and ponds that local populations now number in the thousands year-round.",
+      frequentFlier: true,
       badges: ["Year-Round", "Golf Courses · Parks · Lakes", "Extremely Common"],
     },
   {
@@ -2387,6 +2398,7 @@ export const BIRDS = [
       flight_id: "Swift, direct flight with whistling wingbeats. Long pointed tail with white corners distinctive. Often in small flocks. Wings whistle audibly on takeoff.",
       northTexas: "The single most abundant bird in North Texas — on every wire, roof, and sidewalk year-round. The cooing from a tree at dawn is almost certainly this bird.",
       funFact: "Mourning Doves are the most harvested game bird in North America — over 20 million taken annually. Populations stay robust because they breed nearly continuously, raising up to 6 broods per year.",
+      frequentFlier: true,
       badges: ["Year-Round", "Everywhere", "Extremely Common"],
     },
   {

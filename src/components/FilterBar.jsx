@@ -2,6 +2,7 @@ import React from 'react';
 
 const FILTERS = [
   { id: 'all', label: 'All Species' },
+  { id: 'frequent-fliers', label: '✈ Frequent Fliers' },
   { id: 'songbird', label: 'Songbirds' },
   { id: 'raptor', label: 'Raptors & Owls' },
   { id: 'waterbird', label: 'Waterbirds' },

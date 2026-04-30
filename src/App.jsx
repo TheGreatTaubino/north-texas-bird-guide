@@ -27,6 +27,7 @@ const GROUP_LABELS = {
 
 function matchesFilter(bird, filter) {
   if (filter === 'all') return true;
+  if (filter === 'frequent-fliers') return !!bird.frequentFlier;
   if (filter === 'songbird') return bird.type === 'Songbird';
   if (filter === 'raptor') return RAPTOR_TYPES.has(bird.type);
   if (filter === 'waterbird') return bird.type === 'Waterbird';
@@ -194,7 +195,7 @@ export default function App() {
       .filter(g => g.birds.length > 0);
   }, [filtered]);
 
-  const showSectionHeaders = ['all', 'year-round', 'winter', 'summer'].includes(activeFilter) && !searchQuery;
+  const showSectionHeaders = ['all', 'year-round', 'winter', 'summer', 'frequent-fliers'].includes(activeFilter) && !searchQuery;
 
   return (
     <div className="min-h-screen bg-gray-950">

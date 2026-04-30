@@ -45,6 +45,13 @@ export default function BirdCard({ bird, imageDataUrl, quickIdMode, seenToday, o
           <PlaceholderImage name={bird.imageKey} color={bird.color} />
         )}
 
+        {/* Frequent Flier badge */}
+        {bird.frequentFlier && (
+          <div className="absolute top-2 left-2 flex items-center gap-1 bg-amber-900/90 text-amber-300 text-xs font-semibold px-2 py-1 rounded-full">
+            ✈ Frequent Flier
+          </div>
+        )}
+
         {/* Currently present badge */}
         {currentlySeen && (
           <div className="absolute top-2 right-2 flex items-center gap-1.5 bg-green-900/90 text-green-300 text-xs font-semibold px-2 py-1 rounded-full">
