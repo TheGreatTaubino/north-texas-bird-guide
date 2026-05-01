@@ -1,5 +1,6 @@
 import React, { useMemo, useRef, useState } from 'react';
 import { useGitHubSync } from '../hooks/useGitHubSync.js';
+import { getLocalDateKey } from '../utils/dates.js';
 
 const WEEKDAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 const MONTH_FORMATTER = new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' });
@@ -24,13 +25,6 @@ function saveLastExported() {
   try {
     window.localStorage.setItem(LAST_EXPORT_STORAGE_KEY, Date.now().toString());
   } catch {}
-}
-
-function getLocalDateKey(date = new Date()) {
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, '0');
-  const day = String(date.getDate()).padStart(2, '0');
-  return `${year}-${month}-${day}`;
 }
 
 function dateFromKey(dateKey) {

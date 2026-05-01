@@ -6,6 +6,7 @@ import BirdCard from './components/BirdCard.jsx';
 import SightingCalendar from './components/SightingCalendar.jsx';
 import TriviaSection from './components/TriviaSection.jsx';
 import SpotsSection from './components/SpotsSection.jsx';
+import { getLocalDateKey } from './utils/dates.js';
 
 const SIGHTINGS_STORAGE_KEY = 'northTexasBirdGuide.sightings.v1';
 const RAPTOR_TYPES = new Set(['Raptor', 'Owl']);
@@ -47,13 +48,6 @@ function matchesFilter(bird, filter) {
     return s.includes('Nov') || s.includes('Oct') || s.includes('Sept') || s.includes('Aug–May') || s.includes('Year-Round');
   }
   return true;
-}
-
-function getLocalDateKey(date = new Date()) {
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, '0');
-  const day = String(date.getDate()).padStart(2, '0');
-  return `${year}-${month}-${day}`;
 }
 
 function loadStoredSightings() {
@@ -152,7 +146,7 @@ export default function App() {
       for (const [dateKey, ids] of Object.entries(incoming)) {
         if (/^\d{4}-\d{2}-\d{2}$/.test(dateKey) && Array.isArray(ids)) {
           const existing = new Set(merged[dateKey] || []);
-          ids.filter(id => typeof id === 'string').forEach(id => existing.add(id));
+          ids.filter(id => typeof id === 'string' && VALID_BIRD_IDS.has(id)).forEach(id => existing.add(id));
           merged[dateKey] = [...existing];
         }
       }
