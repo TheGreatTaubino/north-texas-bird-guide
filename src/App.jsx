@@ -6,9 +6,11 @@ import BirdCard from './components/BirdCard.jsx';
 import SightingCalendar from './components/SightingCalendar.jsx';
 import TriviaSection from './components/TriviaSection.jsx';
 import SpotsSection from './components/SpotsSection.jsx';
+import { getLocalDateKey } from './utils/dates.js';
+import { matchesFilter } from './utils/filter.js';
+import { mergeSightings } from './utils/sightings.js';
 
 const SIGHTINGS_STORAGE_KEY = 'northTexasBirdGuide.sightings.v1';
-const RAPTOR_TYPES = new Set(['Raptor', 'Owl']);
 const VALID_BIRD_IDS = new Set(BIRDS.map(b => b.id));
 const GROUP_ORDER = ['Songbird', 'Raptor', 'Owl', 'Waterbird', 'Shorebird', 'Woodpecker', 'Duck', 'Goose', 'Gull', 'Other'];
 
@@ -24,37 +26,6 @@ const GROUP_LABELS = {
   Gull:      { num: '09', title: 'Gulls', subtitle: 'Year-round and migratory gulls — including your parking lot bird' },
   Other:     { num: '10', title: 'Other Birds', subtitle: 'Hummingbirds, doves, pigeons, kingfishers, nighthawks, and swifts' },
 };
-
-function matchesFilter(bird, filter) {
-  if (filter === 'all') return true;
-  if (filter === 'frequent-fliers') return !!bird.frequentFlier;
-  if (filter === 'songbird') return bird.type === 'Songbird';
-  if (filter === 'raptor') return RAPTOR_TYPES.has(bird.type);
-  if (filter === 'waterbird') return bird.type === 'Waterbird';
-  if (filter === 'shorebird') return bird.type === 'Shorebird';
-  if (filter === 'woodpecker') return bird.type === 'Woodpecker';
-  if (filter === 'waterfowl') return bird.type === 'Duck' || bird.type === 'Goose';
-  if (filter === 'gulls') return bird.type === 'Gull';
-  if (filter === 'year-round') return bird.season.toLowerCase().includes('year-round');
-  if (filter === 'summer') {
-    const s = bird.season;
-    return (
-      s.includes('April') || s.includes('March') || s.includes('May') || s.includes('Aug')
-    ) && !s.includes('Year-Round') && !s.includes('Nov') && !s.includes('Oct') && !s.includes('Sept');
-  }
-  if (filter === 'winter') {
-    const s = bird.season;
-    return s.includes('Nov') || s.includes('Oct') || s.includes('Sept') || s.includes('Aug–May') || s.includes('Year-Round');
-  }
-  return true;
-}
-
-function getLocalDateKey(date = new Date()) {
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, '0');
-  const day = String(date.getDate()).padStart(2, '0');
-  return `${year}-${month}-${day}`;
-}
 
 function loadStoredSightings() {
   try {
@@ -147,17 +118,7 @@ export default function App() {
   };
 
   const importSightings = (incoming) => {
-    setSightings(prev => {
-      const merged = { ...prev };
-      for (const [dateKey, ids] of Object.entries(incoming)) {
-        if (/^\d{4}-\d{2}-\d{2}$/.test(dateKey) && Array.isArray(ids)) {
-          const existing = new Set(merged[dateKey] || []);
-          ids.filter(id => typeof id === 'string').forEach(id => existing.add(id));
-          merged[dateKey] = [...existing];
-        }
-      }
-      return merged;
-    });
+    setSightings(prev => mergeSightings(prev, incoming, VALID_BIRD_IDS));
   };
 
   const toggleSeenToday = (birdId) => {
