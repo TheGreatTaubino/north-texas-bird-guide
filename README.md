@@ -46,6 +46,12 @@ Build the app:
 npm run build
 ```
 
+Run unit tests:
+
+```bash
+npm test
+```
+
 Preview the production build:
 
 ```bash
@@ -95,7 +101,7 @@ Clearing browser site data will clear local sighting history. Closing the tab cl
 
 ```text
 src/
-  App.jsx                    Main application shell, filters, grouping, layout, sighting state
+  App.jsx                    Main application shell, grouping, layout, sighting state
   main.jsx                   React entry point
   index.css                  Tailwind/global styles
   data/birds.js              Species and trivia data (109 species)
@@ -108,6 +114,11 @@ src/
     TriviaSection.jsx        Trivia cards
   hooks/
     useGitHubSync.js         GitHub Gist sync — push/pull sighting data via GitHub API
+  utils/
+    dates.js                 getLocalDateKey shared utility
+    filter.js                matchesFilter logic and RAPTOR_TYPES
+    sightings.js             mergeSightings — validates and merges imported sighting data
+    __tests__/               Unit tests (vitest) for all utils
   images/                    Source bird photos
 scripts/
   embed-images.js            Generates embedded image data
