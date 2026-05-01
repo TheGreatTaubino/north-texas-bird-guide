@@ -85,10 +85,11 @@ The calendar section includes **Back Up** and **Restore** buttons to export and 
 The calendar section includes an optional **GitHub Sync** panel. When configured with a GitHub personal access token (requires `gist` scope only), the app automatically syncs sightings to a private GitHub Gist on a debounced push and pulls on startup. This allows sighting history to survive app updates and work across multiple devices.
 
 - Leave the Gist ID blank on first connect to create a new private Gist automatically.
-- The token is stored locally on the device only, never sent anywhere except the GitHub API.
+- The token and Gist ID are stored in `sessionStorage` — they are cleared when the tab or browser closes. You will need to re-enter your token each session.
+- The token is never sent anywhere except the GitHub API.
 - Sightings are merged on import — no data is overwritten.
 
-Clearing browser site data will clear local sighting history and sync configuration for that device.
+Clearing browser site data will clear local sighting history. Closing the tab clears sync configuration (token and Gist ID).
 
 ## Project Structure
 

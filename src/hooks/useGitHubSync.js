@@ -6,7 +6,7 @@ const PUSH_DEBOUNCE_MS = 4000;
 
 function loadConfig() {
   try {
-    const raw = localStorage.getItem(SYNC_CONFIG_KEY);
+    const raw = sessionStorage.getItem(SYNC_CONFIG_KEY);
     return raw ? JSON.parse(raw) : { token: '', gistId: '', lastSyncedAt: null };
   } catch {
     return { token: '', gistId: '', lastSyncedAt: null };
@@ -15,7 +15,7 @@ function loadConfig() {
 
 function persistConfig(config) {
   try {
-    localStorage.setItem(SYNC_CONFIG_KEY, JSON.stringify(config));
+    sessionStorage.setItem(SYNC_CONFIG_KEY, JSON.stringify(config));
   } catch {}
 }
 

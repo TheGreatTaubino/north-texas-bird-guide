@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react(), viteSingleFile()],
   build: {
     assetsInlineLimit: 100 * 1024 * 1024,
-    rollupOptions: {
+    rolldownOptions: {
       output: {
         inlineDynamicImports: true,
       },
