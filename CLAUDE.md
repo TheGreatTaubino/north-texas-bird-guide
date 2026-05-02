@@ -58,6 +58,8 @@ Each record in `BIRDS`:
 ```
 To add a species: add record to `BIRDS`, add photo to `src/images/`, then run `npm run embed-images`.
 
+When adding new species, always provide a table of birds with missing images, the expected file name, and a link to the bird on https://merlin.allaboutbirds.org/
+
 ## Storage
 | Key | Storage | Contents |
 |-----|---------|----------|

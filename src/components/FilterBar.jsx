@@ -3,22 +3,20 @@ import React from 'react';
 const FILTERS = [
   { id: 'all', label: 'All Species' },
   { id: 'frequent-fliers', label: '✈ Frequent Fliers' },
-  { id: 'songbird', label: 'Songbirds' },
-  { id: 'raptor', label: 'Raptors & Owls' },
+  { id: 'songbirds', label: 'Songbirds' },
+  { id: 'birds-of-prey', label: 'Birds of Prey' },
   { id: 'waterbird', label: 'Waterbirds' },
   { id: 'shorebird', label: 'Shorebirds' },
-  { id: 'woodpecker', label: 'Woodpeckers' },
-  { id: 'waterfowl', label: 'Ducks & Geese' },
-  { id: 'gulls', label: 'Gulls' },
-  { id: 'year-round', label: 'Year-Round' },
-  { id: 'summer', label: 'Summer' },
-  { id: 'winter', label: 'Winter' },
+  { id: 'duck', label: 'Ducks' },
+  { id: 'goose', label: 'Geese' },
+  { id: 'gull', label: 'Gulls' },
+  { id: 'other', label: 'Other' },
 ];
 
 export default function FilterBar({ activeFilter, onFilterChange, searchQuery, onSearchChange, quickIdMode, onQuickIdToggle }) {
   return (
     <div className="sticky top-0 z-50 bg-bird-navy border-b border-gray-800 shadow-lg">
-      <div className="max-w-5xl mx-auto px-3 py-2">
+      <div className="max-w-screen-2xl mx-auto px-3 py-2">
         {/* Search row */}
         <div className="flex items-center gap-2 mb-2">
           <div className="relative flex-1">

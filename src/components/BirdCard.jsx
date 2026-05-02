@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { isCurrentlySeen } from '../data/birds.js';
+import { TYPE_COLORS } from '../utils/typeColors.js';
 
 function PlaceholderImage({ name, color }) {
   return (
@@ -153,19 +154,22 @@ export default function BirdCard({ bird, imageDataUrl, quickIdMode, seenToday, o
 
             {/* Badges */}
             <div className="flex flex-wrap gap-1.5 pt-1">
-              {bird.badges.map((b, i) => (
-                <span
-                  key={i}
-                  className="text-xs px-2.5 py-1 rounded-full font-medium"
-                  style={{
-                    backgroundColor: `${bird.color}33`,
-                    color: bird.color === '#424949' || bird.color === '#273746' || bird.color === '#212f3d' ? '#adb5bd' : bird.color,
-                    border: `1px solid ${bird.color}55`,
-                  }}
-                >
-                  {b}
-                </span>
-              ))}
+              {bird.badges.map((b, i) => {
+                const c = TYPE_COLORS[bird.type] || bird.color;
+                return (
+                  <span
+                    key={i}
+                    className="text-xs px-2.5 py-1 rounded-full font-medium"
+                    style={{
+                      backgroundColor: `${c}22`,
+                      color: c,
+                      border: `1px solid ${c}55`,
+                    }}
+                  >
+                    {b}
+                  </span>
+                );
+              })}
             </div>
 
             {/* Collapse in quick ID mode */}
