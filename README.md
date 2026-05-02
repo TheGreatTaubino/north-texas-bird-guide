@@ -7,7 +7,9 @@ The app is designed for quick field identification and offline use. It includes 
 ## Features
 
 - Search by common name, scientific name, or bird type
-- Filter by group, season, waterfowl, gulls, raptors, and other categories
+- Filter by category: Songbirds, Birds of Prey, Waterbird, Shorebird, Duck, Goose, Gull, Other
+- Category color coding — each bird group has a consistent color across badges and calendar tags
+- 6-point abundance scale on each species card (Most Rare → Most Common)
 - Quick ID mode for condensed field-mark cards
 - One-tap "seen today" sighting checkboxes on each species card
 - Local calendar tracker with daily sighting counts and species history
@@ -16,7 +18,7 @@ The app is designed for quick field identification and offline use. It includes 
 - Collapsible bird-type sections with species counts
 - Embedded bird photos for offline builds
 - Seasonal "Here Now" badges based on each species' season field
-- Local context for Plano, DFW, Collin County, and the Central Flyway
+- Responsive grid layout — up to 5 columns wide on large screens
 - Trivia and local birding spot sections
 
 ## Tech Stack
@@ -88,14 +90,25 @@ The calendar section includes **Back Up** and **Restore** buttons to export and 
 
 ### GitHub Gist Sync
 
-The calendar section includes an optional **GitHub Sync** panel. When configured with a GitHub personal access token (requires `gist` scope only), the app automatically syncs sightings to a private GitHub Gist on a debounced push and pulls on startup. This allows sighting history to survive app updates and work across multiple devices.
+The calendar section includes an optional **GitHub Sync** panel. When configured with a GitHub personal access token (requires `gist` scope only), the app automatically syncs sightings to a private GitHub Gist on a debounced push and pulls on startup.
 
 - Leave the Gist ID blank on first connect to create a new private Gist automatically.
-- The token and Gist ID are stored in `sessionStorage` — they are cleared when the tab or browser closes. You will need to re-enter your token each session.
+- The token and Gist ID are stored in `sessionStorage` — they are cleared when the tab or browser closes.
 - The token is never sent anywhere except the GitHub API.
 - Sightings are merged on import — no data is overwritten.
 
-Clearing browser site data will clear local sighting history. Closing the tab clears sync configuration (token and Gist ID).
+## Bird Categories
+
+| Category | Color | Includes |
+|---|---|---|
+| Songbirds | Green | Passerines, swallows, flycatchers |
+| Birds of Prey | Red | Hawks, falcons, eagles, ospreys, owls |
+| Waterbird | Blue | Herons, egrets, cormorants, pelicans, grebes, coots |
+| Shorebird | Teal | Plovers, sandpipers, stilts, avocets |
+| Duck | Sky | Dabbling, diving, whistling, and tree ducks |
+| Goose | Amber | Canada, White-fronted, and Snow Geese |
+| Gull | Slate | Migratory and year-round gulls |
+| Other | Purple | Woodpeckers, hummingbirds, doves, kingfishers, swifts |
 
 ## Project Structure
 
@@ -108,17 +121,18 @@ src/
   imageData.js               Generated embedded image data
   components/
     BirdCard.jsx             Species card UI with seen-today toggle
-    FilterBar.jsx            Search, filters, quick ID toggle
+    FilterBar.jsx            Search, type filters, quick ID toggle
     SightingCalendar.jsx     Monthly calendar tracker, backup/restore, GitHub Gist sync UI
     SpotsSection.jsx         Local birding spots
     TriviaSection.jsx        Trivia cards
   hooks/
     useGitHubSync.js         GitHub Gist sync — push/pull sighting data via GitHub API
   utils/
+    typeColors.js            Canonical category→color map (shared across components)
     dates.js                 getLocalDateKey shared utility
-    filter.js                matchesFilter logic and RAPTOR_TYPES
+    filter.js                matchesFilter logic
     sightings.js             mergeSightings — validates and merges imported sighting data
-    __tests__/               Unit tests (vitest) for all utils
+    __tests__/               Unit tests (vitest)
   images/                    Source bird photos
 scripts/
   embed-images.js            Generates embedded image data
@@ -131,22 +145,17 @@ Each species record in `src/data/birds.js` generally includes:
 - `id`
 - `name`
 - `latin`
-- `type`
-- `season`
-- `color`
+- `type` — one of the 8 category values above
+- `season` — display string shown on card overlay
+- `color` — individual card accent color
 - `imageKey`
-- optional `subtype`
-- optional `size`, `weight`, and `wingspan`
-- `id_marks`
-- `flight_id`
-- `northTexas`
-- `funFact`
-- `badges`
+- optional `subtype`, `size`, `weight`, `wingspan`, `frequentFlier`
+- `id_marks`, `flight_id`, `northTexas`, `funFact`, `badges`
 
-`imageKey` should match a photo filename in `src/images/` and an exported key in `src/imageData.js`.
+`badges` contains habitat and abundance strings. Abundance uses the scale: Most Rare · More Rare · Rare · Common · More Common · Most Common.
 
 ## Notes
 
 - `dist/` and `node_modules/` are intentionally ignored.
-- Windows metadata sidecar files such as `*:Zone.Identifier` are ignored and should not be committed.
+- Windows metadata sidecar files such as `*:Zone.Identifier` are ignored.
 - Photo and species data attribution is shown in the app footer.
