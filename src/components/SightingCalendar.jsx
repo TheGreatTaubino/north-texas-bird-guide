@@ -1,6 +1,7 @@
 import React, { useMemo, useRef, useState } from 'react';
 import { useGitHubSync } from '../hooks/useGitHubSync.js';
 import { getLocalDateKey } from '../utils/dates.js';
+import { TYPE_COLORS } from '../utils/typeColors.js';
 
 const WEEKDAYS = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 const MONTH_FORMATTER = new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' });
@@ -308,7 +309,7 @@ export default function SightingCalendar({ birds, sightings, todayKey, onImportS
   };
 
   return (
-    <section className="max-w-5xl mx-auto px-4 py-10">
+    <section className="max-w-screen-2xl mx-auto px-4 py-10">
       <div className="mb-6 flex flex-col gap-4">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
           <div>
@@ -481,9 +482,9 @@ export default function SightingCalendar({ birds, sightings, todayKey, onImportS
                   <span
                     className="text-[11px] rounded-full px-2 py-0.5 border flex-shrink-0"
                     style={{
-                      backgroundColor: `${bird.color}22`,
-                      borderColor: `${bird.color}55`,
-                      color: bird.color,
+                      backgroundColor: `${TYPE_COLORS[bird.type] || bird.color}22`,
+                      borderColor: `${TYPE_COLORS[bird.type] || bird.color}55`,
+                      color: TYPE_COLORS[bird.type] || bird.color,
                     }}
                   >
                     {bird.type}

@@ -3,7 +3,7 @@ import { matchesFilter } from '../filter.js';
 
 // Minimal bird stubs — only fields matchesFilter reads
 const bird = (overrides) => ({
-  type: 'Songbird',
+  type: 'Songbirds',
   season: 'Year-Round',
   frequentFlier: false,
   ...overrides,
@@ -11,7 +11,7 @@ const bird = (overrides) => ({
 
 describe('matchesFilter', () => {
   it('all — always true', () => {
-    expect(matchesFilter(bird({ type: 'Gull' }), 'all')).toBe(true);
+    expect(matchesFilter(bird({ type: 'Waterfowl' }), 'all')).toBe(true);
   });
 
   it('frequent-fliers — requires frequentFlier flag', () => {
@@ -19,60 +19,44 @@ describe('matchesFilter', () => {
     expect(matchesFilter(bird(), 'frequent-fliers')).toBe(false);
   });
 
-  it('songbird', () => {
-    expect(matchesFilter(bird({ type: 'Songbird' }), 'songbird')).toBe(true);
-    expect(matchesFilter(bird({ type: 'Raptor' }), 'songbird')).toBe(false);
+  it('songbirds', () => {
+    expect(matchesFilter(bird({ type: 'Songbirds' }), 'songbirds')).toBe(true);
+    expect(matchesFilter(bird({ type: 'Birds of Prey' }), 'songbirds')).toBe(false);
   });
 
-  it('raptor — includes Raptor and Owl', () => {
-    expect(matchesFilter(bird({ type: 'Raptor' }), 'raptor')).toBe(true);
-    expect(matchesFilter(bird({ type: 'Owl' }), 'raptor')).toBe(true);
-    expect(matchesFilter(bird({ type: 'Songbird' }), 'raptor')).toBe(false);
+  it('birds-of-prey — includes Raptors and Owls', () => {
+    expect(matchesFilter(bird({ type: 'Birds of Prey' }), 'birds-of-prey')).toBe(true);
+    expect(matchesFilter(bird({ type: 'Songbirds' }), 'birds-of-prey')).toBe(false);
   });
 
   it('waterbird', () => {
     expect(matchesFilter(bird({ type: 'Waterbird' }), 'waterbird')).toBe(true);
-    expect(matchesFilter(bird({ type: 'Duck' }), 'waterbird')).toBe(false);
+    expect(matchesFilter(bird({ type: 'Shorebird' }), 'waterbird')).toBe(false);
   });
 
   it('shorebird', () => {
     expect(matchesFilter(bird({ type: 'Shorebird' }), 'shorebird')).toBe(true);
+    expect(matchesFilter(bird({ type: 'Waterbird' }), 'shorebird')).toBe(false);
   });
 
-  it('woodpecker', () => {
-    expect(matchesFilter(bird({ type: 'Woodpecker' }), 'woodpecker')).toBe(true);
+  it('duck', () => {
+    expect(matchesFilter(bird({ type: 'Duck' }), 'duck')).toBe(true);
+    expect(matchesFilter(bird({ type: 'Goose' }), 'duck')).toBe(false);
   });
 
-  it('waterfowl — includes Duck and Goose', () => {
-    expect(matchesFilter(bird({ type: 'Duck' }), 'waterfowl')).toBe(true);
-    expect(matchesFilter(bird({ type: 'Goose' }), 'waterfowl')).toBe(true);
-    expect(matchesFilter(bird({ type: 'Waterbird' }), 'waterfowl')).toBe(false);
+  it('goose', () => {
+    expect(matchesFilter(bird({ type: 'Goose' }), 'goose')).toBe(true);
+    expect(matchesFilter(bird({ type: 'Duck' }), 'goose')).toBe(false);
   });
 
-  it('gulls', () => {
-    expect(matchesFilter(bird({ type: 'Gull' }), 'gulls')).toBe(true);
-    expect(matchesFilter(bird({ type: 'Shorebird' }), 'gulls')).toBe(false);
+  it('gull', () => {
+    expect(matchesFilter(bird({ type: 'Gull' }), 'gull')).toBe(true);
+    expect(matchesFilter(bird({ type: 'Shorebird' }), 'gull')).toBe(false);
   });
 
-  it('year-round', () => {
-    expect(matchesFilter(bird({ season: 'Year-Round' }), 'year-round')).toBe(true);
-    expect(matchesFilter(bird({ season: 'Winter (Nov–Mar)' }), 'year-round')).toBe(false);
-  });
-
-  it('summer — matches summer months, excludes year-round and winter', () => {
-    // Note: 'Sept' is an exclusion term, so seasons running into September are excluded
-    expect(matchesFilter(bird({ season: 'April–August' }), 'summer')).toBe(true);
-    expect(matchesFilter(bird({ season: 'May–August' }), 'summer')).toBe(true);
-    expect(matchesFilter(bird({ season: 'Year-Round' }), 'summer')).toBe(false);
-    expect(matchesFilter(bird({ season: 'Nov–Mar' }), 'summer')).toBe(false);
-  });
-
-  it('winter — includes Oct/Nov/Sept arrivals and Year-Round birds', () => {
-    expect(matchesFilter(bird({ season: 'Nov–Mar' }), 'winter')).toBe(true);
-    expect(matchesFilter(bird({ season: 'Oct–Apr' }), 'winter')).toBe(true);
-    expect(matchesFilter(bird({ season: 'Year-Round' }), 'winter')).toBe(true);
-    expect(matchesFilter(bird({ season: 'Aug–May' }), 'winter')).toBe(true);
-    expect(matchesFilter(bird({ season: 'April–August' }), 'winter')).toBe(false);
+  it('other — woodpeckers, hummingbirds, doves, etc.', () => {
+    expect(matchesFilter(bird({ type: 'Other' }), 'other')).toBe(true);
+    expect(matchesFilter(bird({ type: 'Duck' }), 'other')).toBe(false);
   });
 
   it('unknown filter — falls through to true', () => {

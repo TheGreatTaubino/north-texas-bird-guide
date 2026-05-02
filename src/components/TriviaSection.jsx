@@ -22,7 +22,7 @@ function TriviaCard({ item }) {
 
 export default function TriviaSection() {
   return (
-    <section className="max-w-5xl mx-auto px-4 py-10">
+    <section className="max-w-screen-2xl mx-auto px-4 py-10">
       <div className="mb-6">
         <p className="text-xs font-semibold text-bird-amber uppercase tracking-widest mb-1">Bird Knowledge</p>
         <h2 className="text-2xl font-serif font-bold text-white">Field Guide Trivia</h2>
