@@ -464,7 +464,6 @@ export const BIRDS = [
       flight_id: "Short, direct, slightly bounding flight. Often erupts from shrubs, rooflines, or restaurant patios in noisy flocks.",
       northTexas: "Abundant year-round around buildings, gas stations, grocery stores, parking lots, patio restaurants, and neighborhood feeders across North Texas.",
       funFact: "House Sparrows are not native to North America. Introduced in the 1800s, they adapted brilliantly to human settlement and now live on every continent except Antarctica.",
-      frequentFlier: true,
       badges: ["Buildings · Parking Lots · Feeders", "Most Common"],
     },
   {

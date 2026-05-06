@@ -159,6 +159,10 @@ export default function App() {
         onQuickIdToggle={() => setQuickIdMode(m => !m)}
       />
 
+      <div className="border-b border-gray-800">
+        <SightingCalendar birds={BIRDS} sightings={sightings} todayKey={todayKey} onImportSightings={importSightings} />
+      </div>
+
       <main className="max-w-screen-2xl mx-auto px-4 py-6">
         {filtered.length === 0 && (
           <div className="text-center py-16 text-gray-500">
@@ -194,10 +198,6 @@ export default function App() {
           </div>
         ))}
       </main>
-
-      <div className="border-t border-gray-800">
-        <SightingCalendar birds={BIRDS} sightings={sightings} todayKey={todayKey} onImportSightings={importSightings} />
-      </div>
 
       <div className="border-t border-gray-800">
         <TriviaSection />
