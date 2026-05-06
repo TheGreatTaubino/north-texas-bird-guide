@@ -78,6 +78,7 @@ export default function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [quickIdMode, setQuickIdMode] = useState(false);
   const [collapsedGroups, setCollapsedGroups] = useState(new Set());
+  const [sightingsCollapsed, setSightingsCollapsed] = useState(false);
   const [sightings, setSightings] = useState(loadStoredSightings);
   const todayKey = getLocalDateKey();
 
@@ -150,6 +151,17 @@ export default function App() {
         </div>
       </header>
 
+      <div className="border-b border-gray-800">
+        <SightingCalendar
+          birds={BIRDS}
+          sightings={sightings}
+          todayKey={todayKey}
+          onImportSightings={importSightings}
+          collapsed={sightingsCollapsed}
+          onToggle={() => setSightingsCollapsed(c => !c)}
+        />
+      </div>
+
       <FilterBar
         activeFilter={activeFilter}
         onFilterChange={setActiveFilter}
@@ -158,10 +170,6 @@ export default function App() {
         quickIdMode={quickIdMode}
         onQuickIdToggle={() => setQuickIdMode(m => !m)}
       />
-
-      <div className="border-b border-gray-800">
-        <SightingCalendar birds={BIRDS} sightings={sightings} todayKey={todayKey} onImportSightings={importSightings} />
-      </div>
 
       <main className="max-w-screen-2xl mx-auto px-4 py-6">
         {filtered.length === 0 && (

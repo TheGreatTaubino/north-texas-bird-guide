@@ -216,7 +216,7 @@ function SyncPanel({ sightings, onMerge }) {
   );
 }
 
-export default function SightingCalendar({ birds, sightings, todayKey, onImportSightings }) {
+export default function SightingCalendar({ birds, sightings, todayKey, onImportSightings, collapsed, onToggle }) {
   const [monthDate, setMonthDate] = useState(() => dateFromKey(todayKey));
   const [selectedDateKey, setSelectedDateKey] = useState(todayKey);
   const [importStatus, setImportStatus] = useState(null);
@@ -315,82 +315,105 @@ export default function SightingCalendar({ birds, sightings, todayKey, onImportS
   };
 
   return (
-    <section className="max-w-screen-2xl mx-auto px-4 py-10">
-      <div className="mb-6 flex flex-col gap-4">
+    <section className="max-w-screen-2xl mx-auto px-4 py-6">
+      <div className={collapsed ? '' : 'mb-6'}>
         <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-          <div>
-            <p className="text-xs font-semibold text-bird-green uppercase tracking-widest mb-1">Sightings</p>
-            <h2 className="text-2xl font-serif font-bold text-white">Calendar Tracker</h2>
-            <p className="text-sm text-gray-400 mt-1">
-              Mark birds as seen today, then review your local sighting history by date.
-            </p>
-          </div>
-          <div className="flex flex-col items-end gap-2">
-            <div className="flex items-center gap-2 flex-wrap justify-end">
-              <input
-                ref={fileInputRef}
-                type="file"
-                accept=".json"
-                className="hidden"
-                onChange={handleFileImport}
-              />
-              <button
-                type="button"
-                onClick={handleExport}
-                className={`text-xs rounded-lg px-2.5 py-1 transition-colors border ${
-                  backupIsStale
-                    ? 'border-amber-600 text-amber-400 hover:border-amber-400 hover:text-amber-200'
-                    : 'border-gray-700 text-gray-400 hover:border-gray-500 hover:text-gray-200'
-                }`}
-              >
-                {backupIsStale ? '⚠ Back Up Now' : 'Back Up ↓'}
-              </button>
-              <button
-                type="button"
-                onClick={() => fileInputRef.current?.click()}
-                className="text-xs border border-gray-700 rounded-lg px-2.5 py-1 text-gray-400 hover:border-gray-500 hover:text-gray-200 transition-colors"
-              >
-                Restore ↑
-              </button>
-              {navigator.clipboard?.readText && (
+          <button
+            type="button"
+            onClick={onToggle}
+            className="flex items-center gap-3 text-left group"
+            aria-expanded={!collapsed}
+          >
+            <div>
+              <p className="text-xs font-semibold text-bird-green uppercase tracking-widest mb-1">Sightings</p>
+              <h2 className="text-2xl font-serif font-bold text-white group-hover:text-gray-200 transition-colors">
+                Calendar Tracker
+              </h2>
+              {!collapsed && (
+                <p className="text-sm text-gray-400 mt-1">
+                  Mark birds as seen today, then review your local sighting history by date.
+                </p>
+              )}
+            </div>
+            <svg
+              className={`w-5 h-5 text-gray-500 group-hover:text-gray-300 transition-all duration-150 mt-1 flex-shrink-0 ${collapsed ? '-rotate-90' : ''}`}
+              fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          {!collapsed && (
+            <div className="flex flex-col items-end gap-2">
+              <div className="flex items-center gap-2 flex-wrap justify-end">
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  accept=".json"
+                  className="hidden"
+                  onChange={handleFileImport}
+                />
                 <button
                   type="button"
-                  onClick={handleClipboardImport}
+                  onClick={handleExport}
+                  className={`text-xs rounded-lg px-2.5 py-1 transition-colors border ${
+                    backupIsStale
+                      ? 'border-amber-600 text-amber-400 hover:border-amber-400 hover:text-amber-200'
+                      : 'border-gray-700 text-gray-400 hover:border-gray-500 hover:text-gray-200'
+                  }`}
+                >
+                  {backupIsStale ? '⚠ Back Up Now' : 'Back Up ↓'}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => fileInputRef.current?.click()}
                   className="text-xs border border-gray-700 rounded-lg px-2.5 py-1 text-gray-400 hover:border-gray-500 hover:text-gray-200 transition-colors"
                 >
-                  Paste ↑
+                  Restore ↑
                 </button>
-              )}
-              {importStatus && (
-                <span className={`text-xs ${importStatus === 'ok' ? 'text-bird-green' : 'text-red-400'}`}>
-                  {importStatus === 'ok' ? 'Imported!' : 'Invalid file'}
+                {navigator.clipboard?.readText && (
+                  <button
+                    type="button"
+                    onClick={handleClipboardImport}
+                    className="text-xs border border-gray-700 rounded-lg px-2.5 py-1 text-gray-400 hover:border-gray-500 hover:text-gray-200 transition-colors"
+                  >
+                    Paste ↑
+                  </button>
+                )}
+                {importStatus && (
+                  <span className={`text-xs ${importStatus === 'ok' ? 'text-bird-green' : 'text-red-400'}`}>
+                    {importStatus === 'ok' ? 'Imported!' : 'Invalid file'}
+                  </span>
+                )}
+              </div>
+              <div className="flex items-center gap-3 text-xs text-gray-500">
+                {lastExportedAt && (
+                  <span className={daysSinceExport > STALE_DAYS ? 'text-amber-500' : 'text-gray-500'}>
+                    Last backup: {SHORT_DT_FORMATTER.format(lastExportedAt)}
+                  </span>
+                )}
+                {totalDaysWithSightings > 0 && !lastExportedAt && (
+                  <span className="text-amber-500">Not backed up</span>
+                )}
+                <span className="text-gray-300">
+                  <span className="font-semibold text-white">{monthTotal}</span> sightings this month
                 </span>
-              )}
+              </div>
             </div>
-            <div className="flex items-center gap-3 text-xs text-gray-500">
-              {lastExportedAt && (
-                <span className={daysSinceExport > STALE_DAYS ? 'text-amber-500' : 'text-gray-500'}>
-                  Last backup: {SHORT_DT_FORMATTER.format(lastExportedAt)}
-                </span>
-              )}
-              {totalDaysWithSightings > 0 && !lastExportedAt && (
-                <span className="text-amber-500">Not backed up</span>
-              )}
-              <span className="text-gray-300">
-                <span className="font-semibold text-white">{monthTotal}</span> sightings this month
-              </span>
-            </div>
-          </div>
+          )}
         </div>
 
-        {/* GitHub Sync */}
-        <div className="border-t border-gray-800 pt-4">
-          <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">Auto Sync</p>
-          <SyncPanel sightings={sightings} onMerge={onImportSightings} />
-        </div>
+        {!collapsed && (
+          <>
+            {/* GitHub Sync */}
+            <div className="border-t border-gray-800 pt-4 mb-6">
+              <p className="text-xs font-semibold text-gray-500 uppercase tracking-wide mb-2">Auto Sync</p>
+              <SyncPanel sightings={sightings} onMerge={onImportSightings} />
+            </div>
+          </>
+        )}
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.35fr)_minmax(280px,0.65fr)] gap-4">
+      {!collapsed && <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1.35fr)_minmax(280px,0.65fr)] gap-4">
         <div className="bg-gray-900 border border-gray-800 rounded-xl p-4">
           <div className="flex items-center justify-between gap-2 mb-4">
             <button
@@ -504,7 +527,7 @@ export default function SightingCalendar({ birds, sightings, todayKey, onImportS
             </div>
           )}
         </div>
-      </div>
+      </div>}
     </section>
   );
 }
