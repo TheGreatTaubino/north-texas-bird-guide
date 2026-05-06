@@ -1,13 +1,15 @@
 import { useState, useEffect, useRef } from 'react';
 
 const SYNC_CONFIG_KEY = 'northTexasBirdGuide.syncConfig.v1';
+const GIST_ID_KEY = 'northTexasBirdGuide.gistId.v1';
 const GIST_FILENAME = 'north-texas-bird-sightings.json';
 const PUSH_DEBOUNCE_MS = 4000;
 
 function loadConfig() {
   try {
-    const raw = sessionStorage.getItem(SYNC_CONFIG_KEY);
-    return raw ? JSON.parse(raw) : { token: '', gistId: '', lastSyncedAt: null };
+    const session = JSON.parse(sessionStorage.getItem(SYNC_CONFIG_KEY) || '{}');
+    const gistId = localStorage.getItem(GIST_ID_KEY) || '';
+    return { token: session.token || '', gistId, lastSyncedAt: session.lastSyncedAt || null };
   } catch {
     return { token: '', gistId: '', lastSyncedAt: null };
   }
@@ -15,7 +17,9 @@ function loadConfig() {
 
 function persistConfig(config) {
   try {
-    sessionStorage.setItem(SYNC_CONFIG_KEY, JSON.stringify(config));
+    // Token is session-only; gistId persists across sessions (not sensitive)
+    sessionStorage.setItem(SYNC_CONFIG_KEY, JSON.stringify({ token: config.token, lastSyncedAt: config.lastSyncedAt }));
+    if (config.gistId) localStorage.setItem(GIST_ID_KEY, config.gistId);
   } catch {}
 }
 
@@ -162,8 +166,9 @@ export function useGitHubSync(sightings, onMerge) {
 
   const disconnect = () => {
     clearTimeout(pushTimerRef.current);
-    const cleared = { token: '', gistId: '', lastSyncedAt: null };
-    persistConfig(cleared);
+    // Clear token from sessionStorage; keep gistId in localStorage for easy reconnect
+    sessionStorage.removeItem(SYNC_CONFIG_KEY);
+    const cleared = { token: '', gistId: config.gistId, lastSyncedAt: null };
     setConfig(cleared);
     setStatus('idle');
     setSyncError(null);

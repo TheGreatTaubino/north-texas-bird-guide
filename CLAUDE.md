@@ -65,9 +65,10 @@ When adding new species, always provide a table of birds with missing images, th
 |-----|---------|----------|
 | `northTexasBirdGuide.sightings.v1` | `localStorage` | Sighting history (date → species array) |
 | `northTexasBirdGuide.lastExport.v1` | `localStorage` | Timestamp of last backup export |
-| `northTexasBirdGuide.syncConfig.v1` | `sessionStorage` | GitHub token + Gist ID — **clears on tab close** |
+| `northTexasBirdGuide.gistId.v1` | `localStorage` | Gist ID — persists across sessions (not sensitive; visible in gist URL) |
+| `northTexasBirdGuide.syncConfig.v1` | `sessionStorage` | GitHub token + last sync time — **clears on tab close** |
 
-The GitHub PAT lives in `sessionStorage` intentionally — it clears when the tab or browser closes to limit token exposure. Users re-enter their token each session. Do not move this to `localStorage`.
+The GitHub PAT lives in `sessionStorage` intentionally — it clears when the tab or browser closes to limit token exposure. Users re-enter their token each session. Do not move this to `localStorage`. The Gist ID is stored separately in `localStorage` so the connect form can pre-fill it on reconnect.
 
 ## GitHub Sync
 `useGitHubSync.js` pushes/pulls sighting data to a private GitHub Gist. Token requires only `gist` scope. Sync config is stored in `sessionStorage` — not `localStorage` — by design.

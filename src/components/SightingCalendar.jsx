@@ -85,7 +85,9 @@ function SyncPanel({ sightings, onMerge }) {
 
   const [showSetup, setShowSetup] = useState(false);
   const [tokenInput, setTokenInput] = useState('');
-  const [gistInput, setGistInput] = useState('');
+  const [gistInput, setGistInput] = useState(
+    () => localStorage.getItem('northTexasBirdGuide.gistId.v1') || ''
+  );
   const [connecting, setConnecting] = useState(false);
 
   const handleConnect = async () => {
@@ -145,9 +147,13 @@ function SyncPanel({ sightings, onMerge }) {
       ) : (
         <div className="bg-gray-900 border border-gray-800 rounded-xl p-4 flex flex-col gap-3 max-w-sm">
           <div>
-            <p className="text-sm font-semibold text-white mb-0.5">Connect GitHub Sync</p>
+            <p className="text-sm font-semibold text-white mb-0.5">
+              {gistInput ? 'Reconnect GitHub Sync' : 'Connect GitHub Sync'}
+            </p>
             <p className="text-xs text-gray-400">
-              Sightings sync automatically to a private GitHub Gist — survives app updates and works across devices.
+              {gistInput
+                ? 'Paste your token to reconnect — your Gist ID was remembered.'
+                : 'Sightings sync automatically to a private GitHub Gist — survives app updates and works across devices.'}
             </p>
           </div>
 

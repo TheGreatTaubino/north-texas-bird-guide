@@ -396,6 +396,7 @@ export const BIRDS = [
       flight_id: "Fast, direct flight on pointed triangular wings. Often in dense, synchronized flocks. Short tail and chunky body create a distinctive torpedo shape.",
       northTexas: "Extremely common year-round in parking lots, lawns, farms, neighborhoods, and commercial areas throughout Plano and DFW. Often mixes with grackles, cowbirds, and blackbirds.",
       funFact: "All European Starlings in North America descend from about 100 birds released in New York in the 1890s by people trying to introduce birds mentioned by Shakespeare. They now number in the tens of millions.",
+      frequentFlier: true,
       badges: ["Parking Lots · Lawns · Farms", "Most Common"],
     },
   {
@@ -2422,6 +2423,7 @@ export const BIRDS = [
       flight_id: "Strong, direct flight on broad pointed wings. Often wheels in tight urban flocks; pale underwings and dark wing bars flash on typical gray birds.",
       northTexas: "Common year-round around downtown areas, bridges, warehouses, parking garages, shopping centers, and older buildings throughout DFW.",
       funFact: "Rock Pigeons are the wild ancestor of domestic pigeons. Their homing ability has been used for thousands of years, including carrying messages during wartime.",
+      frequentFlier: true,
       badges: ["Urban Areas · Bridges · Parking Garages", "Common"],
     },
   {
