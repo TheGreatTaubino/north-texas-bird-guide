@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { isCurrentlySeen } from '../data/birds.js';
+import { isCurrentlySeen, SPOTS } from '../data/birds.js';
 import { TYPE_COLORS } from '../utils/typeColors.js';
 
 function PlaceholderImage({ name, color }) {
@@ -23,8 +23,12 @@ function PlaceholderImage({ name, color }) {
 
 export default function BirdCard({ bird, imageDataUrl, quickIdMode, seenToday, onToggleSeenToday }) {
   const [expanded, setExpanded] = useState(false);
+  const [triviaOpen, setTriviaOpen] = useState(false);
+  const [spotsOpen, setSpotsOpen] = useState(false);
   const currentlySeen = isCurrentlySeen(bird.season);
   const showFull = !quickIdMode || expanded;
+  const triviaItem = bird.trivia || null;
+  const birdSpots = (bird.spots || []).map(name => SPOTS.find(s => s.name === name)).filter(Boolean);
 
   return (
     <div
@@ -135,9 +139,9 @@ export default function BirdCard({ bird, imageDataUrl, quickIdMode, seenToday, o
         {showFull && (
           <>
             {/* In Flight */}
-            <div className="bg-blue-950/60 border border-blue-900/50 rounded-lg p-3">
-              <p className="text-xs font-semibold text-blue-400 uppercase tracking-wide mb-1">✈ In Flight</p>
-              <p className="text-sm text-blue-100">{bird.flight_id}</p>
+            <div>
+              <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-1">In Flight</p>
+              <p className="text-sm text-gray-300">{bird.flight_id}</p>
             </div>
 
             {/* North Texas */}
@@ -147,13 +151,13 @@ export default function BirdCard({ bird, imageDataUrl, quickIdMode, seenToday, o
             </div>
 
             {/* Fun Fact */}
-            <div className="bg-amber-950/50 border border-amber-800/40 rounded-lg p-3">
-              <p className="text-xs font-semibold text-amber-400 uppercase tracking-wide mb-1">★ Fun Fact</p>
-              <p className="text-sm text-amber-100">{bird.funFact}</p>
+            <div>
+              <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-1">Fun Fact</p>
+              <p className="text-sm text-gray-300">{bird.funFact}</p>
             </div>
 
             {/* Badges */}
-            <div className="flex flex-wrap gap-1.5 pt-1">
+            <div className="flex flex-wrap gap-1.5">
               {bird.badges.map((b, i) => {
                 const c = TYPE_COLORS[bird.type] || bird.color;
                 return (
@@ -170,6 +174,55 @@ export default function BirdCard({ bird, imageDataUrl, quickIdMode, seenToday, o
                   </span>
                 );
               })}
+            </div>
+
+            {/* Special Trivia */}
+            {triviaItem && (
+              <div>
+                <button
+                  type="button"
+                  onClick={() => setTriviaOpen(o => !o)}
+                  className="flex items-center gap-1.5 text-xs font-semibold text-gray-400 uppercase tracking-wide w-full text-left hover:text-gray-200 transition-colors"
+                >
+                  <span>Trivia</span>
+                  <svg className={`w-3.5 h-3.5 transition-transform duration-150 ${triviaOpen ? '' : '-rotate-90'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                {triviaOpen && (
+                  <div className="mt-2 bg-gray-800/60 border border-gray-700/50 rounded-lg p-3">
+                    <p className="text-xs font-semibold text-gray-200 mb-1">{triviaItem.q}</p>
+                    <p className="text-xs text-gray-400 leading-relaxed">{triviaItem.a}</p>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Birding Spots */}
+            <div>
+              <button
+                type="button"
+                onClick={() => setSpotsOpen(o => !o)}
+                className="flex items-center gap-1.5 text-xs font-semibold text-gray-400 uppercase tracking-wide w-full text-left hover:text-gray-200 transition-colors"
+              >
+                <span>Sighting Spots</span>
+                <svg className={`w-3.5 h-3.5 transition-transform duration-150 ${spotsOpen ? '' : '-rotate-90'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {spotsOpen && (
+                <div className="mt-2 space-y-2">
+                  {birdSpots.map((spot, i) => (
+                    <div key={i} className="bg-gray-800/60 rounded-lg p-3 border border-gray-700/50">
+                      <div className="flex items-center justify-between gap-2 mb-1">
+                        <span className="text-xs font-semibold text-white">{spot.name}</span>
+                        <span className="text-xs text-gray-400 whitespace-nowrap">{spot.dist}</span>
+                      </div>
+                      <p className="text-xs text-gray-500 leading-relaxed">{spot.desc}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
 
             {/* Collapse in quick ID mode */}

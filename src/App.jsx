@@ -4,8 +4,6 @@ import { images } from './imageData.js';
 import FilterBar from './components/FilterBar.jsx';
 import BirdCard from './components/BirdCard.jsx';
 import SightingCalendar from './components/SightingCalendar.jsx';
-import TriviaSection from './components/TriviaSection.jsx';
-import SpotsSection from './components/SpotsSection.jsx';
 import { getLocalDateKey } from './utils/dates.js';
 import { matchesFilter } from './utils/filter.js';
 import { mergeSightings } from './utils/sightings.js';
@@ -206,14 +204,6 @@ export default function App() {
           </div>
         ))}
       </main>
-
-      <div className="border-t border-gray-800">
-        <TriviaSection />
-      </div>
-
-      <div className="border-t border-gray-800">
-        <SpotsSection />
-      </div>
 
       <footer className="border-t border-gray-800 bg-bird-navy">
         <div className="max-w-screen-2xl mx-auto px-4 py-6 text-center">

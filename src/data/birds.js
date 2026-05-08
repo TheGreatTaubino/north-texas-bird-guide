@@ -21,6 +21,8 @@ export const BIRDS = [
       northTexas: "Common year-round in wooded neighborhoods, parks, campuses, fields, and riparian corridors. Less tied to parking lots than grackles and more often seen around mature trees.",
       funFact: "American Crows recognize individual human faces, use tools in some contexts, and hold long-term social knowledge within family groups. They are among North America's smartest birds.",
       frequentFlier: true,
+      trivia: { q: "How large can a crow's extended social memory be?",a: "American Crows live in family groups where juveniles stay to help raise younger siblings for up to five years. They remember dozens of individual crows and humans by face, and pass along information about dangerous individuals to their offspring — a cultural transmission rarely seen outside mammals." },
+      spots: ["Arbor Hills Nature Preserve", "Trinity River Audubon Center", "Heard Natural Science Museum"],
       badges: ["Parks · Wooded Suburbs · Fields", "Common"],
     },
   {
@@ -43,6 +45,8 @@ export const BIRDS = [
       flight_id: "Strongly undulating 'bouncy' flight. Musical call notes given continuously in flight. April birds show males molting into brilliant yellow breeding plumage.",
       northTexas: "Common October–April at feeders offering nyjer (thistle) seed. One of the most welcome winter feeder birds. Males begin molting into bright yellow in April — a stunning sight just before they depart.",
       funFact: "American Goldfinches are strict vegetarians — one of the very few songbirds that feeds its nestlings only plant matter rather than insects. They also time breeding to peak thistle seed availability in late summer, making them among the latest-nesting songbirds.",
+      trivia: { q: "Why do American Goldfinches breed so late in summer compared to other songbirds?",a: "They time their nesting to the peak availability of thistle and other seed heads in mid-to-late summer. This ensures a steady supply of the seeds they feed their nestlings — making them one of the latest-nesting songbirds in North America, with eggs often laid in July or August." },
+      spots: ["Arbor Hills Nature Preserve", "Heard Natural Science Museum"],
       badges: ["Feeders · Open Areas", "Common"],
     },
   {
@@ -65,6 +69,8 @@ export const BIRDS = [
       flight_id: "Strong, direct flight with brief glides. Reddish breast visible at distance. Large, stocky silhouette. Winter flocks of hundreds move together through treetops.",
       northTexas: "Present year-round, but dramatic winter flocks of thousands descend on berry-laden trees across North Texas December–March. Lawns full of feeding robins are a winter spectacle.",
       funFact: "Robins find worms visually — not by hearing. That characteristic head-cocked pose is one eye being used to spot movement through the soil. The listening theory is a myth.",
+      trivia: { q: "How do American Robins locate earthworms?",a: "Robins find worms primarily by vision — their head-cocked pose puts one eye close to the soil to detect movement or shape against the ground. Studies with blinded or deafened robins show that visual cues are essential while auditory cues are not, disproving the popular 'listening for worms' theory." },
+      spots: ["Arbor Hills Nature Preserve", "Heard Natural Science Museum", "Trinity River Audubon Center"],
       badges: ["Lawns · Parks · Woodlands", "More Common"],
     },
   {
@@ -87,6 +93,8 @@ export const BIRDS = [
       flight_id: "Male's brilliant orange unmistakable in flight. Strong, direct. Flute-like whistled song. Usually stays high in tree canopy.",
       northTexas: "Common spring (April–May) and fall (September–October) migrant. Some individuals winter in DFW at feeders offering grape jelly, orange halves, or nectar — an increasingly common winter sighting.",
       funFact: "Baltimore Orioles weave some of the most elaborate nests of any North American bird — tightly woven hanging pouches of plant fiber suspended from the tip of an elm or cottonwood branch, taking the female up to two weeks to complete.",
+      trivia: { q: "What do Baltimore Orioles eat during migration that surprises most people?",a: "Beyond insects and nectar, Baltimore Orioles are voracious consumers of ripe, dark-colored fruits and berries during migration — particularly mulberries and wild cherries. They also have a unique behavior of piercing the base of tubular flowers to steal nectar without pollinating the plant, a strategy called 'nectar robbing.'" },
+      spots: ["Heard Natural Science Museum", "Trinity River Audubon Center", "Arbor Hills Nature Preserve"],
       badges: ["Woodland Edges · Feeders", "Common"],
     },
   {
@@ -109,6 +117,8 @@ export const BIRDS = [
       flight_id: "Extremely agile and swooping. Deeply forked tail is the ID mark in flight. Fastest of the swallows. Rarely seen perched except at nest sites.",
       northTexas: "Arrives March, common through October. Breeds under bridges, in open barns, and on building eaves across the DFW area.",
       funFact: "Barn Swallows have the widest natural distribution of any swallow in the world, breeding on every continent except Antarctica. A single bird can catch 60 insects per hour.",
+      trivia: { q: "How do male Barn Swallows use their tail length to attract mates?",a: "Female Barn Swallows prefer males with longer, more symmetrical tail streamers. Experiments artificially lengthening or shortening tail feathers showed that longer-tailed males acquired mates faster, had higher reproductive success, and suffered fewer parasites — tail length honestly signals male genetic quality." },
+      spots: ["Heard Natural Science Museum", "Lewisville Lake / Elm Fork Greenbelt", "Trinity River Audubon Center"],
       badges: ["Open Water · Bridges · Farms", "Common"],
     },
   {
@@ -131,6 +141,8 @@ export const BIRDS = [
       flight_id: "Short, low flights near ground. Long tail with white-tipped corners visible. Pumps and fans tail constantly. Tends to stay in dense cover.",
       northTexas: "Year-round in brushy, open woodland habitats throughout North Texas. Less conspicuous and vocal than Carolina Wren, easily overlooked. Texas is now the core of its remaining eastern range.",
       funFact: "Bewick's Wren has nearly disappeared from the eastern United States east of the Mississippi — likely driven out by the expanding House Wren. Texas and the West are now the stronghold; it's a species quietly lost from most of its former eastern range.",
+      trivia: { q: "How does a male Bewick's Wren build its song repertoire?",a: "Unlike many songbirds that learn a fixed song from their father, male Bewick's Wrens learn by borrowing and recombining phrases from multiple neighboring males. Each male ends up with a unique mosaic of locally sourced song elements, and researchers can use song patterns to track population connectivity across a region." },
+      spots: ["Arbor Hills Nature Preserve", "Heard Natural Science Museum"],
       badges: ["Brushy Areas · Open Woodlands", "Common"],
     },
   {
@@ -154,6 +166,8 @@ export const BIRDS = [
       northTexas: "Common year-round resident in wooded suburbs throughout Plano and DFW. Fall migration brings additional birds moving through.",
       funFact: "Blue Jays are expert mimics — they perfectly imitate Red-shouldered and Red-tailed Hawk calls, sometimes to clear competitors away from feeders. A jay imitating a hawk is almost always fake.",
       frequentFlier: true,
+      trivia: { q: "What role do Blue Jays play in oak forest regeneration?",a: "Blue Jays are among the primary dispersers of acorns — they can carry up to 5 acorns at once in their throat, crop, and bill, and cache thousands per autumn. Studies suggest jays were responsible for the rapid northward spread of oak forests following the last Ice Age, as they carry acorns far beyond the parent tree's natural seed-fall radius." },
+      spots: ["Arbor Hills Nature Preserve", "Trinity River Audubon Center", "Heard Natural Science Museum"],
       badges: ["Wooded Suburbs · Feeders", "Common"],
     },
   {
@@ -176,6 +190,8 @@ export const BIRDS = [
       flight_id: "Direct, blackbird-like flight, usually in loose flocks. Male's brown head is visible at close range; females look plain and can be overlooked. Often rises from lawns, fields, or feedlots with mixed blackbird flocks.",
       northTexas: "Common year-round throughout Plano and DFW in parks, lawns, pastures, fields, feeders, and anywhere short grass or livestock attracts mixed flocks. Very easy to find around suburban open areas.",
       funFact: "Brown-headed Cowbirds are brood parasites — females lay eggs in the nests of other songbirds instead of building their own. This strategy evolved when cowbirds followed roaming bison herds and could not stay in one place long enough to raise young.",
+      trivia: { q: "How do cowbird chicks avoid being ejected from host nests?",a: "Cowbird eggs often hatch before the host's own eggs because they have a shorter incubation period. The cowbird chick produces begging calls that mimic multiple nestlings at once — acoustic mimicry that tricks the host parents into bringing food at a rate sufficient for a full brood, even though only one chick is present." },
+      spots: ["Heard Natural Science Museum", "Lewisville Lake / Elm Fork Greenbelt", "Hagerman NWR"],
       badges: ["Lawns · Fields · Feeders", "Common"],
     },
   {
@@ -198,6 +214,8 @@ export const BIRDS = [
       flight_id: "Rapid wingbeats, bounding flight. Tiny with big rounded head. Often in mixed flocks with Tufted Titmice, nuthatches, and Yellow-rumped Warblers in winter.",
       northTexas: "Year-round at backyard feeders and in wooded areas throughout North Texas. One of the most reliable feeder visitors, especially at sunflower seeds.",
       funFact: "Chickadees can remember thousands of individual food cache locations for up to several months after hiding seeds — each storage site requires a separate memory entry in a brain region that actually grows larger in fall.",
+      trivia: { q: "What happens to a Carolina Chickadee's brain in fall?",a: "The hippocampus — the brain region responsible for spatial memory — physically enlarges in autumn as chickadees begin caching food. The number of new neurons generated in this region increases dramatically in fall, allowing the birds to form and store thousands of new spatial memories for their hidden food caches." },
+      spots: ["Arbor Hills Nature Preserve", "Heard Natural Science Museum", "Trinity River Audubon Center"],
       badges: ["Wooded Areas · Feeders", "More Common"],
     },
   {
@@ -220,6 +238,8 @@ export const BIRDS = [
       flight_id: "Very low, short, fluttering flights near ground or through brush. Cocked tail and white eyebrow visible. Rarely crosses open areas.",
       northTexas: "North Texas's most vocal wren. Pairs hold year-round territories in wooded backyards, filling neighborhoods with explosive song.",
       funFact: "Carolina Wrens mate for life and the pair stays together year-round defending a joint territory. They're also surprisingly cold-sensitive — hard winters can crash local populations, though they rebound quickly.",
+      trivia: { q: "How loud is a Carolina Wren relative to its body size?",a: "The Carolina Wren's song can reach 90 decibels — about as loud as a lawnmower — from a bird weighing less than an ounce. Sound output relative to body mass makes it one of the loudest birds in the world per gram of body weight. A singing wren can be heard from over a quarter mile away." },
+      spots: ["Arbor Hills Nature Preserve", "Heard Natural Science Museum", "Trinity River Audubon Center"],
       badges: ["Brush Piles · Wooded Backyards", "Common"],
     },
   {
@@ -242,6 +262,8 @@ export const BIRDS = [
       flight_id: "Tight, chattering flocks with constant high-pitched 'seee' calls. Undulating flight. Yellow tail tip and black mask visible. Flocks strip berry trees bare within hours.",
       northTexas: "Common October–April. Flocks of dozens to hundreds descend on holly, possumhaw, cedar, and wax myrtle trees and clean them out in a single afternoon. A spectacular winter sight in any berry-laden neighborhood.",
       funFact: "Cedar Waxwings are so specialized for fruit they can survive on almost nothing else. Occasionally berries ferment on the vine and entire flocks become noticeably intoxicated — birds have been found drunk and unable to fly.",
+      trivia: { q: "What determines how many red waxy wingtip droplets a Cedar Waxwing has?",a: "The number of red waxy tips on the secondary wing feathers increases with age — older birds have more. Females prefer males with more tips, since they indicate a longer-lived, experienced individual. The tips are actually extensions of the feather shaft tip, not separate structures, and their number is limited by diet during molt." },
+      spots: ["Arbor Hills Nature Preserve", "Heard Natural Science Museum", "Trinity River Audubon Center"],
       badges: ["Wooded Suburbs · Berry Trees", "Common"],
     },
   {
@@ -264,6 +286,8 @@ export const BIRDS = [
       flight_id: "Fast, agile, and colonial. Squared tail and pale rump distinguish it from Barn Swallow. Often circles repeatedly near bridges and overpasses.",
       northTexas: "Common March–September under highway overpasses, bridges, culverts, and building eaves throughout DFW. Large mud-nest colonies are easy to spot once active.",
       funFact: "Cliff Swallows build enclosed mud nests one pellet at a time. A single nest may require more than 1,000 mud pellets carried in the bill.",
+      trivia: { q: "How do Cliff Swallows use colonial nesting as an information network?",a: "When a Cliff Swallow returns unsuccessful from foraging, it watches which neighbors leave the colony and follows them the next morning. Unsuccessful foragers cluster near successful ones to track them to good food sources. The colony acts as an 'information center' — one of the first demonstrations of this theory in birds." },
+      spots: ["Lewisville Lake / Elm Fork Greenbelt", "Heard Natural Science Museum", "Trinity River Audubon Center"],
       badges: ["Bridges · Overpasses · Open Water", "Common"],
     },
   {
@@ -286,6 +310,8 @@ export const BIRDS = [
       flight_id: "Bounding flight. White outer tail feathers flash prominently on takeoff. Soft ticking call notes in flight. Hops and scratches on ground under feeders and brush.",
       northTexas: "Extremely common October–April. One of the defining 'snowbird' arrivals heralding winter. Forages on the ground under shrubs and feeders. Departs abruptly in spring.",
       funFact: "The Dark-eyed Junco is estimated at 630 million individuals — one of the most abundant birds in North America. It's been called 'the snowbird' since colonial times because arrival coincides with the first cold fronts of autumn.",
+      trivia: { q: "Why do Dark-eyed Juncos flash their white outer tail feathers?",a: "The white outer tail feathers serve as social signals rather than predator warnings. Juncos with more white show higher dominance in winter flocks — dominant individuals tend to have larger white patches. Experiments covering the white feathers showed those birds lost social rank, confirming the patches function as status badges." },
+      spots: ["Arbor Hills Nature Preserve", "Heard Natural Science Museum"],
       badges: ["Feeders · Brush Piles · Ground", "More Common"],
     },
   {
@@ -308,6 +334,8 @@ export const BIRDS = [
       flight_id: "Gentle, fluttery flight. Male's electric blue back visible at great distance. Perches hunched on wires and low posts, drops to ground.",
       northTexas: "Year-round in open grassy areas and golf courses throughout Plano. Nesting box programs have significantly boosted local populations.",
       funFact: "Eastern Bluebirds nearly vanished from the mid-20th-century landscape due to pesticides and nest competition from introduced House Sparrows and Starlings. A massive volunteer nest-box campaign brought them back.",
+      trivia: { q: "How do Eastern Bluebirds pick nest box sites?",a: "Females select nest cavities almost entirely on their own, visiting multiple boxes before choosing. They strongly prefer boxes facing open areas with perch sites for hunting, 4–6 feet off the ground, with a 1.5-inch entrance hole — too small for starlings. Pair bond strength increases significantly when the female selects a site the male has not pre-occupied." },
+      spots: ["Arbor Hills Nature Preserve", "Heard Natural Science Museum", "Lake Tawakoni State Park"],
       badges: ["Open Fields · Golf Courses", "Common"],
     },
   {
@@ -330,6 +358,8 @@ export const BIRDS = [
       flight_id: "Direct, strong flight. White tail band visible on every bird in flight. Black-and-white pattern. Sallies from perches to catch insects in mid-air.",
       northTexas: "Common April–September on wires, fences, and treetops in open areas throughout DFW. Aggressively attacks crows, herons, and even Bald Eagles passing through its territory.",
       funFact: "Eastern Kingbirds are fearless — they routinely attack and ride on the backs of crows, Red-tailed Hawks, and Bald Eagles that pass through their territory. The name 'kingbird' refers to this fierce territorial aggression, not any regal appearance.",
+      trivia: { q: "What happens to Eastern Kingbirds' diet in South America during winter?",a: "In their North American breeding range, Eastern Kingbirds eat mainly insects caught by aerial sallying. But on their South American wintering grounds they become almost exclusively frugivorous, joining mixed-species flocks in the forest canopy to eat berries. The same individual bird is essentially a different ecological species at different times of year." },
+      spots: ["Heard Natural Science Museum", "Lewisville Lake / Elm Fork Greenbelt", "Trinity River Audubon Center"],
       badges: ["Open Country · Roadsides", "Common"],
     },
   {
@@ -352,6 +382,8 @@ export const BIRDS = [
       flight_id: "Distinctive: several rapid wing flaps then a glide, showing white outer tail feathers. Low over grasslands. Often perches on fence posts and sings.",
       northTexas: "Year-round in open grasslands and fields. Declining due to habitat loss but still found in agricultural areas around McKinney, Celina, and the airport prairies. The song is one of North Texas's great sounds.",
       funFact: "Despite its name, the Eastern Meadowlark is not a lark — it's a member of the blackbird family. Its population has declined 75%+ since 1970 due to grassland habitat loss, making it one of North America's most steeply declining common birds.",
+      trivia: { q: "How does the Eastern Meadowlark's song vary geographically?",a: "Eastern and Western Meadowlarks are nearly identical in appearance and overlap in Texas, but their songs are completely different — Eastern's is a pure, clear whistle; Western's is a complex, gurgling series of notes. They recognize their own species by song and rarely hybridize even where ranges overlap, making them a textbook case of species maintained by vocal isolation." },
+      spots: ["Hagerman NWR", "Lewisville Lake / Elm Fork Greenbelt", "Heard Natural Science Museum"],
       badges: ["Open Grasslands · Fields", "Common"],
     },
   {
@@ -374,6 +406,8 @@ export const BIRDS = [
       flight_id: "Short sallying flights from perch to catch insects in air, then returns to same perch. Pumps tail on landing. Dark above, pale below.",
       northTexas: "Year-round resident in small numbers; winter populations are much higher. Nests on bridges and building ledges. The constant tail-pumping makes it one of the easiest flycatchers to identify.",
       funFact: "Eastern Phoebes were the first North American birds banded for scientific study — John James Audubon tied silver wire to their legs in 1804 to confirm that the same individuals returned to nest at the same site each year.",
+      trivia: { q: "What makes the Eastern Phoebe unusual among flycatchers in cold weather?",a: "Unlike most insect-eating flycatchers that migrate far south for winter, Eastern Phoebes can overwinter in the southern U.S. by switching to berries and small fruits when insects are unavailable. They are the hardiest flycatcher in North America, returning north in February — weeks before any insect activity begins — by eating wax myrtle berries." },
+      spots: ["Heard Natural Science Museum", "Trinity River Audubon Center", "Arbor Hills Nature Preserve"],
       badges: ["Bridges · Creek Edges · Open Areas", "Common"],
     },
   {
@@ -397,6 +431,8 @@ export const BIRDS = [
       northTexas: "Extremely common year-round in parking lots, lawns, farms, neighborhoods, and commercial areas throughout Plano and DFW. Often mixes with grackles, cowbirds, and blackbirds.",
       funFact: "All European Starlings in North America descend from about 100 birds released in New York in the 1890s by people trying to introduce birds mentioned by Shakespeare. They now number in the tens of millions.",
       frequentFlier: true,
+      trivia: { q: "How does a European Starling murmuration work?",a: "In a starling murmuration, each bird reacts to the movements of its six or seven nearest neighbors — not to the whole flock. This local-rule behavior produces cascading ripples of coordinated movement across thousands of birds in real time, making the flock behave as a single fluid organism with no leader and no central coordination." },
+      spots: ["Lewisville Lake / Elm Fork Greenbelt", "Heard Natural Science Museum", "Hagerman NWR"],
       badges: ["Parking Lots · Lawns · Farms", "Most Common"],
     },
   {
@@ -420,6 +456,8 @@ export const BIRDS = [
       northTexas: "Impossibly abundant in North Texas. Massive evening roosts number in the tens of thousands at established sites. Every parking lot, grocery store, and suburban park is claimed territory.",
       funFact: "The Great-tailed Grackle has expanded its range dramatically northward throughout the 20th century, following human development. Its breeding range has grown 6-fold since 1900.",
       frequentFlier: true,
+      trivia: { q: "Why do Great-tailed Grackles hold their tail in a V-keel shape in flight?",a: "The distinctive keeled tail posture is created by two sets of tail muscles acting independently on the left and right tail halves. Males can control each side separately, allowing them to steer precisely at high speed. The keel also reduces drag at cruising speed — a unique aerodynamic adaptation not seen in other icterids." },
+      spots: ["Lewisville Lake / Elm Fork Greenbelt", "Heard Natural Science Museum", "Hagerman NWR"],
       badges: ["Parking Lots · Parks · Suburbs", "Most Common"],
     },
   {
@@ -442,6 +480,8 @@ export const BIRDS = [
       flight_id: "Bouncy, undulating flight. Often travels in small flocks between feeders, rooflines, and trees. Males flash reddish face and chest in good light.",
       northTexas: "Common year-round at sunflower feeders, neighborhoods, shopping centers, and landscaped areas throughout DFW. Often nests on porches, wreaths, and building ledges.",
       funFact: "House Finches were originally western birds. Pet-trade escapees released in New York in the 1940s founded the eastern population, which spread across the continent and met the native western range.",
+      trivia: { q: "What determines how red a male House Finch becomes?",a: "The redness of a male House Finch's plumage is entirely diet-dependent during the fall molt — it comes from carotenoid pigments in the fruits and berries he eats. Males that gain access to richer food produce brighter plumage, and females consistently choose redder males, as color honestly signals foraging ability and health." },
+      spots: ["Arbor Hills Nature Preserve", "Heard Natural Science Museum"],
       badges: ["Feeders · Neighborhoods · Shopping Centers", "More Common"],
     },
   {
@@ -464,6 +504,8 @@ export const BIRDS = [
       flight_id: "Short, direct, slightly bounding flight. Often erupts from shrubs, rooflines, or restaurant patios in noisy flocks.",
       northTexas: "Abundant year-round around buildings, gas stations, grocery stores, parking lots, patio restaurants, and neighborhood feeders across North Texas.",
       funFact: "House Sparrows are not native to North America. Introduced in the 1800s, they adapted brilliantly to human settlement and now live on every continent except Antarctica.",
+      trivia: { q: "What does the size of a male House Sparrow's black bib signal?",a: "The black bib on a male House Sparrow's throat is a 'badge of status' — larger bibs indicate dominant males. Experiments painting bibs larger caused other males to treat those birds as dominant before any contests occurred. The badge provides rank information instantly, reducing the need for costly physical fights." },
+      spots: ["Arbor Hills Nature Preserve", "Heard Natural Science Museum"],
       badges: ["Buildings · Parking Lots · Feeders", "Most Common"],
     },
   {
@@ -486,6 +528,8 @@ export const BIRDS = [
       flight_id: "Short, low, darting flights through brush. Small brown body and cocked tail; rarely crosses open ground for long.",
       northTexas: "Common October–April in brush piles, dense shrubs, hedgerows, parks, and wooded edges. Mostly a winter visitor in DFW, with Carolina and Bewick's Wrens more prominent year-round.",
       funFact: "House Wrens are fierce cavity competitors. Males may fill multiple cavities with sticks before a female chooses one, and they sometimes puncture eggs of other cavity-nesting birds.",
+      trivia: { q: "How far does a House Wren migrate compared to its tiny body size?",a: "House Wrens weigh just 11 grams — about the same as two pennies — yet migrate up to 2,500 miles between their North American breeding grounds and Central American wintering areas. Weight-for-weight, this is among the most energetically demanding migrations of any North American bird, and they accomplish it with no stored fat reserve on departure." },
+      spots: ["Arbor Hills Nature Preserve", "Heard Natural Science Museum", "Trinity River Audubon Center"],
       badges: ["Brush Piles · Shrubs · Wooded Edges", "Common"],
     },
   {
@@ -508,6 +552,8 @@ export const BIRDS = [
       flight_id: "Low, fast, undulating flight. Black-and-white wing pattern flashes. Hooked bill and mask visible at close range. Often dives low before rising sharply to a new perch.",
       northTexas: "Year-round in open shrubby areas, roadsides, and grasslands throughout North Texas. Scan fence lines and isolated shrubs in open country. Larders of impaled prey are definitive evidence.",
       funFact: "The Loggerhead Shrike is a songbird that hunts like a raptor — it lacks strong talons, so it impales prey on thorns, cactus spines, or barbed wire to hold it while eating. These 'butcher bird pantries' are one of nature's more unsettling field sights.",
+      trivia: { q: "Why does the Loggerhead Shrike impale prey before eating it?",a: "Shrikes lack the strong gripping talons of raptors, so they cannot hold prey while tearing it apart. Impaling on a thorn or barbed wire acts as a 'third hand,' anchoring the prey so the hooked bill can pull off pieces. Shrikes also impale prey to cache it — and stored food ferments slightly, breaking down toxic compounds in some beetles and grasshoppers, making them safe to eat after a few days." },
+      spots: ["Hagerman NWR", "Lewisville Lake / Elm Fork Greenbelt", "Heard Natural Science Museum"],
       badges: ["Open Shrublands · Roadsides", "Common"],
     },
   {
@@ -531,6 +577,8 @@ export const BIRDS = [
       northTexas: "Plano's most recognizable backyard bird. Year-round in any shrubby or wooded habitat, parks, and neighborhoods throughout DFW.",
       funFact: "The Northern Cardinal is the official state bird of 7 U.S. states — more than any other species. Females sing too, which is rare among North American songbirds.",
       frequentFlier: true,
+      trivia: { q: "Why do female Northern Cardinals sing, which is rare among North American songbirds?",a: "Female cardinals sing to communicate their needs to their mate while incubating — they remain on the nest and sing to request food deliveries. The male brings food in response to specific song phrases. This duet system allows the female to signal hunger without exposing the nest by leaving, an adaptation to keep the incubating female fed." },
+      spots: ["Arbor Hills Nature Preserve", "Heard Natural Science Museum", "Trinity River Audubon Center"],
       badges: ["Backyards · Thickets", "More Common"],
     },
   {
@@ -554,6 +602,8 @@ export const BIRDS = [
       northTexas: "Texas's state bird, present in every Plano neighborhood year-round. Commonly sings from prominent exposed perches through the night during breeding season.",
       funFact: "A mockingbird can sing 200+ different songs and keeps adding new imitations throughout its life — it can mimic other birds, frogs, car alarms, and squeaky gates.",
       frequentFlier: true,
+      trivia: { q: "Why do Northern Mockingbirds sing at night?",a: "Unpaired males sing at night during the breeding season to attract females — and they continue through the night because there is no other competing sound. Studies show that males sing at night from exposed, illuminated perches (streetlights) more than from dark locations, suggesting they evolved to exploit artificial light to extend the 'broadcast window' of their song." },
+      spots: ["Arbor Hills Nature Preserve", "Heard Natural Science Museum"],
       badges: ["Backyards · Open Areas", "More Common"],
     },
   {
@@ -576,6 +626,8 @@ export const BIRDS = [
       flight_id: "Low, fluttery swallow flight over water and creek corridors. Plain brown upperparts and square tail; usually in small groups rather than huge colonies.",
       northTexas: "Common March–October along creeks, ponds, drainage channels, and lake edges. Often nests in bank holes, drain pipes, and crevices near water.",
       funFact: "The 'rough-winged' name comes from tiny hook-like barbs on the outer wing feathers of males. The feature is nearly impossible to see in the field but gives the species its name.",
+      trivia: { q: "What are the 'rough wings' of the Northern Rough-winged Swallow actually for?",a: "The tiny recurved barbs on the outer primary feathers of male Rough-winged Swallows are one of ornithology's enduring mysteries. They produce a soft rustling sound in flight, which some researchers believe may function in mate attraction or territorial signaling, but no definitive behavioral function has been confirmed experimentally." },
+      spots: ["Heard Natural Science Museum", "Trinity River Audubon Center", "Lewisville Lake / Elm Fork Greenbelt"],
       badges: ["Creeks · Ponds · Drainage Channels", "Common"],
     },
   {
@@ -598,6 +650,8 @@ export const BIRDS = [
       flight_id: "Small, quick, low flight between shrubs. Plain olive color and lack of wing bars are key. Often gives a sharp, high chip note from cover.",
       northTexas: "Common October–April in brushy parks, wooded edges, yards with shrubs, and weedy creek corridors. One of the most regular winter warblers in North Texas after Yellow-rumped Warbler.",
       funFact: "Despite its name, the orange crown is almost never visible unless the bird is agitated or handled by researchers. In the field it is usually identified by being the plain, quiet olive warbler in the shrubs.",
+      trivia: { q: "How does the Orange-crowned Warbler differ from other warblers in its winter feeding strategy?",a: "Unlike most wood-warblers that pick insects from foliage, Orange-crowned Warblers regularly pierce the bases of flowers to steal nectar — a behavior called nectar robbing — and probe into the tunnels of other birds' nests to steal food. They are among the most behaviorally flexible warblers, explaining why they can overwinter farther north than most species." },
+      spots: ["Arbor Hills Nature Preserve", "Heard Natural Science Museum", "Trinity River Audubon Center"],
       badges: ["Shrubs · Creek Edges · Weedy Parks", "Common"],
     },
   {
@@ -620,6 +674,8 @@ export const BIRDS = [
       flight_id: "Direct, fast, slightly undulating. Male's brilliant colors visible even in flight. Female's bright green surprisingly hard to spot at rest.",
       northTexas: "Common spring and fall migrant through DFW. Some breed in brushy areas. White millet feeders attract them reliably during migration.",
       funFact: "Males are so intensely colored they were trapped by the thousands for the caged-bird trade in the 19th century. Now strictly protected under the Migratory Bird Treaty Act.",
+      trivia: { q: "Why do male Painted Buntings take two years to acquire their brilliant plumage?",a: "First-year male Painted Buntings look identical to females — plain green — and remain in this cryptic plumage for their entire first breeding season. This 'delayed plumage maturation' lets young males attempt to breed while avoiding the intense aggression that full adult males direct at colorful rivals. Some first-year males successfully breed while invisible." },
+      spots: ["Arbor Hills Nature Preserve", "Heard Natural Science Museum", "Trinity River Audubon Center"],
       badges: ["Brushy Areas · Feeders", "Common"],
     },
   {
@@ -642,6 +698,8 @@ export const BIRDS = [
       flight_id: "Soars and glides more than other swallows. Deep wingbeats alternating with long glides. Circles high above martin houses in loose colonies.",
       northTexas: "North Texas harbors large martin colonies in apartment-style gourds and martin houses. Colony scouts arrive as early as late January. Celebrated by residents who maintain martin housing.",
       funFact: "Purple Martins in the eastern U.S. are now almost entirely dependent on human-provided nest housing — a dependency that developed over centuries of living near Native American settlements that provided gourds.",
+      trivia: { q: "How do Purple Martin scouts find martin houses in late winter?",a: "Scout martins — typically older experienced males — arrive weeks ahead of the main population and investigate potential nest sites. They use both memory of previous year sites and social information: they're attracted to the sounds of other martins and to decoy systems using recorded calls or plastic decoys placed at new housing sites, which is why martin landlords use these attractants." },
+      spots: ["Lewisville Lake / Elm Fork Greenbelt", "Heard Natural Science Museum", "Trinity River Audubon Center"],
       badges: ["Open Sky · Lakes", "Common"],
     },
   {
@@ -664,6 +722,8 @@ export const BIRDS = [
       flight_id: "Male's red epaulets flash prominently in flight and display. Strong, direct flight. Often in large flocks. Female streaky brown, frequently overlooked as a different species.",
       northTexas: "One of the most abundant birds in North America. Year-round in North Texas wherever there are marshes, cattails, or open fields. Winter roosts can number in the millions across the DFW area.",
       funFact: "Red-winged Blackbird winter roosts are among the largest bird aggregations in North America — single roost sites can contain 20+ million birds. The communal roost functions as an information center, allowing birds to follow well-fed individuals to food sources the next morning.",
+      trivia: { q: "How does a male Red-winged Blackbird control when to show his red epaulets?",a: "A male can voluntarily conceal his red shoulder patches by raising his scapular feathers to cover them, or fully expose the vivid red-and-yellow display by flattening his wings. In territories where they are outnumbered by rival males, males conceal their epaulets more often — reducing costly attacks from dominants while still maintaining a territory claim." },
+      spots: ["Heard Natural Science Museum", "Lewisville Lake / Elm Fork Greenbelt", "Hagerman NWR"],
       badges: ["Marshes · Fields · Roadsides", "Most Common"],
     },
   {
@@ -686,6 +746,8 @@ export const BIRDS = [
       flight_id: "Tiny, fast, fluttering. Constant nervous wing flicking. Often in mixed flocks with chickadees and Yellow-rumped Warblers. High 'ji-dit' call.",
       northTexas: "One of the most abundant winter birds in North Texas — present in virtually any shrub or tree October–April — yet constantly overlooked because it's tiny and easily dismissed as 'a small greenish bird.'",
       funFact: "The Ruby-crowned Kinglet's song is astonishingly loud and complex for a bird barely larger than a hummingbird — running 5–6 seconds and covering three octaves. It's one of the largest songs relative to body size of any North American bird.",
+      trivia: { q: "How many eggs does a Ruby-crowned Kinglet lay relative to its body size?",a: "A female Ruby-crowned Kinglet weighing just 6 grams may lay a clutch of 7–12 eggs — a clutch that can weigh more than she does. This is the largest egg-mass-to-body-mass ratio of any North American passerine. She lays one egg per day, rapidly rebuilding the proteins needed for each successive egg from the insects she catches." },
+      spots: ["Arbor Hills Nature Preserve", "Heard Natural Science Museum", "Trinity River Audubon Center"],
       badges: ["Woodlands · Shrubs · Backyards", "More Common"],
     },
   {
@@ -708,6 +770,8 @@ export const BIRDS = [
       flight_id: "The streaming forked tail is visible from 100+ yards. Sallies from perches on wires and fences to catch insects in acrobatic aerial chases.",
       northTexas: "Arrives April, departs September. Common on power lines, fences, and isolated trees in open country throughout Plano and DFW.",
       funFact: "Oklahoma's state bird (it also breeds in North Texas) winters in Central America. The male's tail feathers can exceed 15 inches and are used in elaborate aerial courtship displays.",
+      trivia: { q: "How do Scissor-tailed Flycatchers use their tail in aerial courtship?",a: "During courtship display, male Scissor-tailed Flycatchers perform a 'sky dance' — climbing steeply then plunging in repeated V-shaped dives while the long forked tail streams and folds dramatically. The tail is not used for steering during the display but functions as a visual signal: longer-tailed males are preferred by females, and experimental tail-clipping reduces mating success." },
+      spots: ["Heard Natural Science Museum", "Lewisville Lake / Elm Fork Greenbelt", "Hagerman NWR"],
       badges: ["Open Country · Roadsides", "Common"],
     },
   {
@@ -730,6 +794,8 @@ export const BIRDS = [
       flight_id: "Medium-sized, ground-hugging. Rufous flanks and white wing spots visible. Loud 'chewink!' call in flight. Prefers dense brush and thickets.",
       northTexas: "Common October–April in dense brushy habitats, thickets, and wooded undergrowth throughout North Texas. Forages by double-scratching noisily in leaf litter — one of the most reliably-heard but least-often-seen winter birds.",
       funFact: "Spotted Towhees scratch in leaf litter using a 'double-scratch' — both feet kick backward simultaneously in a powerful jump-hop. This technique is strong enough to move surprisingly large leaves and unearth seeds other birds can't reach.",
+      trivia: { q: "Why do Spotted Towhees have red eyes?",a: "Red iris coloration in Spotted Towhees is produced by carotenoid pigments sequestered in the eye, not by structural color. Eye color varies geographically — populations in the interior West have darker or orange eyes while Pacific Coast birds have red eyes. The function is debated, but red eyes may signal individual quality during close-range social interactions in dense brush." },
+      spots: ["Arbor Hills Nature Preserve", "Heard Natural Science Museum", "Trinity River Audubon Center"],
       badges: ["Dense Thickets · Brush Piles", "Common"],
     },
   {
@@ -752,6 +818,8 @@ export const BIRDS = [
       flight_id: "Bounding flight between trees. Gray overall with rusty flank flash visible. Gray crest often visible in flight. Travels with chickadees.",
       northTexas: "Year-round in wooded North Texas suburbs. Regular at sunflower seed feeders, and famous for snatching nest material — including pet fur — from almost anywhere.",
       funFact: "Tufted Titmice are notorious nest-material kleptomaniacs — they'll pull fur directly from living animals including deer, raccoons, dogs, and occasionally from people or their pets.",
+      trivia: { q: "How does the Tufted Titmouse choose which seeds to take from a feeder?",a: "Titmice examine each seed individually before taking it, selecting the heaviest seed in each trip. They then carry it to a nearby branch, hammer it open, and cache the contents. Studies show they preferentially cache larger, higher-calorie seeds farther from the feeder as insurance against winter scarcity, demonstrating episodic-like memory for cache location, timing, and content." },
+      spots: ["Arbor Hills Nature Preserve", "Heard Natural Science Museum", "Trinity River Audubon Center"],
       badges: ["Wooded Suburbs · Feeders", "More Common"],
     },
   {
@@ -774,6 +842,8 @@ export const BIRDS = [
       flight_id: "Male's brilliant red unmistakable in any light. Small, compact flycatcher. Sallies from low perches. Male's display flight: flutters high with puffed red breast feathers.",
       northTexas: "Uncommon but regular October–April at parks, golf courses, and open areas with scattered trees. A remarkable find — the male's red stops non-birders mid-stride. Numbers have been increasing in DFW in recent decades.",
       funFact: "The Vermilion Flycatcher's brilliant red comes from carotenoid pigments derived from insects in its diet. Males who eat more red-pigment-rich insects develop brighter plumage — and brighter males attract more females and hold better territories.",
+      trivia: { q: "What unique courtship gift does the male Vermilion Flycatcher give the female?",a: "Unlike most flycatchers that court through song and display alone, male Vermilion Flycatchers deliver a nuptial gift — a butterfly or other large, showy insect — to the female during courtship. The male catches the gift, then presents it in an aerial display flight with his red crest fully elevated and breast feathers puffed, combining food offering with visual display." },
+      spots: ["Heard Natural Science Museum", "Hagerman NWR", "Lewisville Lake / Elm Fork Greenbelt"],
       badges: ["Open Areas · Golf Courses", "Rare"],
     },
   {
@@ -796,6 +866,8 @@ export const BIRDS = [
       flight_id: "Medium sparrow. Bold crown pattern visible at close range. Pink bill. 'Chink' call. Often in flocks in open brushy areas.",
       northTexas: "Common October–April in open brushy areas, roadsides, and suburban edges. One of the most reliably identifiable sparrows due to its bold black-and-white head pattern.",
       funFact: "White-crowned Sparrows have distinct geographic dialects — birds from different breeding regions sing measurably different songs, and young birds learn the local dialect from neighbors. A sparrow raised in one region sings that region's dialect for life.",
+      trivia: { q: "How long can a White-crowned Sparrow stay awake during migration?",a: "During migratory periods White-crowned Sparrows enter a state called 'migratory restlessness' (Zugunruhe) during which they sleep in short bursts of just seconds to a few minutes, totaling only a fraction of their normal sleep time. Studies have shown they can remain cognitively functional on as little as one-third their normal sleep — a biological adaptation to non-stop migration." },
+      spots: ["Heard Natural Science Museum", "Hagerman NWR", "Lewisville Lake / Elm Fork Greenbelt"],
       badges: ["Brushy Areas · Roadsides", "Common"],
     },
   {
@@ -818,6 +890,8 @@ export const BIRDS = [
       flight_id: "Medium sparrow. White throat and yellow spot visible at close range. Streaky brown overall. 'Chink' call. Often in flocks near dense brush.",
       northTexas: "Very common October–April; one of the most familiar winter feeder birds in North Texas. Forages on the ground under feeders. Whistled song often heard on mild winter mornings.",
       funFact: "White-throated Sparrows have two genetically distinct forms — white-striped and tan-striped — that almost always mate with the opposite form, essentially creating two coexisting genetic types within one species. It's an ongoing natural speciation experiment.",
+      trivia: { q: "Why do White-throated Sparrows almost always mate with the opposite head-stripe form?",a: "The two forms — white-striped and tan-striped — have different chromosomal arrangements that also control behavior: white-striped birds are more aggressive and sing more; tan-striped are more parental. Because the same chromosome controls both appearance and behavior, the two types are behaviorally complementary partners, and same-morph pairs are significantly less reproductively successful." },
+      spots: ["Arbor Hills Nature Preserve", "Heard Natural Science Museum", "Trinity River Audubon Center"],
       badges: ["Feeders · Brush Piles · Ground", "More Common"],
     },
   {
@@ -840,6 +914,8 @@ export const BIRDS = [
       flight_id: "Energetic, acrobatic flight. Yellow rump patch flashes with every wingbeat — unmistakable. Often flycatches in mid-air over open areas.",
       northTexas: "North Texas's most abundant winter warbler. Arrives October, stays through April. Flocks of 50+ work through any treed habitat.",
       funFact: "Yellow-rumped Warblers can digest waxy bayberries that no other warbler can process, allowing them to winter far farther north than any other warbler species.",
+      trivia: { q: "How does the Yellow-rumped Warbler digest waxy berries that other warblers cannot?",a: "Yellow-rumped Warblers produce elevated levels of lipase enzymes in their digestive system that can break down the waxy coating of bayberries and wax myrtles — a feat other warblers cannot manage. This dietary flexibility is the direct reason they can remain as far north as the mid-Atlantic states in winter while all other warblers must migrate to the tropics." },
+      spots: ["Arbor Hills Nature Preserve", "Heard Natural Science Museum", "Trinity River Audubon Center"],
       badges: ["Woodlands · Shrubs · Parks", "More Common"],
     },
 
@@ -864,6 +940,8 @@ export const BIRDS = [
       flight_id: "Light, buoyant wingbeats. Frequently hovers into wind like a helicopter — the key field behavior. Bobs tail constantly when perched.",
       northTexas: "Common September–April on power lines and fence posts in open country around Plano and throughout the DFW region.",
       funFact: "American Kestrel populations have declined 50%+ in the eastern U.S. since the 1970s due to loss of open farmland and nest cavities — a species of increasing conservation concern despite seeming common.",
+      trivia: { q: "How do American Kestrels see prey that humans cannot?",a: "Kestrels can see ultraviolet light, which voles and other small rodents cannot detect. Kestrels use this to follow vole urine trails, which glow in UV, leading them to active runways. A kestrel can essentially 'read' the ground for fresh rodent activity from 50 feet in the air, locating hunting hotspots long before spotting any movement." },
+      spots: ["Hagerman NWR", "Lewisville Lake / Elm Fork Greenbelt", "Heard Natural Science Museum"],
       badges: ["Open Fields · Roadsides", "Common"],
     },
   {
@@ -886,6 +964,8 @@ export const BIRDS = [
       flight_id: "Massive wingspan. Flat, plank-like wing posture — unlike Turkey Vulture's V. Slow, powerful wingbeats. Often seen perched in snags over large reservoirs.",
       northTexas: "Regular winter visitor November–March on Lake Ray Hubbard, Lake Lavon, Lake Lewisville, and Lake Texoma. A few pairs now nest year-round at Hagerman NWR.",
       funFact: "Fewer than 500 nesting pairs remained in the lower 48 states by 1963. After DDT was banned and the Endangered Species Act took effect, populations rebounded to 10,000+ nesting pairs today.",
+      trivia: { q: "How powerful is a Bald Eagle's grip compared to a human hand?",a: "A Bald Eagle's grip strength is approximately 400 pounds per square inch — roughly ten times stronger than the average human hand. The talons lock shut with a ratcheting tendon mechanism that requires muscle effort to open rather than to close, meaning an eagle can grip prey with essentially no energy expenditure once the foot is closed." },
+      spots: ["Lake Ray Hubbard", "Hagerman NWR", "Lake Lavon"],
       badges: ["Lakes · Reservoirs", "Rare"],
     },
   {
@@ -908,6 +988,8 @@ export const BIRDS = [
       flight_id: "Flat, plank-like wing posture — not V-shaped like Turkey Vulture. White wingtip patches flash prominently below. Several rapid flaps then a glide. Short, squared tail.",
       northTexas: "Extremely common year-round, often outnumbering Turkey Vultures at carcasses. Increasingly bold around suburban areas; known to damage vehicles and rubber seals near communal roosts.",
       funFact: "Black Vultures can't find food by smell, so they follow Turkey Vultures to carcasses then use greater aggression to push them aside. They're also one of the few truly monogamous birds — pairs mate for life and adult offspring help raise younger siblings.",
+      trivia: { q: "How do Black Vultures compensate for their lack of smell when finding food?",a: "Black Vultures have poor olfactory ability compared to Turkey Vultures, so they rely on vision and social surveillance. They perch at high vantage points watching for Turkey Vultures descending to carcasses, then follow them. At the carcass, their greater aggression lets them displace the Turkey Vultures that found the food — a classic example of parasitic exploitation of another species' specialized sense." },
+      spots: ["Trinity River Audubon Center", "Lewisville Lake / Elm Fork Greenbelt", "Hagerman NWR"],
       badges: ["Open Country · Roadsides", "Most Common"],
     },
   {
@@ -930,6 +1012,8 @@ export const BIRDS = [
       flight_id: "Small buteo. Bold black-and-white tail bands visible from below. Migration in spectacular kettles — spiraling flocks of hundreds to thousands riding thermals together.",
       northTexas: "A migration spectacle. Passes through DFW in massive numbers September–October and April–May. Watch from any high point with northwest winds on warm autumn afternoons — thousands can pass in a single hour.",
       funFact: "Broad-winged Hawk migration is one of North America's great wildlife spectacles. The entire eastern North American population funnels through Texas twice yearly — over 1 million birds have been counted at a single hawk watch in a single day.",
+      trivia: { q: "Why do Broad-winged Hawks migrate in massive kettle flocks rather than alone?",a: "Broad-wingeds migrate almost entirely on thermals — columns of rising warm air — which occur at specific locations and times of day. By riding thermals in large groups, hundreds of birds can spiral upward together, then glide forward to the next thermal in loose streams. Group migration reduces the energy cost dramatically compared to powered flapping flight, enabling the entire population to travel thousands of miles on minimal fat reserves." },
+      spots: ["Hagerman NWR", "Lewisville Lake / Elm Fork Greenbelt"],
       badges: ["Open Sky", "Common"],
     },
   {
@@ -952,6 +1036,8 @@ export const BIRDS = [
       flight_id: "Classic accipiter — several quick flaps then a long glide. Rounded tail visible from below. Dashes through dense cover at surprising speed.",
       northTexas: "Year-round in wooded North Texas suburbs. The hawk responsible for most backyard feeder strikes — it hunts House Sparrows and Mourning Doves at feeders.",
       funFact: "Cooper's Hawks evolved to chase birds through dense forest at high speed. They regularly break their own collarbones during impacts — 23% of museum specimens show healed clavicle fractures.",
+      trivia: { q: "How did Cooper's Hawks adapt to hunting in dense suburban vegetation?",a: "Urban Cooper's Hawks have measurably shorter wings and longer tails compared to rural individuals — a shift toward the body plan best suited for maneuvering through dense suburban trees and fences. This rapid morphological change has occurred within just a few decades of suburban colonization, making it one of the fastest documented cases of urban-driven evolution in a North American bird." },
+      spots: ["Arbor Hills Nature Preserve", "Trinity River Audubon Center", "Heard Natural Science Museum"],
       badges: ["Wooded Suburbs · Feeders", "Common"],
     },
   {
@@ -975,6 +1061,8 @@ export const BIRDS = [
       northTexas: "Spectacular summer resident. Large communal roost sites in Plano, Richardson, and Garland suburbs. Hundreds visible soaring together on warm summer evenings — a genuine North Texas spectacle.",
       funFact: "Mississippi Kites have exploded in Texas suburban areas since the 1970s, drawn by large shade trees in newer developments. Tree-lined golf courses and suburbs are now prime breeding habitat.",
       frequentFlier: true,
+      trivia: { q: "What do Mississippi Kites eat almost exclusively?",a: "Mississippi Kites are specialist aerial insectivores that feed almost entirely on large flying insects — cicadas, dragonflies, and large beetles — caught with their feet and eaten in flight. During cicada emergences they aggregate in huge numbers over suburban areas where cicadas are densely erupting. A single kite may catch and eat 30–40 cicadas in an hour during peak emergence." },
+      spots: ["Trinity River Audubon Center", "Arbor Hills Nature Preserve", "Heard Natural Science Museum"],
       badges: ["Suburban Trees · Parks", "Common"],
     },
   {
@@ -997,6 +1085,8 @@ export const BIRDS = [
       flight_id: "Unmistakable low hunting flight — glides just above grass and marsh, tilting and rocking on long wings. White rump patch flashes with every bank. Wings in slight V posture.",
       northTexas: "Common October–April over open grasslands, prairies, and flooded fields throughout DFW. Hagerman NWR hosts good winter concentrations. The low coursing flight over open land is instantly distinctive.",
       funFact: "The Northern Harrier is the only North American hawk that uses hearing as much as sight to hunt — aided by a facial disc like an owl's. Males can mate with up to 5 females in years of rodent abundance.",
+      trivia: { q: "Why does the Northern Harrier have a facial disc like an owl?",a: "The harrier's owl-like facial disc channels sound toward its asymmetrically placed ears, allowing it to detect rodents moving through grass by sound alone — without seeing them. This is the only hawk in North America known to locate prey primarily by hearing during hunting flights. In dense vegetation or low-light conditions, sound may be more useful than vision." },
+      spots: ["Hagerman NWR", "Lewisville Lake / Elm Fork Greenbelt", "Heard Natural Science Museum"],
       badges: ["Open Grasslands · Fields", "Common"],
     },
   {
@@ -1019,6 +1109,8 @@ export const BIRDS = [
       flight_id: "Long angled wings with noticeable crook at wrist. Hovers over water before plunging feet-first. Impossible to confuse with any other raptor.",
       northTexas: "Common March–November on all major DFW-area reservoirs. Some pairs nest on platforms at water treatment facilities near Garland and Frisco.",
       funFact: "Ospreys are 99% fish-eaters. They always rotate their catch to carry it head-forward — reducing aerodynamic drag. Barbed foot-pads and a reversible outer toe prevent the fish from slipping.",
+      trivia: { q: "How does an Osprey avoid losing a struggling fish after the plunge?",a: "Ospreys have a reversible outer toe — it can point either forward or backward — allowing them to grip fish with two toes on each side rather than three-and-one like other raptors. Combined with barbed, scale-like foot pads that grip wet surfaces, this gives an Osprey a near-unbreakable hold on a thrashing fish. They also always orient the fish headfirst to reduce drag in flight." },
+      spots: ["Lake Ray Hubbard", "Lake Lavon", "Heard Natural Science Museum"],
       badges: ["Lakes · Reservoirs", "Common"],
     },
   {
@@ -1041,6 +1133,8 @@ export const BIRDS = [
       flight_id: "Translucent crescent 'windows' near wingtips very distinctive from below. Banded tail. Rounded wings. Loud screaming call often given in flight.",
       northTexas: "Year-round in wooded riparian corridors and bottomland forests — anywhere with tall trees near water. Trinity River corridor, Heard Museum, and wooded creek systems throughout DFW.",
       funFact: "Blue Jays perfectly mimic the Red-shouldered Hawk's call and use it to clear competitors from feeders. If you hear a Red-shouldered Hawk in the suburbs but can't find it, look for a Blue Jay instead.",
+      trivia: { q: "What is the relationship between Red-shouldered Hawks and Blue Jays beyond mimicry?",a: "Beyond the well-known mimicry, Red-shouldered Hawks and Blue Jays often nest near each other in what researchers have described as a mutually beneficial relationship. Jays mob and harass nest predators — crows, raccoons — that also threaten hawk nests, and hawks deter other raptors that would steal jays' food caches. The association is consistent enough to appear non-random in nesting surveys." },
+      spots: ["Trinity River Audubon Center", "Heard Natural Science Museum", "Arbor Hills Nature Preserve"],
       badges: ["Wooded Riparian Areas", "Common"],
     },
   {
@@ -1063,6 +1157,8 @@ export const BIRDS = [
       flight_id: "Broad rounded wings, fan-shaped tail. Soars with wings slightly uptilted in a shallow V (dihedral). Most common large soaring hawk — if you see one big hawk, it's probably this.",
       northTexas: "The default large hawk of North Texas — on every utility pole and fence post along major roads year-round. Winter numbers swell with northern migrants.",
       funFact: "The screech you hear in every movie and TV show when a hawk or eagle appears on screen is always the Red-tailed Hawk's call — even when they're showing a Bald Eagle or other species.",
+      trivia: { q: "How many color variations exist within the Red-tailed Hawk species?",a: "Red-tailed Hawks have more recognized color morphs than almost any other North American raptor — at least 14 subspecies are recognized, ranging from the pale cream-colored Krider's form to the nearly all-dark Harlan's form. Some of these forms were once classified as separate species. In Texas, Harlan's Hawks pass through as a rare but regular winter migrant, looking almost nothing like a typical Red-tailed." },
+      spots: ["Hagerman NWR", "Lewisville Lake / Elm Fork Greenbelt", "Heard Natural Science Museum"],
       badges: ["Open Country · Roadsides · Fields", "More Common"],
     },
   {
@@ -1085,6 +1181,8 @@ export const BIRDS = [
       flight_id: "Classic accipiter: flap-flap-flap-glide. Squared tail tip and smaller head distinguish it from Cooper's. Often faster and more erratic in pursuit.",
       northTexas: "Common October–April; the most numerous migrant accipiter in fall. Regularly hunts songbirds at backyard feeders. Telling it from Cooper's Hawk is one of North Texas birding's great challenges.",
       funFact: "Sharp-shinned and Cooper's Hawks are so similar that experienced birders frequently can't separate them with certainty. The two species have even hybridized. Many field guides now list them as 'Sharpie/Cooper's' for difficult sightings — and that's completely acceptable.",
+      trivia: { q: "What is the size difference between male and female Sharp-shinned Hawks?",a: "Female Sharp-shinned Hawks are nearly twice the mass of males — females average 150 grams while males average just 87 grams. This extreme reverse sexual size dimorphism, the most pronounced of any North American accipiter, means that male and female Sharpies effectively hunt different prey: males specialize in the smallest warblers and sparrows; females take larger thrushes and starlings." },
+      spots: ["Arbor Hills Nature Preserve", "Heard Natural Science Museum", "Trinity River Audubon Center"],
       badges: ["Wooded Suburbs · Feeders", "Common"],
     },
   {
@@ -1108,6 +1206,8 @@ export const BIRDS = [
       northTexas: "One of the most commonly seen large birds in North Texas year-round. Flocks of 50+ soar on thermals over Plano on any warm afternoon. Communal roosts in large trees.",
       funFact: "Turkey Vultures find food almost entirely by smell — one of the largest olfactory systems of any bird. They can detect a single dead mouse from over a mile away. Black Vultures, which lack this ability, follow Turkey Vultures to find carcasses.",
       frequentFlier: true,
+      trivia: { q: "How does the Turkey Vulture's digestive system deal with dangerous pathogens in carrion?",a: "Turkey Vultures have the most acidic stomach of any bird — stomach pH of nearly 0, comparable to battery acid. This destroys anthrax spores, botulinum toxin, hog cholera virus, and other lethal pathogens that would kill a mammalian scavenger. Their featherless head is also thought to stay cleaner while feeding deep in carcasses, reducing bacterial buildup." },
+      spots: ["Hagerman NWR", "Lewisville Lake / Elm Fork Greenbelt", "Trinity River Audubon Center"],
       badges: ["Open Sky · Roadsides", "Most Common"],
     },
 
@@ -1132,6 +1232,8 @@ export const BIRDS = [
       flight_id: "Silent, large, buoyant. Round head unmistakable. Dark eyes visible at close range. Flies low between trees in riparian forests.",
       northTexas: "Year-round in mature riparian woodlands and creek corridors. Trinity River corridor and wooded creek systems near Plano hold resident pairs.",
       funFact: "The Barred Owl is spreading westward and now hybridizes with the endangered Spotted Owl in the Pacific Northwest — creating a serious conservation crisis as hybrids can outcompete pure Spotted Owls.",
+      trivia: { q: "What is the primary hunting method of the Barred Owl?",a: "Barred Owls are 'perch-and-pounce' hunters — they sit motionless on a low branch, rotating their head to scan and listen, then drop silently onto prey on the ground. Unlike Great Horned Owls that will take large mammals, Barred Owls specialize in crayfish, frogs, and small rodents near water, making riparian corridors essential habitat regardless of season." },
+      spots: ["Trinity River Audubon Center", "Heard Natural Science Museum"],
       badges: ["Riparian Forests · Creek Corridors", "Rare"],
     },
   {
@@ -1154,6 +1256,8 @@ export const BIRDS = [
       flight_id: "Small, silent, moth-like flight. Low between trees. Ear tufts pressed flat in flight. Rarely seen in flight — almost always detected by call at night.",
       northTexas: "One of the most common owls in Plano and DFW suburbs. Roosts in nest boxes and tree cavities by day. The whistling whinny heard from suburban trees at night is almost always this bird.",
       funFact: "Eastern Screech-Owls come in two completely different color morphs — gray and rufous — which are genetically determined. Gray morphs survive colder winters better; rufous birds are more common in warmer climates and are declining at the northern edge of the range.",
+      trivia: { q: "How do Eastern Screech-Owls use blind snakes as nest assistants?",a: "Eastern Screech-Owls sometimes carry live blind snakes (small burrowing snakes) into their nest cavity. The snakes burrow into the nest material and eat the insect larvae and parasites living there, effectively 'cleaning' the nest. Studies show that nestlings in cavities with blind snakes grow faster and have higher survival rates than those in snake-free nests." },
+      spots: ["Arbor Hills Nature Preserve", "Trinity River Audubon Center", "Heard Natural Science Museum"],
       badges: ["Wooded Suburbs · Nest Boxes", "More Common"],
     },
   {
@@ -1176,6 +1280,8 @@ export const BIRDS = [
       flight_id: "Silent, buoyant, moth-like flight on massive rounded wings. Ear tufts pressed flat in flight. Often seen as a silhouette in large trees at dusk.",
       northTexas: "North Texas's apex owl. Nests as early as January — its deep hooting on winter nights is one of the season's most evocative sounds. Found in any park with mature trees.",
       funFact: "The Great Horned Owl is the primary natural predator of the Peregrine Falcon — its power and silent approach allow it to take birds far faster than itself. Falconers historically called it 'the tiger of the sky.'",
+      trivia: { q: "Why does the Great Horned Owl begin nesting in January?",a: "Great Horned Owls start incubating eggs in January — the coldest month — because their owlets require the longest development period of any North American owl before they can hunt independently. By hatching in late winter and fledging in spring, young owls have the entire summer and fall to learn to hunt before facing their first winter alone." },
+      spots: ["Trinity River Audubon Center", "Arbor Hills Nature Preserve", "Heard Natural Science Museum"],
       badges: ["Woodlands · Parks · Suburbs", "Common"],
     },
 
@@ -1200,6 +1306,8 @@ export const BIRDS = [
       flight_id: "Labored takeoff — must patter across water on feet to gain speed. White trailing edge on wings in flight. Head-pumping visible even while flying.",
       northTexas: "Abundant year-round on every suburban lake and pond. Winter flocks can reach hundreds on major reservoirs. Look-alike for a duck but watch for the white bill and head-bobbing.",
       funFact: "American Coot chicks have bizarre red-orange fluffy head feathers at hatching — believed to trigger adult feeding responses. This 'chick ornamentation' fades within weeks.",
+      trivia: { q: "How do American Coots recognize and reject cowbird eggs?",a: "American Coots can recognize foreign eggs in their nest and typically reject them — a sophisticated ability despite being one of the few non-passerines targeted by Brown-headed Cowbirds. More remarkably, coots also selectively feed chicks with the most colorful head ornaments first, effectively choosing which offspring survive lean periods based on visual signals of genetic quality." },
+      spots: ["Heard Natural Science Museum", "Lake Ray Hubbard", "Lewisville Lake / Elm Fork Greenbelt"],
       badges: ["Every Lake & Pond", "Most Common"],
     },
   {
@@ -1222,6 +1330,8 @@ export const BIRDS = [
       flight_id: "Unmistakable size and black-and-white pattern. Often soars in spectacular spiraling flocks on thermals. Rows of pelicans flying in perfect V-formation are breathtaking.",
       northTexas: "Winter visitor October–April. Lake Lewisville, Lake Ray Hubbard, and Lake Lavon regularly host hundreds. They fish cooperatively, driving fish into shallows before scooping them up.",
       funFact: "American White Pelicans cooperate in fishing — groups form a line or semicircle and drive fish into shallow water before scooping them together. Their pouch can hold up to 3 gallons of water.",
+      trivia: { q: "Why do American White Pelicans develop a horn on their bill during breeding season?",a: "Both sexes grow a fibrous plate — the 'nuptial tubercle' — on the upper bill during the breeding season. Unlike most bird ornaments that develop through plumage, this is a keratin growth that appears in late winter and is shed after eggs are laid. Its exact function is debated but it likely plays a role in mate choice displays, as it grows most prominently in dominant individuals." },
+      spots: ["Lake Ray Hubbard", "Hagerman NWR", "Lewisville Lake / Elm Fork Greenbelt"],
       badges: ["Large Reservoirs", "Common"],
     },
   {
@@ -1244,6 +1354,8 @@ export const BIRDS = [
       flight_id: "Stocky compact silhouette. Deep slow wingbeats. Often seen flying at dusk and dawn. Loud 'kwok!' call. Neck retracted in flight.",
       northTexas: "Year-round in North Texas with peak winter numbers. Active at night along pond edges and drainage channels. Roosts communally in dense willows during daytime.",
       funFact: "Black-crowned Night-Herons are the most widespread heron in the world, found on every continent except Australia and Antarctica. Their nocturnal habits let them exploit food sources unavailable to day-feeding herons.",
+      trivia: { q: "How do Black-crowned Night-Herons use bait to catch fish?",a: "Black-crowned Night-Herons have been documented dropping pieces of bread, insects, feathers, and other items onto the water surface as lures to attract fish — placing them among the few bait-fishing birds alongside Green Herons. They typically do this at the edges of their feeding territory, sometimes returning repeatedly to the same 'bait station' at the same time each night." },
+      spots: ["Heard Natural Science Museum", "Trinity River Audubon Center", "Lewisville Lake / Elm Fork Greenbelt"],
       badges: ["Ponds · Marshes · Drainage Ditches", "Common"],
     },
   {
@@ -1266,6 +1378,8 @@ export const BIRDS = [
       flight_id: "Compact, stocky white egret. Shorter neck than Great Egret. Yellow bill visible. Often in flocks flying to and from cattle fields at dusk.",
       northTexas: "Common March–October in open fields and pastures, especially near livestock. Horse pastures, farm fields, and golf course rough attract them. Follows mowers to catch flushed insects.",
       funFact: "The Cattle Egret is one of the most successful natural bird colonizations in history — it originated in Africa, crossed the Atlantic on its own to South America in the 1870s, reached Florida by 1941, and now breeds across most of North America.",
+      trivia: { q: "Why do Cattle Egrets associate with large grazing animals instead of water?",a: "Cattle Egrets follow large animals because the animals' feet and bodies flush grasshoppers, crickets, and other insects into the open as they walk. Studies show that a Cattle Egret feeding behind cattle catches prey at three times the rate of one feeding alone in the same field. The egret uses about one-third less energy per calorie obtained than when feeding independently." },
+      spots: ["Heard Natural Science Museum", "Hagerman NWR", "Lewisville Lake / Elm Fork Greenbelt"],
       badges: ["Cattle Fields · Open Pastures", "Common"],
     },
   {
@@ -1288,6 +1402,8 @@ export const BIRDS = [
       flight_id: "Flies in straight lines or V-formations. Neck held with characteristic kink. Fast wingbeats. Low over water. Wing-spreading posture on rocks and posts.",
       northTexas: "Year-round on all major DFW reservoirs, with dramatically higher winter numbers. Massive communal roosts of hundreds form on dead trees at reservoir edges.",
       funFact: "Unlike most waterbirds, cormorants intentionally lack waterproof feathers — getting wet reduces buoyancy for deep diving. This forces the famous arms-spread drying posture after every swim.",
+      trivia: { q: "How deep can a Double-crested Cormorant dive?",a: "Double-crested Cormorants regularly dive to depths of 25 feet and have been recorded below 100 feet, using powerful foot propulsion. They can stay submerged for up to 70 seconds. Their wettable plumage — which forces the post-swim drying posture — actually helps them dive deeper by reducing buoyancy, a tradeoff between diving efficiency and the inconvenience of drying off after every swim." },
+      spots: ["Lake Ray Hubbard", "Lake Lavon", "Lewisville Lake / Elm Fork Greenbelt"],
       badges: ["Lakes · Reservoirs", "More Common"],
     },
   {
@@ -1311,6 +1427,8 @@ export const BIRDS = [
       northTexas: "The undisputed master of every suburban pond, lake, and drainage ditch in North Texas. A daily sight in any neighborhood with standing water.",
       funFact: "Great Blue Herons can strike fish at a speed fast enough to penetrate the water surface from the air. In winter, they can lower their metabolic rate to stand in freezing water for extended periods.",
       frequentFlier: true,
+      trivia: { q: "How does the Great Blue Heron hunt in cold weather when fish become sluggish?",a: "In winter, Great Blue Herons shift their hunting strategy from still-waiting at pond edges to actively wading through shallower areas and even hunting in upland fields for voles and mice — prey that becomes more abundant as water freezes. A single heron may travel several miles from its roost on cold mornings to find open water or vole-rich fields, demonstrating flexibility rarely observed in most wading birds." },
+      spots: ["Heard Natural Science Museum", "Lake Ray Hubbard", "Trinity River Audubon Center"],
       badges: ["Every Pond & Lake", "Most Common"],
     },
   {
@@ -1333,6 +1451,8 @@ export const BIRDS = [
       flight_id: "Slow, regal wingbeats. Neck held in S-curve. All-white with yellow bill visible at distance. Legs trail straight behind. Majestic in flight.",
       northTexas: "Year-round on area lakes and ponds. Roosts communally in impressive 'heronries' with other wading birds at established sites like Lake Ray Hubbard.",
       funFact: "Great Egrets were hunted nearly to extinction for their breeding plumes in the late 1800s — a single plume hat required the death of multiple birds. The Audubon Society was founded specifically to stop this slaughter; the egret remains its symbol.",
+      trivia: { q: "How do Great Egrets defend their breeding plumes from rivals?",a: "During the breeding season, Great Egrets perform elaborate 'aigrette displays' — raising their long back plumes into a cascading fan and performing a bowing display at the nest site. These plumes are not just for mate attraction; they also signal dominance to rival egrets at the heronry. Males with the longest, most elaborate plumes hold the most central — and safest — nest positions in the colony." },
+      spots: ["Heard Natural Science Museum", "Lake Ray Hubbard", "Trinity River Audubon Center"],
       badges: ["Ponds · Lakes · Wetlands", "Common"],
     },
   {
@@ -1355,6 +1475,8 @@ export const BIRDS = [
       flight_id: "Short, low flights along water's edge. Neck tucked in, legs dangling slightly. Often calls loudly when flushed. Much smaller than other herons.",
       northTexas: "Common March–October along vegetated pond margins, drainage ditches, and wooded creeks throughout North Texas. A master of still-water ambush hunting.",
       funFact: "Green Herons are one of the very few tool-using birds — they drop insects, feathers, berries, and pieces of bread onto the water surface as lures to attract fish within striking range.",
+      trivia: { q: "How widespread is tool use among Green Herons around the world?",a: "Tool use in Green Herons has been documented independently on multiple continents — in North America, Europe, Africa, and Asia — suggesting it is either a deeply conserved behavior or one that individual birds invent independently. Unlike most tool use in birds (which is rare and restricted to a few species), Green Heron bait fishing appears to be learned socially within populations and shows individual variation in preferred bait types." },
+      spots: ["Heard Natural Science Museum", "Trinity River Audubon Center", "Lewisville Lake / Elm Fork Greenbelt"],
       badges: ["Vegetated Pond Edges · Creeks", "Common"],
     },
   {
@@ -1377,6 +1499,8 @@ export const BIRDS = [
       flight_id: "Similar to Double-crested but smaller and longer-tailed. White-bordered throat pouch visible at close range. Often mixes with Double-crested in flocks.",
       northTexas: "Now year-round on DFW-area lakes — was rare in North Texas 20 years ago and is now a regular presence. A genuine newcomer that rewards careful scrutiny of cormorant flocks.",
       funFact: "The Neotropic Cormorant has expanded dramatically northward into Texas over the past 30 years, one of several southern species whose range is shifting north. It's a bird that simply wasn't part of the North Texas scene a generation ago.",
+      trivia: { q: "How did the Neotropic Cormorant expand its range into North Texas?",a: "Neotropic Cormorants were essentially absent from inland North Texas before the 1990s. Their expansion tracked the growth of urban reservoirs and aquaculture ponds, which provide reliable shallow-water fishing year-round. Unlike Double-crested Cormorants that prefer deeper open water, Neotropics are smaller and hunt more effectively in shallow weedy impoundments — exactly the habitat that suburban Texas produces in abundance." },
+      spots: ["Lake Ray Hubbard", "Lake Lavon", "Heard Natural Science Museum"],
       badges: ["Lakes · Reservoirs", "Common"],
     },
   {
@@ -1399,6 +1523,8 @@ export const BIRDS = [
       flight_id: "Rarely seen in flight — typically dives to escape. Rapid wingbeats, feet trailing, very short rounded wings. Mostly seen swimming.",
       northTexas: "Year-round on most local lakes and ponds. A master of disappearing — can slowly sink until barely visible, then swim away underwater.",
       funFact: "Pied-billed Grebes carry their young on their back tucked under wing feathers. The chick's head may poke out while the parent dives underwater — the chick rides out the dive.",
+      trivia: { q: "How does a Pied-billed Grebe control its buoyancy?",a: "Pied-billed Grebes can compress their feathers against their body, expelling trapped air to become denser than water — essentially controlling their specific gravity. This allows them to adjust their waterline precisely, sitting low or high, or gradually sinking below the surface without diving. They are more physiologically similar to submarines than to conventional diving birds." },
+      spots: ["Heard Natural Science Museum", "Lake Lavon", "Lewisville Lake / Elm Fork Greenbelt"],
       badges: ["Ponds · Lakes", "Common"],
     },
   {
@@ -1421,6 +1547,8 @@ export const BIRDS = [
       flight_id: "Massive wingspan (5–6 ft). Neck fully outstretched — unlike herons. Often in large V-formations or loose lines. Loud bugling calls from high-altitude flocks audible for miles.",
       northTexas: "Spectacular fall and winter visitor — flocks of thousands pass through DFW, especially October–November. Bugling calls from high-altitude flocks on still fall nights are one of North Texas's most unforgettable wildlife sounds.",
       funFact: "The Sandhill Crane's bugling call is produced by a windpipe coiled within its breastbone, creating a resonating chamber that amplifies the sound to be audible over 2 miles away.",
+      trivia: { q: "How long do Sandhill Cranes live, and do they mate for life?",a: "Sandhill Cranes are among the longest-lived birds in North America, with wild individuals documented at 20+ years and captive birds reaching 40 years. They are monogamous and typically mate for life, beginning a pair bond through elaborate synchronized dancing — jumping, bowing, and calling together — a bonding ritual that continues even in long-established pairs." },
+      spots: ["Hagerman NWR", "Lewisville Lake / Elm Fork Greenbelt", "Lake Tawakoni State Park"],
       badges: ["Open Fields · Reservoirs", "Common"],
     },
   {
@@ -1443,6 +1571,8 @@ export const BIRDS = [
       flight_id: "More active flight than Great Egret — quicker wingbeats. Bright yellow feet visible trailing behind in flight. Elegant and energetic.",
       northTexas: "Common March–October on local wetlands, pond edges, and shorelines. Often feeds actively and aggressively, vs. the patient stalking of the Great Egret.",
       funFact: "Snowy Egrets were hunted even more relentlessly than Great Egrets because their fine breeding plumes were the most prized in 19th-century fashion. One ounce of aigrette plumes was worth more than one ounce of gold in 1900.",
+      trivia: { q: "Why do Snowy Egrets shuffle their bright yellow feet through the water while feeding?",a: "The foot-shuffling behavior — called 'foot stirring' — disturbs the sediment and flushes small fish, crustaceans, and invertebrates into the open water column where the egret can see and strike them. The yellow feet may function as lures, mimicking the yellow color of small fish or aquatic invertebrates. Snowy Egrets employ at least 13 different foraging tactics, more than any other North American heron." },
+      spots: ["Heard Natural Science Museum", "Lake Lavon", "Lewisville Lake / Elm Fork Greenbelt"],
       badges: ["Wetlands · Pond Edges", "Common"],
     },
   {
@@ -1465,6 +1595,8 @@ export const BIRDS = [
       flight_id: "Ibis fly in lines or V-formations with continuous flapping (no gliding). Neck fully extended — unlike herons. Long curved bill visible. Iridescent in good light.",
       northTexas: "Common March–October migrant and summer resident. Flocks work flooded fields, restored wetlands, and sewage ponds across North Texas.",
       funFact: "The ibis was sacred in ancient Egypt, representing Thoth — god of wisdom and writing. However, the sacred bird was Africa's Hadada Ibis; this American species carries the symbolism by association.",
+      trivia: { q: "How does the White-faced Ibis use its curved bill to find food underground?",a: "The White-faced Ibis feeds by probing soft soil, mud, and shallow water with its long curved bill, using touch-sensitive receptors (Herbst corpuscles) concentrated in the bill tip to detect the movement and pressure signature of earthworms and crayfish underground — without being able to see them. This tactile hunting method allows effective foraging in turbid water and dense wet soil where visual hunting would fail." },
+      spots: ["Heard Natural Science Museum", "Lewisville Lake / Elm Fork Greenbelt", "Hagerman NWR"],
       badges: ["Flooded Fields · Wetlands", "Common"],
     },
   {
@@ -1487,6 +1619,8 @@ export const BIRDS = [
       flight_id: "Stocky, compact flight. Legs extend noticeably beyond tail tip in flight — the key vs. Black-crowned. Slate-gray overall. Croaking call.",
       northTexas: "Common March–October in suburban areas near water. Roosts in neighborhood trees over ponds and drainage channels. Often more approachable and visible in residential areas than Black-crowned.",
       funFact: "Yellow-crowned Night-Herons are crab and crayfish specialists — their powerful bill is built specifically for crushing hard-shelled crustaceans. They will wait motionless for hours near crayfish burrows, then strike with explosive speed.",
+      trivia: { q: "How is the Yellow-crowned Night-Heron's skull adapted for eating crabs?",a: "The Yellow-crowned Night-Heron has evolved an unusually powerful skull and jaw musculature compared to other herons — adapted specifically for crushing hard-shelled crabs and crayfish. The bill is proportionally heavier and the jaw-closing muscles are larger than in Great Blue Herons of comparable body size. They can also swallow crabs whole after a brief manipulation, unlike herons that only eat soft prey." },
+      spots: ["Heard Natural Science Museum", "Trinity River Audubon Center", "Lewisville Lake / Elm Fork Greenbelt"],
       badges: ["Ponds · Suburban Water", "Common"],
     },
 
@@ -1511,6 +1645,8 @@ export const BIRDS = [
       flight_id: "Bold black-and-white wing pattern. Long bill and legs trailing behind. Striking and distinctive flight silhouette. Often calls 'wheet' in flight.",
       northTexas: "Common March–November on shallow mudflats, sewage ponds, and restored wetlands throughout DFW. Spring birds in full breeding orange plumage are spectacular.",
       funFact: "The female avocet's more strongly curved bill lets her forage in deeper water than males — a physical adaptation that reduces competition between the sexes at the same feeding site.",
+      trivia: { q: "How does the American Avocet's scything feeding technique work?",a: "Avocets feed by sweeping their upturned bill side to side through shallow water in a motion called 'scything.' Touch-sensitive receptors in the bill tip detect invertebrates and small fish by feel as the bill sweeps — the bird does not need to see the prey at all. Groups of avocets often synchronize their sweeping into a chorus-line formation, driving prey toward shallow water where it becomes concentrated." },
+      spots: ["Heard Natural Science Museum", "Lewisville Lake / Elm Fork Greenbelt", "Hagerman NWR"],
       badges: ["Shallow Mudflats · Wetlands", "Common"],
     },
   {
@@ -1533,6 +1669,8 @@ export const BIRDS = [
       flight_id: "Long pink legs trail far behind. Bold black-and-white pattern contrasting and visible at great distance. Loud persistent 'kek-kek-kek' alarm call.",
       northTexas: "Common breeder March–October on flooded fields, mudflats, and shallow wetlands. Particularly numerous at sewage treatment ponds and restoration wetlands.",
       funFact: "Black-necked Stilts nest in tight colonies and mob any intruder relentlessly, regardless of its size. Eagles, coyotes, and humans are all treated to the same screaming aerial assault.",
+      trivia: { q: "Why does the Black-necked Stilt have the second-longest legs relative to body size of any bird?",a: "The stilt's extreme leg length allows it to wade into water depths inaccessible to most shorebirds, reaching prey on the bottom in water up to 10 inches deep. The long legs also elevate the nesting parent above the hot ground surface in shallow pan wetlands, allowing them to incubate in conditions that would overheat shorter-legged species. Young stilts can wade and feed within hours of hatching." },
+      spots: ["Heard Natural Science Museum", "Lewisville Lake / Elm Fork Greenbelt", "Hagerman NWR"],
       badges: ["Mudflats · Flooded Fields", "Common"],
     },
   {
@@ -1555,6 +1693,8 @@ export const BIRDS = [
       flight_id: "Long yellow legs trail behind. Gray-streaked with white rump patch. Loud, repeated 'tew-tew-tew' calls in flight — one of the most recognizable shorebird calls.",
       northTexas: "Common migrant and winter visitor on mudflats, pond edges, and shallow wetlands throughout DFW. Loud and conspicuous — often the first shorebird you hear at any wetland.",
       funFact: "Greater and Lesser Yellowlegs are notoriously difficult to separate. The most reliable differences: Greater's bill is longer than its head and slightly upturned; Lesser's equals head length and is straight. Calls are also different — Greater gives 3–4 notes, Lesser gives 1–2.",
+      trivia: { q: "What makes the Greater Yellowlegs an unusually active forager among shorebirds?",a: "Unlike most shorebirds that probe or pick at the substrate, Greater Yellowlegs frequently chase fish through the shallows — running, spinning, and striking in bursts of speed that look more like a heron than a sandpiper. They will pursue small fish into water deep enough to partially submerge themselves, and regularly steal prey from smaller shorebirds by chasing them until the smaller bird drops its catch." },
+      spots: ["Heard Natural Science Museum", "Lewisville Lake / Elm Fork Greenbelt", "Hagerman NWR"],
       badges: ["Mudflats · Wetlands", "Common"],
     },
   {
@@ -1577,6 +1717,8 @@ export const BIRDS = [
       flight_id: "Fast and direct. Orange rump flashes prominently. Loud 'kill-deer!' call given frequently in flight. Long-winged for its size.",
       northTexas: "North Texas's most abundant shorebird — found year-round on any open ground. Nests in gravel lots, athletic fields, and flat rooftops as readily as in natural areas.",
       funFact: "Killdeer perform the famous 'broken wing display' — dragging a wing on the ground and acting injured to lure predators away from their nest. Once at a safe distance, they simply fly away perfectly healthy.",
+      trivia: { q: "Where does the Killdeer nest that surprises most people?",a: "Killdeer nest on bare gravel with no nest structure at all — just a shallow scrape in the ground. They regularly nest on gravel rooftops, in gravel parking lot islands, on railroad ballast, and on flat industrial rooftops, sometimes in the middle of active construction sites. The cryptically patterned eggs are invisible on gravel even from a foot away, making camouflage rather than concealment their defense strategy." },
+      spots: ["Heard Natural Science Museum", "Lewisville Lake / Elm Fork Greenbelt", "Hagerman NWR"],
       badges: ["Parking Lots · Athletic Fields · Mudflats", "More Common"],
     },
   {
@@ -1599,6 +1741,8 @@ export const BIRDS = [
       flight_id: "Small, fast, erratic flight in compact flocks. Yellowish legs visible if close. Thin 'kreeet' call given frequently. Often flushes in tight twisting groups.",
       northTexas: "Common August–May on any mudflat or pond edge. Often abundant during fall migration mixed with other small sandpipers — yellow legs identify this one.",
       funFact: "Despite being tiny, Least Sandpipers are epic migrants. Some individuals travel from Arctic tundra breeding grounds all the way to Peru or Chile — a round trip exceeding 15,000 miles.",
+      trivia: { q: "How do Least Sandpipers fuel their migration across such vast distances?",a: "Least Sandpipers fuel long-distance migration by hyperphagia — extreme overeating — before departure, doubling their lean body mass in fat within a few days at stopover sites rich in invertebrates. During the migration itself they can fly continuously for 60–80 hours over open ocean between stopovers. At 20–30 grams, they are the smallest long-distance migrants in the world." },
+      spots: ["Heard Natural Science Museum", "Lewisville Lake / Elm Fork Greenbelt", "Hagerman NWR"],
       badges: ["Mudflats · Pond Edges", "Common"],
     },
 
@@ -1623,6 +1767,8 @@ export const BIRDS = [
       flight_id: "Strongly undulating. Small size apparent next to other woodpeckers. High whinnying 'pik' call. Often in mixed flocks with chickadees and titmice.",
       northTexas: "Year-round throughout North Texas. The most frequent small woodpecker at suet feeders — a reliable daily visitor in any wooded neighborhood.",
       funFact: "Downy Woodpeckers are the smallest woodpeckers in North America. Their small bills let them exploit weed stems and goldenrod galls for insects that larger woodpeckers simply cannot reach.",
+      trivia: { q: "How do Downy Woodpeckers forage in a way that larger woodpeckers cannot?",a: "Downy Woodpeckers can cling to and excavate slender weed stems, goldenrod galls, and cattail heads — substrates too thin and flexible for heavier woodpeckers. Their small bill lets them excavate the galls of goldenrod flies, which larger woodpeckers ignore entirely. During winter, a Downy may spend hours working a single goldenrod stem for the larvae inside, a food source available to almost no other species." },
+      spots: ["Arbor Hills Nature Preserve", "Heard Natural Science Museum", "Trinity River Audubon Center"],
       badges: ["Wooded Suburbs · Feeders", "More Common"],
     },
   {
@@ -1645,6 +1791,8 @@ export const BIRDS = [
       flight_id: "Undulating. Larger size apparent next to Downy Woodpecker. Longer bill visible. Same pattern but bigger. Visits suet feeders in wooded neighborhoods.",
       northTexas: "Year-round in mature wooded areas throughout North Texas. Less common than Downy at feeders but a regular suet visitor. The long bill is the definitive ID mark at any distance.",
       funFact: "Hairy and Downy Woodpeckers look so similar many assume they're closely related — but they're not. Their resemblance is convergent evolution. The Hairy is actually more closely related to several Central American woodpecker species.",
+      trivia: { q: "What does the Hairy Woodpecker's long bill allow it to reach that a Downy cannot?",a: "The Hairy Woodpecker's bill is nearly as long as its head — proportionally the longest of any North American woodpecker relative to skull size — allowing it to excavate deep into the sapwood and heartwood of large-diameter trees to reach carpenter ant galleries and wood-boring beetle larvae several inches below the surface. This makes Hairy Woodpeckers important biological control agents for bark beetle outbreaks in mature forests." },
+      spots: ["Arbor Hills Nature Preserve", "Heard Natural Science Museum", "Lake Tawakoni State Park"],
       badges: ["Mature Woodlands · Feeders", "Common"],
     },
   {
@@ -1667,6 +1815,8 @@ export const BIRDS = [
       flight_id: "White rump patch flashes prominently with every wingbeat — one of the easiest any-bird ID marks in flight. Classic undulating woodpecker flight.",
       northTexas: "Year-round but numbers swell dramatically in winter as northern birds move through. Common in open areas with scattered trees and in wooded neighborhoods.",
       funFact: "Unlike most woodpeckers, Flickers are primarily ant-eaters. They spend much of their time on the ground, using a tongue that can extend 2+ inches past the bill tip to lap up ants and beetle larvae.",
+      trivia: { q: "How many ants can a Northern Flicker consume in a single meal?",a: "Northern Flickers can consume over 5,000 ants in a single foraging bout. Their saliva contains formic acid — the same defensive compound ants spray — which neutralizes the venom and makes the ants safe to eat in large quantities. The tongue extends more than 2 inches beyond the bill tip and is coated in sticky mucus that picks up multiple ants per lick from ant tunnels." },
+      spots: ["Arbor Hills Nature Preserve", "Heard Natural Science Museum", "Lake Tawakoni State Park"],
       badges: ["Open Woodlands · Lawns", "Common"],
     },
   {
@@ -1690,6 +1840,8 @@ export const BIRDS = [
       northTexas: "The most common woodpecker in North Texas neighborhoods. Year-round in any yard with mature trees. Regular at suet and peanut feeders.",
       funFact: "Red-bellied Woodpeckers have a tongue that extends 2 inches beyond the bill tip, sticky and barbed at the end to extract insects from deep crevices. They also cache food in bark and return to it later.",
       frequentFlier: true,
+      trivia: { q: "How do Red-bellied Woodpeckers store food differently from chickadees?",a: "Red-bellied Woodpeckers are generalist cachers that store food in bark crevices, under shingles, in fence post holes, and in the forks of branches — sometimes covering the cache with a bark chip. Unlike chickadees that scatter-hoard thousands of tiny caches, Red-bellied Woodpeckers maintain a smaller number of larger larder caches and defend these cache sites aggressively against other woodpeckers and jays." },
+      spots: ["Arbor Hills Nature Preserve", "Heard Natural Science Museum", "Trinity River Audubon Center"],
       badges: ["Wooded Suburbs · Feeders", "More Common"],
     },
   {
@@ -1712,6 +1864,8 @@ export const BIRDS = [
       flight_id: "Undulating woodpecker flight. Bold white wing stripe very conspicuous in flight. Black-and-white overall. Often gives a cat-like mewing call.",
       northTexas: "Common October–April in wooded areas. Look for the telltale horizontal rows of sap wells drilled in tree bark — the unmistakable signature of this species. Often detected by its nasal mewing call.",
       funFact: "Yellow-bellied Sapsuckers drill precise rows of sap wells and aggressively guard them. Ruby-throated Hummingbirds time their spring migration northward to follow sapsuckers, feeding from their sap wells before wildflowers bloom.",
+      trivia: { q: "How many other species depend on Yellow-bellied Sapsucker sap wells?",a: "Researchers have documented over 35 species of birds and mammals that use sapsucker sap wells opportunistically, including hummingbirds, warblers, kinglets, nuthatches, and flying squirrels. The Ruby-throated Hummingbird's spring migration northward is timed to follow sapsuckers, as the sap wells provide the only reliable sugar source before wildflowers bloom. Sapsuckers are considered a 'keystone species' in eastern forest ecosystems." },
+      spots: ["Arbor Hills Nature Preserve", "Heard Natural Science Museum", "Lake Tawakoni State Park"],
       badges: ["Wooded Areas · Parks", "Common"],
     },
 
@@ -1737,6 +1891,8 @@ export const BIRDS = [
       flight_id: "White forehead obvious in flight. Large white wing patch on forewing. Fast wingbeats, often in tight flocks.",
       northTexas: "Common winter visitor Nov–March on lakes, ponds, and grassy wetland edges.",
       funFact: "Wigeons are notorious kleptoparasites — they steal food directly from diving ducks and coots the moment they surface with vegetation.",
+      trivia: { q: "Why do American Wigeons steal food from diving ducks instead of diving themselves?",a: "Wigeons are surface dabblers whose bills and feet are not adapted for diving. Rather than evolve diving ability, they exploit diving ducks and coots as 'fishing fleets' — waiting on the surface and snatching submerged aquatic vegetation the moment a diving bird resurfaces. This kleptoparasitic strategy costs the wigeon no diving energy and provides food without the physiological investment of becoming a diver." },
+      spots: ["Hagerman NWR", "Lake Ray Hubbard", "Lewisville Lake / Elm Fork Greenbelt"],
       badges: ["Lakes · Grassy Wetlands", "Common"],
     },
   {
@@ -1760,6 +1916,8 @@ export const BIRDS = [
       flight_id: "Long-necked, long-legged silhouette. Blazing white wing stripe across dark wings. Loud whistling calls in flight. Often in large evening flocks.",
       northTexas: "The #1 most-sighted duck on eBird in Texas. Year-round on suburban ponds throughout Plano, Allen, and McKinney.",
       funFact: "Both parents share incubation equally — unusual among ducks. 'Super-clutches' of 40+ eggs form when multiple females lay in one nest.",
+      trivia: { q: "How did the Black-bellied Whistling-Duck colonize North Texas suburbs?",a: "Black-bellied Whistling-Ducks expanded northward into Texas starting in the 1970s, driven by the proliferation of suburban retention ponds and irrigated lawns — habitat that closely mimics the tropical lagoons and flooded savannas of their native Mexico. They are uniquely adapted to human-modified landscapes: they nest in tree cavities and nest boxes, graze on lawn grass, and show almost no fear of humans." },
+      spots: ["Heard Natural Science Museum", "Lewisville Lake / Elm Fork Greenbelt", "Trinity River Audubon Center"],
       badges: ["Suburban Ponds · Marshes", "Most Common"],
     },
   {
@@ -1783,6 +1941,8 @@ export const BIRDS = [
       flight_id: "Tiny and fast. Powder-blue forewing patches are the key mark at any distance. Erratic, twisting flight in tight flocks.",
       northTexas: "First ducks to arrive each fall (August). Common on shallow marshes and ponds through spring.",
       funFact: "Among the longest-distance migrants of any dabbling duck — some individuals travel 8,000+ miles round trip to South America each year.",
+      trivia: { q: "How early in fall do Blue-winged Teal begin migrating south?",a: "Blue-winged Teal are among the earliest southbound migrants of any waterfowl — adult males begin moving through North Texas as early as late July, weeks before most other duck species even think about departing. Their early departure is thought to be linked to their long migration route to South America: leaving early allows them to stage in Central America before continuing to their equatorial wintering grounds." },
+      spots: ["Heard Natural Science Museum", "Lewisville Lake / Elm Fork Greenbelt", "Hagerman NWR"],
       badges: ["Shallow Marshes · Ponds", "Common"],
     },
   {
@@ -1806,6 +1966,8 @@ export const BIRDS = [
       flight_id: "Tiny, fast, buzzy wingbeats. Male's white head patch flashes prominently in flight. Very small size. Often seen landing with a long skid.",
       northTexas: "Regular Oct–March on local reservoirs and larger ponds. Usually in small groups. One of the most charming winter ducks.",
       funFact: "Buffleheads nest almost exclusively in old Northern Flicker woodpecker cavities in the boreal forest — they're the only diving duck small enough to use woodpecker holes. Their population is directly tied to flicker numbers.",
+      trivia: { q: "Why is the Bufflehead the only diving duck that nests in woodpecker holes?",a: "The Bufflehead is North America's smallest diving duck — roughly the size of a large robin — which makes it the only diving duck physically small enough to enter a Northern Flicker's nest hole (about 2.5 inches in diameter). This dependence on Flicker cavities ties Bufflehead breeding populations directly to the abundance of Flickers in the boreal forest, making Flicker conservation indirectly important to Bufflehead management." },
+      spots: ["Lake Ray Hubbard", "Lake Lavon", "Hagerman NWR"],
       badges: ["Lakes · Ponds", "Common"],
     },
   {
@@ -1829,6 +1991,8 @@ export const BIRDS = [
       flight_id: "Large, with sloping head profile unlike any other duck. White back gleams in flight. Fast wingbeats, often in lines or V-formations.",
       northTexas: "Winter visitor on larger reservoirs (Ray Hubbard, Lavon, Lewisville) Nov–March.",
       funFact: "The most expensive game bird in 19th-century America — served at Lincoln's state dinners. Their wild celery diet (Vallisneria, their scientific name) gave the meat a legendary flavor.",
+      trivia: { q: "What does the Canvasback's scientific name reveal about its diet?",a: "The Canvasback's species name — valisineria — is derived from Vallisneria, the genus of wild celery, the aquatic plant that forms the core of its winter diet. The birds dive to depths of 10+ feet to pull up wild celery rhizomes from the bottom of brackish bays and deep freshwater lakes. The distinctive flavor of wild-celery-fed Canvasbacks made them the most prized table duck in 19th-century America." },
+      spots: ["Lake Ray Hubbard", "Lake Lavon", "Hagerman NWR"],
       badges: ["Deep Lakes · Reservoirs", "Rare"],
     },
   {
@@ -1852,6 +2016,8 @@ export const BIRDS = [
       flight_id: "Loud whistling sound from wings in flight — audible hundreds of feet away. White wing patches flash. Fast, direct flight with rapid wingbeats.",
       northTexas: "Uncommon but regular Nov–March on larger reservoirs (Ray Hubbard, Lavon, Tawakoni). Always worth a second look when scanning diving duck flocks.",
       funFact: "Common Goldeneyes produce a distinctive loud wing whistle in flight audible from hundreds of feet away. This 'wing music' led to their old folk name 'whistler' — used by hunters for centuries before the species got a formal name.",
+      trivia: { q: "What causes the Common Goldeneye's distinctive wing whistle?",a: "The loud whistling sound produced by flying Common Goldeneyes is caused by the unusually stiff, narrow outer primary feathers vibrating as air passes over them — similar to how a reed instrument produces sound. This 'wing music' is so consistent and loud that hunters heard approaching Goldeneyes before seeing them and named the species 'whistler' centuries before ornithologists gave it a scientific name." },
+      spots: ["Lake Ray Hubbard", "Lake Lavon", "Lake Tawakoni State Park"],
       badges: ["Large Reservoirs", "Rare"],
     },
   {
@@ -1875,6 +2041,8 @@ export const BIRDS = [
       flight_id: "White speculum (inner wing patch) is the diagnostic mark — no other dabbler shows white there. Otherwise gray-brown overall.",
       northTexas: "One of the most abundant winter ducks in North Texas, Oct–March on lakes and wetlands.",
       funFact: "Despite its 'plain' reputation, Gadwall regularly steals aquatic vegetation from coots and diving ducks — a clever food-theft strategy.",
+      trivia: { q: "Why do birders consider the Gadwall an underrated duck?",a: "The Gadwall's gray-brown plumage appears plain at a distance, but close examination reveals extraordinarily intricate vermiculated feather patterns — each body feather edged in a precise scalloped pattern that becomes more complex in fully adult males. In addition to their plumage complexity, Gadwalls are among the most behaviorally sophisticated dabblers, showing context-dependent kleptoparasitism and flexible foraging strategies rare in other dabbling ducks." },
+      spots: ["Hagerman NWR", "Lake Lavon", "Lewisville Lake / Elm Fork Greenbelt"],
       badges: ["Lakes · Wetlands", "More Common"],
     },
   {
@@ -1898,6 +2066,8 @@ export const BIRDS = [
       flight_id: "Tiny and extremely fast. Green speculum shows in flight. Erratic, twisting flocks that move as one unit.",
       northTexas: "Abundant Oct–March — often the most numerous duck on local wetlands in mid-winter.",
       funFact: "The #2 most-harvested duck in the U.S. after the Mallard, yet populations stay healthy because they breed far north in largely undisturbed habitat.",
+      trivia: { q: "How fast can a Green-winged Teal fly?",a: "Green-winged Teal are the fastest of the dabbling ducks, capable of sustained flight speeds exceeding 50 mph and short bursts approaching 60 mph. Their small, compact bodies and rapidly beating wings allow them to turn and accelerate in flight with agility that rivals much smaller birds. Migrating flocks perform synchronized aerobatic maneuvers at high speed — a behavior called 'towering' — that helps confuse aerial predators." },
+      spots: ["Hagerman NWR", "Lewisville Lake / Elm Fork Greenbelt", "Heard Natural Science Museum"],
       badges: ["Shallow Ponds · Mudflats", "Most Common"],
     },
   {
@@ -1921,6 +2091,8 @@ export const BIRDS = [
       flight_id: "Fast, direct, with rapid wingbeats. Male's crest often held flat in flight. Found near wooded water. Often flies low between trees.",
       northTexas: "Regular Oct–March on wooded ponds, rivers, and creeks. Trinity River corridor and tree-lined lakes. Perhaps the most beautiful duck of a North Texas winter.",
       funFact: "Like Wood Ducks, Hooded Mergansers nest in tree cavities. The chicks jump from the nest hole within 24 hours of hatching — before they can fly — and bounce unhurt to the forest floor below.",
+      trivia: { q: "How does the Hooded Merganser use its eyesight for underwater hunting?",a: "Hooded Mergansers have a transparent third eyelid — a nictitating membrane — that functions like built-in goggles, allowing them to see clearly underwater despite the optical distortion. Their eyes also contain a rapid lens-focusing mechanism that corrects for the difference between air and water optics the moment they submerge. This gives them exceptional underwater vision for chasing fast-moving fish in the murky conditions of woodland ponds." },
+      spots: ["Trinity River Audubon Center", "Heard Natural Science Museum", "Lake Tawakoni State Park"],
       badges: ["Wooded Ponds · Rivers", "Common"],
     },
   {
@@ -1944,6 +2116,8 @@ export const BIRDS = [
       flight_id: "Fast wingbeats. White wing stripe visible — shorter than Greater Scaup's (extends only to secondaries, not primaries). Often in large dense flocks.",
       northTexas: "Abundant Oct–April on every DFW reservoir and large pond. Texas's most common winter diving duck, often in flocks of hundreds.",
       funFact: "Telling Lesser from Greater Scaup is one of North Texas birding's classic challenges. The head shape is key: Lesser peaks toward the rear; Greater is rounder like a ball — but only in good light.",
+      trivia: { q: "What is causing Lesser Scaup populations to decline?",a: "Lesser Scaup populations declined significantly from the 1980s through 2000s in what researchers called 'the scaup mystery' — duck numbers fell despite hunting regulations tightening and prairie wetlands being restored. Research eventually pointed to reduced food quality at key migration stopovers: invasive mussels and aquatic invertebrates in the Great Lakes had shifted the food web, reducing the high-protein invertebrate forage scaup need to build fat reserves before their Arctic breeding migration." },
+      spots: ["Lake Ray Hubbard", "Lake Lavon", "Hagerman NWR"],
       badges: ["Lakes · Reservoirs", "More Common"],
     },
   {
@@ -1968,6 +2142,8 @@ export const BIRDS = [
       northTexas: "Year-round on every pond, park, and river in Plano and DFW. Numbers swell heavily in winter.",
       funFact: "Only the female quacks. The male makes a soft raspy grunt. Mallards have hybridized with 40+ wild duck species — they're the promiscuous generalists of the duck world.",
       frequentFlier: true,
+      trivia: { q: "What is 'eclipse plumage' in male Mallards?",a: "After breeding, male Mallards molt into a cryptic brown plumage called 'eclipse plumage' — they look almost identical to females for 4–6 weeks in summer. During this period they are flightless (molting all primary feathers simultaneously) and vulnerable to predators. The drab plumage provides camouflage during this defenseless period. Eclipse plumage is unique to ducks among North American birds." },
+      spots: ["Heard Natural Science Museum", "Lewisville Lake / Elm Fork Greenbelt", "Lake Ray Hubbard"],
       badges: ["Lakes · Ponds · Parks", "More Common"],
     },
   {
@@ -1991,6 +2167,8 @@ export const BIRDS = [
       flight_id: "Slim, elegant silhouette — long neck and long pointed tail unmistakable even at distance. Swift, direct flight.",
       northTexas: "Abundant Oct–March on shallow lakes and flooded fields across Collin and Dallas counties.",
       funFact: "One of the fastest ducks at up to 65 mph. Also among the earliest fall migrants, arriving before most other species.",
+      trivia: { q: "How do Northern Pintails navigate long migrations to precise wintering locations?",a: "Northern Pintails use a combination of magnetic field sensing, star navigation, and memorized landscape features to navigate thousands of miles with striking precision. Banded pintails have been recovered at the same wintering ponds in consecutive years — arriving within days of the same calendar date. Juveniles making their first migration rely more on innate magnetic-compass headings; adults use precise spatial memory of previously visited sites." },
+      spots: ["Hagerman NWR", "Lewisville Lake / Elm Fork Greenbelt", "Lake Lavon"],
       badges: ["Flooded Fields · Shallow Lakes", "Common"],
     },
   {
@@ -2014,6 +2192,8 @@ export const BIRDS = [
       flight_id: "Bill-heavy, front-heavy silhouette unmistakable even in flight. Powder-blue wing patches. Often in spinning circular feeding flocks.",
       northTexas: "Very common Oct–April on shallow, muddy ponds. Often seen in large spinning feeding groups.",
       funFact: "Shovelers feed in coordinated spinning circles — each bird's paddling stirs up food for the duck behind it. Flocks of hundreds rotate like a living whirlpool.",
+      trivia: { q: "How many lamellae does a Northern Shoveler's bill have?",a: "The Northern Shoveler's massive spatula bill is lined with over 110 fine comb-like lamellae per side — more than any other dabbling duck. These lamellae function like a filter, allowing the bird to strain tiny zooplankton and phytoplankton from the water. The bill also has touch-sensitive nerve endings so dense that the shoveler can detect individual water fleas by feel while feeding with its head completely submerged." },
+      spots: ["Heard Natural Science Museum", "Lewisville Lake / Elm Fork Greenbelt", "Hagerman NWR"],
       badges: ["Shallow Muddy Ponds", "Common"],
     },
   {
@@ -2037,6 +2217,8 @@ export const BIRDS = [
       flight_id: "Stocky with round head. Pale gray wing stripe in flight. Often in large dense flocks. Distinguished from Canvasback by rounder head shape.",
       northTexas: "Common winter visitor Nov–March. Texas hosts one of the largest Redhead concentrations in the world.",
       funFact: "Female Redheads are expert brood parasites — they lay eggs in nests of Mallards, Canvasbacks, Pintails, and others. One female may parasitize a dozen nests per season while also raising her own brood.",
+      trivia: { q: "Where does most of the world's Redhead population winter?",a: "The Laguna Madre of Texas and Mexico — a shallow hypersaline lagoon on the Gulf Coast — hosts 80% or more of the entire North American Redhead population each winter, one of the most concentrated waterfowl wintering sites on the continent. Redheads feed almost exclusively on shoalgrass in the Laguna Madre, making the ecological health of this single lagoon critical to the entire species." },
+      spots: ["Hagerman NWR", "Lake Ray Hubbard", "Lake Lavon"],
       badges: ["Lakes · Open Water", "Common"],
     },
   {
@@ -2060,6 +2242,8 @@ export const BIRDS = [
       flight_id: "Fast, direct. Gray wing stripe in flight. Peaked head visible. Usually in smaller flocks than scaup — often prefers more wooded ponds.",
       northTexas: "Common Oct–March on local lakes and ponds. Often in mixed flocks with scaup. Prefers slightly shallower, more vegetated water than other diving ducks.",
       funFact: "The Ring-necked Duck's common name refers to a nearly invisible chestnut neck ring. Its actual field marks are the striking white bill rings — and birders widely consider it one of the worst-named North American ducks.",
+      trivia: { q: "Why is the Ring-necked Duck considered so poorly named?",a: "The 'ring' on the Ring-necked Duck's neck is a barely visible chestnut band visible only at very close range under ideal lighting — essentially useless as a field mark. The species' most visible and useful field marks are the two white rings on its bill. The name was coined by taxonomists working from collected museum specimens held in hand, not from field observation, and it has frustrated birders ever since." },
+      spots: ["Lake Ray Hubbard", "Lake Lavon", "Heard Natural Science Museum"],
       badges: ["Lakes · Wooded Ponds", "Common"],
     },
   {
@@ -2083,6 +2267,8 @@ export const BIRDS = [
       flight_id: "Stiff cocked tail often visible in flight. Rapid, whirring wingbeats on very small wings. Strongly prefers diving to flying — reluctant to take off.",
       northTexas: "Common Oct–April on larger reservoirs and deeper lakes. Often in flocks of dozens to hundreds in winter.",
       funFact: "Male Ruddy Ducks perform a bizarre courtship display — they rapidly beat their bill against their inflated neck, creating bubbles in the water and producing a thumping sound. They also fan their stiff tail over their back like a peacock.",
+      trivia: { q: "What is unique about the Ruddy Duck's tail among North American ducks?",a: "The Ruddy Duck's stiff, fan-shaped tail is composed of spiny, spine-like feathers that are held cocked nearly vertical over the back — a posture not seen in any other North American duck. The tail is used actively in courtship displays and as a balance aid when the duck is resting on land. Unlike the flexible tails of most ducks that lay flat, the Ruddy's tail appears almost mechanical." },
+      spots: ["Lake Ray Hubbard", "Lake Lavon", "Hagerman NWR"],
       badges: ["Lakes · Reservoirs", "Common"],
     },
   {
@@ -2106,6 +2292,8 @@ export const BIRDS = [
       flight_id: "Long squared tail, thin neck, white belly. Crested head visible. Loud rising 'ooo-eek' call in flight. Found near wooded water.",
       northTexas: "Year-round in bottomland forests and wooded lake edges. Trinity River corridor and tree-lined reservoirs.",
       funFact: "Wood Duck ducklings must jump from nest cavities — sometimes 60 feet up — within 24 hours of hatching, before they can fly. They bounce harmlessly and run immediately to water.",
+      trivia: { q: "How do Wood Duck ducklings survive the 60-foot drop from the nest cavity?",a: "Wood Duck ducklings are covered in dense, water-repellent down at hatching, and their bones are not yet ossified — they are largely cartilaginous and extremely flexible. When they jump from the cavity (responding to the mother's call from below), their soft bodies and low body mass create minimal impact force on landing on leaf litter or water. They are ready to swim and feed within hours of jumping." },
+      spots: ["Heard Natural Science Museum", "Trinity River Audubon Center", "Lake Tawakoni State Park"],
       badges: ["Wooded Swamps · Forest Lakes", "Common"],
     },
 
@@ -2131,6 +2319,8 @@ export const BIRDS = [
       northTexas: "Year-round resident on every suburban golf course, park, and lake in North Texas. Non-migratory resident flocks established decades ago stay year-round; migratory birds boost numbers in winter.",
       funFact: "North Texas Canada Geese are largely a non-migratory 'resident' population established by wildlife agencies in the mid-20th century. They adapted so well to suburban lawns and ponds that local populations now number in the thousands year-round.",
       frequentFlier: true,
+      trivia: { q: "How do Canada Geese families maintain their bonds during migration?",a: "Canada Goose family groups — parents and offspring hatched that year — migrate together as a unit and remain together on the wintering grounds. Young geese learn the migration route by following their parents. If one family member is injured and cannot fly, family members will sometimes remain with it rather than continue the migration — a level of family cohesion rare outside mammals." },
+      spots: ["Hagerman NWR", "Lake Ray Hubbard", "Lewisville Lake / Elm Fork Greenbelt"],
       badges: ["Golf Courses · Parks · Lakes", "Most Common"],
     },
   {
@@ -2153,6 +2343,8 @@ export const BIRDS = [
       flight_id: "V-formations or scattered flocks. Cackling laughter-like calls audible from great distance. Brown-gray with white rump patch. Orange legs visible at close range.",
       northTexas: "Common Oct–March migrant; thousands pass through DFW. Large V-formations are a classic fall spectacle overhead. Hagerman NWR hosts huge winter concentrations.",
       funFact: "The Greater White-fronted Goose makes one of the most evocative sounds of fall migration in North Texas — a high cackling laugh from high-altitude V-formations passing on clear October mornings. You'll hear them before you see them.",
+      trivia: { q: "Why do Greater White-fronted Geese have individually unique call signatures?",a: "Each Greater White-fronted Goose has a distinct, individually recognizable call — family members recognize each other's voices in the chaos of large migrating flocks. Parents and goslings maintain vocal contact during their first winter migration, and family members that become separated can reunite by call recognition alone. This individual voice recognition persists for life in established pair bonds." },
+      spots: ["Hagerman NWR", "Lewisville Lake / Elm Fork Greenbelt", "Lake Lavon"],
       badges: ["Flooded Fields · Reservoirs", "Common"],
     },
   {
@@ -2175,6 +2367,8 @@ export const BIRDS = [
       flight_id: "Large flocks — sometimes tens of thousands. All-white with black wingtips flashing. Loud honking calls. Can look like a blizzard from a distance when in massive concentrations.",
       northTexas: "Regular Oct–March, often in large migrating flocks passing through DFW. Hagerman NWR on Lake Texoma sees spectacular fall concentrations. Mixes with Canada Geese.",
       funFact: "Snow Goose populations have grown explosively — from under 2 million in the 1970s to 15+ million today. They're now so abundant they're overgrazing Arctic tundra breeding grounds, threatening the entire ecosystem.",
+      trivia: { q: "How are Snow Goose populations affecting Arctic breeding grounds?",a: "The mid-continent Snow Goose population grew from under 800,000 in 1969 to over 15 million by 2020 — driven by increased food availability on U.S. agricultural fields during winter. The expanded population is now 'eating out' Arctic tundra vegetation during summer, creating denuded mudflats called 'eat-outs' where the vegetation is permanently destroyed. The U.S. Fish and Wildlife Service issued a special conservation order authorizing expanded hunting specifically to reduce Snow Goose numbers." },
+      spots: ["Hagerman NWR", "Lewisville Lake / Elm Fork Greenbelt", "Lake Tawakoni State Park"],
       badges: ["Flooded Fields · Reservoirs", "Common"],
     },
 
@@ -2199,6 +2393,8 @@ export const BIRDS = [
       flight_id: "Light and buoyant — almost tern-like flight. Distinctive white wedge on outer wing flashes in flight. Often dips to water surface. Much smaller than Ring-billed Gull.",
       northTexas: "Regular Oct–April on reservoirs and larger lakes. Often seen in small groups on major DFW reservoirs, sometimes mixing with Ring-billed Gulls.",
       funFact: "Despite being a gull, Bonaparte's Gulls nest in conifer trees — not on the ground — in the boreal forest. They're the only North American gull to regularly nest in trees. Named after Napoleon's ornithologist nephew, not Napoleon himself.",
+      trivia: { q: "Why does Bonaparte's Gull nest in conifer trees instead of on the ground?",a: "Bonaparte's Gulls nest in conifer trees — spruce, fir, and tamarack — in the boreal forest, an ecological niche completely unlike any other gull in North America. Tree nesting likely evolved to avoid the ground predators (foxes, bears) common in the boreal forest. Because they are tree nesters, their breeding behavior is more similar to songbirds than to ground-nesting seagulls, including a need for suitable nesting trees." },
+      spots: ["Lake Ray Hubbard", "Lake Lavon", "Lewisville Lake / Elm Fork Greenbelt"],
       badges: ["Lakes · Reservoirs", "Common"],
     },
   {
@@ -2221,6 +2417,8 @@ export const BIRDS = [
       flight_id: "Small and buoyant. White wing-tip mirrors separated from black by white band — distinctive when visible. Pink flush on underparts in fresh plumage.",
       northTexas: "Common migrant in spring (April–May) and especially fall (Sept–Nov). Spectacular flocks of thousands sometimes pass over DFW in a single October day following cold fronts.",
       funFact: "Franklin's Gulls breed in large interior prairie colonies, then migrate across the entire continent to winter on the Pacific coast of South America — one of the longest overland migrations of any gull.",
+      trivia: { q: "What is unusual about the Franklin's Gull's complete molt schedule?",a: "Franklin's Gull is the only gull species in North America that has two complete molts per year — replacing all of its feathers twice annually. Most gulls molt once or undergo only a partial second molt. The double complete molt means Franklin's Gulls are never wearing worn feathers for long, and the fresh spring plumage acquired before breeding includes the full jet-black hood and rosy breast flush." },
+      spots: ["Lake Ray Hubbard", "Lewisville Lake / Elm Fork Greenbelt", "Lake Tawakoni State Park"],
       badges: ["Open Sky · Lakes", "Common"],
     },
   {
@@ -2243,6 +2441,8 @@ export const BIRDS = [
       flight_id: "Larger and more powerful than Ring-billed. Slower wingbeats. Pink legs visible. Red spot on bill at close range. Dominates mixed gull flocks.",
       northTexas: "Regular Nov–March on major reservoirs — less common than Ring-billed but worth checking large gull flocks. Typically outnumbered 20:1 or more by Ring-billed Gulls in DFW.",
       funFact: "Herring Gulls are among the most studied birds in history. Niko Tinbergen won the Nobel Prize studying their behavior — specifically why chicks peck at the red spot on the parent's bill to beg for food.",
+      trivia: { q: "How do Herring Gulls use tools to open shellfish?",a: "Herring Gulls regularly carry clams, mussels, and sea urchins to altitude, then drop them onto hard surfaces — rocks, parking lots, roads — to crack them open. They learn the minimum drop height needed for different shell types and prefer hard-surface targets over grass. Young gulls learn this technique by watching adults and go through a trial-and-error period of dropping objects from insufficient heights before mastering the skill." },
+      spots: ["Lake Ray Hubbard", "Lewisville Lake / Elm Fork Greenbelt"],
       badges: ["Large Reservoirs", "Rare"],
     },
   {
@@ -2265,6 +2465,8 @@ export const BIRDS = [
       flight_id: "Buoyant, easy flight. Follows cars, shopping carts, and any food source. Often circles above parking lots. Black wingtips with white spots visible from above.",
       northTexas: "This is the gull you saw in the parking lot. The most common inland gull in North America, October–April. Any gull seen at a DFW parking lot, fast food restaurant, or suburban lake is almost certainly this species.",
       funFact: "Ring-billed Gulls colonized inland North America in the 20th century by learning to exploit human food waste. They now breed on inland lakes and winter throughout the entire continental interior — a conservation success story driven almost entirely by human garbage.",
+      trivia: { q: "How did Ring-billed Gull populations recover from near-extinction in the early 20th century?",a: "Ring-billed Gulls were hunted nearly to extinction by 1900 for their feathers, which were used in millinery. After the Migratory Bird Treaty Act of 1918 ended market hunting, populations rebounded spectacularly — from tens of thousands to over 3 million breeding birds today. The recovery is considered one of the most dramatic post-protection rebounds in North American bird history, enabled by the species' ability to exploit human food waste." },
+      spots: ["Lake Ray Hubbard", "Lewisville Lake / Elm Fork Greenbelt", "Lake Lavon"],
       badges: ["Parking Lots · Lakes · Any Open Area", "More Common"],
     },
 
@@ -2289,6 +2491,8 @@ export const BIRDS = [
       flight_id: "Loud rattling call given almost continuously — the most reliable ID. Fast, direct, slightly undulating. Hovers over water before diving headfirst.",
       northTexas: "Year-round on any lake, pond, river, or drainage with clear water. Perches on wires and branches overlooking water. Often heard before seen.",
       funFact: "Kingfishers nest in 3–6 foot tunnels they excavate in earthen banks. Uniquely, the male always takes the night incubation shift and the female always takes the day shift.",
+      trivia: { q: "Why is the female Belted Kingfisher more colorful than the male?",a: "Female Belted Kingfishers have a rusty belly band in addition to the blue breast band that both sexes share — making females more colorful in a reversal of the typical avian pattern. The reason is thought to be role reversal in territory defense: females aggressively defend winter feeding territories against other kingfishers (including their mate), and the extra color may function as a status signal in these territorial disputes." },
+      spots: ["Heard Natural Science Museum", "Trinity River Audubon Center", "Lewisville Lake / Elm Fork Greenbelt"],
       badges: ["Lakes · Streams · Ponds", "Common"],
     },
   {
@@ -2311,6 +2515,8 @@ export const BIRDS = [
       flight_id: "Unlike any other bird — stiff rapid wingbeats on swept-back wings with almost no glide. Constantly twittering. A 'flying cigar.' Batlike but more erratic.",
       northTexas: "April–October. Spectacular evening 'chimney swirls' at dusk — thousands funneling into unused smokestacks and chimneys throughout DFW. Watch at sunset near old buildings.",
       funFact: "Chimney Swifts spend virtually their entire lives airborne — eating, drinking, bathing, even mating in mid-air. They land only to nest and sleep. A single swift may fly 500,000+ miles in its lifetime.",
+      trivia: { q: "How do Chimney Swifts sleep if they never land?",a: "During migration, Chimney Swifts sleep while flying — entering brief unihemispheric sleep episodes (one brain hemisphere at a time) at very high altitude, riding thermals with almost no wing movement. At roost sites and during breeding, they cling vertically to the interior walls of chimneys using their tiny but extremely strong toes and spine-tipped tail feathers as props — the only time they are not airborne." },
+      spots: ["Lewisville Lake / Elm Fork Greenbelt", "Trinity River Audubon Center"],
       badges: ["Open Sky · Urban Areas", "Common"],
     },
   {
@@ -2333,6 +2539,8 @@ export const BIRDS = [
       flight_id: "Erratic, bat-like flight over open areas at dusk and dawn. White wing bars flash. Loud nasal 'peent' call. Male's courtship dive ends with a startling 'boom.'",
       northTexas: "Common April–October. Spectacular fall migration — hundreds can pass over DFW in a single September evening. Often confused with nightjars but more likely to be seen over urban areas.",
       funFact: "Despite the name, Common Nighthawks are not hawks — they're related to nightjars and whip-poor-wills. The male's courtship dive ends with a resonant 'boom' produced by air rushing through his spread wingtips.",
+      trivia: { q: "How does the Common Nighthawk produce its courtship boom?",a: "The male Common Nighthawk produces a deep 'boom' at the bottom of his steep courtship dive by spreading his wingtips abruptly as he pulls up from the dive, causing the primaries to vibrate in the rush of air — similar to how a reed vibrates in a woodwind instrument. The sound is produced entirely by wind-driven feather vibration, not the voice, and is audible hundreds of meters away. Females near the nest can feel the sound as a pressure wave." },
+      spots: ["Lewisville Lake / Elm Fork Greenbelt", "Trinity River Audubon Center"],
       badges: ["Open Sky · Urban Areas", "Common"],
     },
   {
@@ -2355,6 +2563,8 @@ export const BIRDS = [
       flight_id: "Direct dove flight with squared tail. Broad white tail corners flash at takeoff and landing. Often flies from utility wires, roofs, and open lots.",
       northTexas: "Increasingly common year-round in towns, farms, suburbs, grain elevators, and commercial edges throughout North Texas. Often seen on wires and rooftops.",
       funFact: "Eurasian Collared-Doves colonized North America after escaping captivity in the Bahamas in the 1970s. They spread across the continent with remarkable speed.",
+      trivia: { q: "How quickly did the Eurasian Collared-Dove spread across North America after its introduction?",a: "After escaping from a pet dealer in the Bahamas in the mid-1970s, Eurasian Collared-Doves reached Florida by 1982 and spread across the entire continental United States within 25 years — one of the fastest natural range expansions ever documented for a bird. They reached Texas in the early 1990s and are now breeding year-round in virtually every North Texas town. The population now numbers in the millions." },
+      spots: ["Arbor Hills Nature Preserve", "Heard Natural Science Museum"],
       badges: ["Towns · Farms · Suburbs", "Common"],
     },
   {
@@ -2377,6 +2587,8 @@ export const BIRDS = [
       flight_id: "Fast, low dove flight with rusty wing flash and white-edged tail. Often flushes from lawns, alleys, and neighborhood edges.",
       northTexas: "Regular year-round in North Texas neighborhoods, especially older suburbs, yards, alleys, and weedy open areas. More localized than Mourning Dove but familiar where present.",
       funFact: "Inca Doves conserve heat by forming tight roosting pyramids in cold weather, stacking together in groups with tails pointed outward.",
+      trivia: { q: "How do Inca Doves survive winter cold snaps in North Texas?",a: "When temperatures drop below freezing, Inca Doves form 'pyramids' — roosting clusters where birds stack on top of each other two or three layers deep, all facing outward. The inside birds gain warmth from their neighbors while the outside birds lose heat; birds rotate positions to share the warm interior spots. Groups of up to 12 have been recorded in a single pyramid during cold nights." },
+      spots: ["Arbor Hills Nature Preserve", "Heard Natural Science Museum"],
       badges: ["Neighborhoods · Yards · Alleys", "Common"],
     },
   {
@@ -2400,6 +2612,8 @@ export const BIRDS = [
       northTexas: "The single most abundant bird in North Texas — on every wire, roof, and sidewalk year-round. The cooing from a tree at dawn is almost certainly this bird.",
       funFact: "Mourning Doves are the most harvested game bird in North America — over 20 million taken annually. Populations stay robust because they breed nearly continuously, raising up to 6 broods per year.",
       frequentFlier: true,
+      trivia: { q: "What is 'crop milk' and which birds produce it?",a: "Mourning Doves feed their nestlings 'crop milk' — a protein-rich secretion produced by the crop lining of both parents during the first week after hatching. It contains more protein and fat than cow's milk, and chicks are fed nothing else for the first few days. Crop milk is produced only by pigeons and doves (and a few other birds including flamingos and Emperor Penguins) and is hormonally regulated by prolactin, the same hormone that triggers milk production in mammals." },
+      spots: ["Arbor Hills Nature Preserve", "Heard Natural Science Museum"],
       badges: ["Everywhere", "Most Common"],
     },
   {
@@ -2423,6 +2637,8 @@ export const BIRDS = [
       northTexas: "Common year-round around downtown areas, bridges, warehouses, parking garages, shopping centers, and older buildings throughout DFW.",
       funFact: "Rock Pigeons are the wild ancestor of domestic pigeons. Their homing ability has been used for thousands of years, including carrying messages during wartime.",
       frequentFlier: true,
+      trivia: { q: "How do Rock Pigeons navigate home from hundreds of miles away?",a: "Rock Pigeons use a combination of the Earth's magnetic field, the sun's position, infrasound landmarks (low-frequency sounds produced by oceans and mountains that travel hundreds of miles), and familiar visual landmarks to navigate home. Research has also shown they follow road networks and highways as navigation aids, suggesting they use human infrastructure as a map overlay on their innate compass systems." },
+      spots: ["Trinity River Audubon Center", "Lewisville Lake / Elm Fork Greenbelt"],
       badges: ["Urban Areas · Bridges · Parking Garages", "Common"],
     },
   {
@@ -2445,87 +2661,11 @@ export const BIRDS = [
       flight_id: "Helicopter-like — hovers, flies backward and sideways. Blur of green and red. Rapid buzzing wingbeats audible at close range. Visits flowers and feeders repeatedly.",
       northTexas: "Common spring and fall migrant; many breed in wooded suburban areas. Irresistible at sugar water feeders (1 part sugar to 4 parts water, no dye) and red flowers.",
       funFact: "Ruby-throated Hummingbirds fly nonstop across the Gulf of Mexico — 500+ miles — during fall migration, fueled by doubling their body weight in fat reserves beforehand.",
+      trivia: { q: "How does the Ruby-throated Hummingbird enter torpor at night?",a: "On cool nights, Ruby-throated Hummingbirds drop their body temperature from 104°F to near ambient — sometimes as low as 54°F — and their heart rate slows from 1,200 beats per minute to as few as 50. This daily torpor saves up to 60% of the energy they would otherwise burn overnight keeping warm. A torpid hummingbird is nearly comatose and cannot be roused quickly — if disturbed before warming, it is helpless for several minutes." },
+      spots: ["Arbor Hills Nature Preserve", "Heard Natural Science Museum", "Trinity River Audubon Center"],
       badges: ["Gardens · Feeders · Wooded Areas", "Common"],
     },
 
-];
-
-export const TRIVIA = [
-  {
-    q: "Which North Texas bird spends its entire life in the air?",
-    a: "The Chimney Swift — eating, drinking, bathing, even mating in mid-air. It lands only to nest. A single swift may fly 500,000+ miles in its lifetime.",
-    color: "#717d7e",
-  },
-  {
-    q: "Why does the Killdeer drag its wing on the ground?",
-    a: "It's a 'broken wing display' — faking injury to lure predators away from its ground nest. Once far enough away, the bird simply flies off, perfectly healthy.",
-    color: "#b7770d",
-  },
-  {
-    q: "Which North Texas bird uses tools to catch fish?",
-    a: "The Green Heron. It drops feathers, insects, berries, and pieces of bread onto the water as lures to attract fish within striking range — one of the very few tool-using birds worldwide.",
-    color: "#196f3d",
-  },
-  {
-    q: "Why do cormorants spread their wings after swimming?",
-    a: "Unlike most waterbirds, cormorants intentionally lack waterproof feathers — getting wet reduces buoyancy for better diving. This forces them to air-dry after every swim, creating the characteristic 'arms-spread' posture.",
-    color: "#2d4a22",
-  },
-  {
-    q: "What's the most abundant bird in North Texas?",
-    a: "The Mourning Dove — found everywhere year-round. Despite being the #1 harvested game bird in America (20M+ annually), populations stay strong because pairs raise up to 6 broods per year.",
-    color: "#7b7d7d",
-  },
-  {
-    q: "How far does the Ruby-throated Hummingbird migrate?",
-    a: "Many fly nonstop across the Gulf of Mexico — over 500 miles — on a single tank of fat. They double their body weight in fat reserves before the crossing.",
-    color: "#922b21",
-  },
-  {
-    q: "Why does every movie hawk scream sound the same?",
-    a: "Filmmakers always use the Red-tailed Hawk's call — it's the most dramatic raptor voice in North America. You'll hear it over images of Bald Eagles, Golden Eagles, and any other raptor on screen.",
-    color: "#784212",
-  },
-  {
-    q: "What nearly drove egrets to extinction?",
-    a: "Fashion. In the late 1800s, egret breeding plumes were worth more per ounce than gold for hat decorations. The Audubon Society was literally founded to stop the slaughter — the Great Egret is still its symbol.",
-    color: "#5d6d7e",
-  },
-  {
-    q: "Why are Purple Martins dependent on human housing?",
-    a: "Over centuries of nesting near Native American settlements that provided gourds, eastern martins gradually abandoned natural cavities. Today virtually 100% of eastern Purple Martin nesting occurs in martin houses and gourds.",
-    color: "#5b2c6f",
-  },
-  {
-    q: "Which North Texas bird nests as early as January?",
-    a: "The Great Horned Owl — North Texas's earliest nesting bird. They begin incubating eggs in January so their owlets are large enough to learn to hunt before winter.",
-    color: "#7d6608",
-  },
-  {
-    q: "What does the Blue Jay really sound like?",
-    a: "Blue Jays are expert mimics — their 'jay-jay' call is well-known, but they also perfectly imitate Red-tailed and Red-shouldered Hawk screams. If you hear a hawk in the suburbs and can't find it, it's probably a jay.",
-    color: "#2471a3",
-  },
-  {
-    q: "How are Bald Eagles doing today vs. the 1960s?",
-    a: "A remarkable comeback story. Fewer than 500 nesting pairs remained in the lower 48 states by 1963. After DDT was banned and the ESA took effect, populations rebounded to 10,000+ nesting pairs today.",
-    color: "#2c3e50",
-  },
-  {
-    q: "What's that gull doing in the Plano parking lot?",
-    a: "Almost certainly a Ring-billed Gull — the most common inland gull in North America. They colonized the continental interior in the 20th century by learning to exploit human food waste. Any gull over a DFW parking lot or strip mall is almost certainly this species.",
-    color: "#7f8c8d",
-  },
-  {
-    q: "Dabbling vs. diving ducks — what's the difference?",
-    a: "Dabblers tip forward in shallow water and spring straight up on takeoff. Divers have legs set far back — powerful underwater but awkward on land, and must patter across the water to take off.",
-    color: "#2d6a4f",
-  },
-  {
-    q: "Which Texas duck never migrates?",
-    a: "The Black-bellied Whistling-Duck — now a permanent Texas resident year-round on suburban ponds. 50 years ago it was rare north of the Rio Grande. Suburban ponds and warming winters fueled its dramatic northward boom.",
-    color: "#e76f51",
-  },
 ];
 
 export const SPOTS = [
