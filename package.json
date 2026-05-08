@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && cp dist/index.html \"/mnt/c/Users/alexa/OneDrive/north-texas-bird-guide.html\"",
     "preview": "vite preview",
     "embed-images": "node scripts/embed-images.js",
     "build:full": "npm run embed-images && npm run build",
