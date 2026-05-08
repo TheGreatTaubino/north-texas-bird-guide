@@ -16,6 +16,7 @@ The app is designed for quick field identification and offline use. It includes 
 - Export and restore sighting history as JSON (file download or clipboard)
 - Optional GitHub Gist sync — automatically backs up and merges sightings across devices
 - Collapsible bird-type sections with species counts
+- Collapsible sightings calendar — toggle to hide the calendar and free up screen space
 - Embedded bird photos for offline builds
 - Seasonal "Here Now" badges based on each species' season field
 - Responsive grid layout — up to 5 columns wide on large screens
