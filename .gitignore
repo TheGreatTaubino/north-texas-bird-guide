@@ -1,5 +1,7 @@
 node_modules/
 dist/
+.local-node/
+node-v*-win-x64.zip
 .DS_Store
 *.Zone.Identifier
 *:Zone.Identifier

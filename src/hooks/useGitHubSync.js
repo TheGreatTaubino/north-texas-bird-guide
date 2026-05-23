@@ -1,27 +1,14 @@
 import { useState, useEffect, useRef } from 'react';
+import {
+  clearSyncToken,
+  credentialStorageLabel,
+  loadSyncConfig,
+  persistSyncConfig,
+  usesNativeCredentialStorage,
+} from '../utils/syncCredentials.js';
 
-const SYNC_CONFIG_KEY = 'northTexasBirdGuide.syncConfig.v1';
-const GIST_ID_KEY = 'northTexasBirdGuide.gistId.v1';
 const GIST_FILENAME = 'north-texas-bird-sightings.json';
 const PUSH_DEBOUNCE_MS = 4000;
-
-function loadConfig() {
-  try {
-    const session = JSON.parse(sessionStorage.getItem(SYNC_CONFIG_KEY) || '{}');
-    const gistId = localStorage.getItem(GIST_ID_KEY) || '';
-    return { token: session.token || '', gistId, lastSyncedAt: session.lastSyncedAt || null };
-  } catch {
-    return { token: '', gistId: '', lastSyncedAt: null };
-  }
-}
-
-function persistConfig(config) {
-  try {
-    // Token is session-only; gistId persists across sessions (not sensitive)
-    sessionStorage.setItem(SYNC_CONFIG_KEY, JSON.stringify({ token: config.token, lastSyncedAt: config.lastSyncedAt }));
-    if (config.gistId) localStorage.setItem(GIST_ID_KEY, config.gistId);
-  } catch {}
-}
 
 function githubHeaders(token) {
   return {
@@ -32,7 +19,8 @@ function githubHeaders(token) {
 }
 
 export function useGitHubSync(sightings, onMerge) {
-  const [config, setConfig] = useState(loadConfig);
+  const [config, setConfig] = useState({ token: '', gistId: '', lastSyncedAt: null });
+  const [configLoaded, setConfigLoaded] = useState(false);
   const [status, setStatus] = useState('idle'); // idle | syncing | synced | error
   const [syncError, setSyncError] = useState(null);
 
@@ -64,7 +52,7 @@ export function useGitHubSync(sightings, onMerge) {
       const now = Date.now();
       setConfig(prev => {
         const updated = { ...prev, lastSyncedAt: now };
-        persistConfig(updated);
+        persistSyncConfig(updated);
         return updated;
       });
       setStatus('synced');
@@ -94,7 +82,7 @@ export function useGitHubSync(sightings, onMerge) {
       const now = Date.now();
       setConfig(prev => {
         const updated = { ...prev, lastSyncedAt: now };
-        persistConfig(updated);
+        persistSyncConfig(updated);
         return updated;
       });
       setStatus('synced');
@@ -104,16 +92,27 @@ export function useGitHubSync(sightings, onMerge) {
     }
   };
 
-  // Pull on mount if already configured
+  // Pull on mount if already configured. Native builds load the token from
+  // secure storage; web builds keep the existing session-only token behavior.
   useEffect(() => {
-    const cfg = loadConfig();
-    if (cfg.token && cfg.gistId) {
-      pull(cfg.token, cfg.gistId);
-    }
+    let cancelled = false;
+    loadSyncConfig().then(cfg => {
+      if (cancelled) return;
+      setConfig(cfg);
+      setConfigLoaded(true);
+      if (cfg.token && cfg.gistId) {
+        pull(cfg.token, cfg.gistId);
+      }
+    });
+
+    return () => {
+      cancelled = true;
+    };
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Debounced push whenever sightings change
   useEffect(() => {
+    if (!configLoaded) return;
     if (!config.token || !config.gistId) return;
 
     if (skipNextPushRef.current) {
@@ -127,7 +126,7 @@ export function useGitHubSync(sightings, onMerge) {
     }, PUSH_DEBOUNCE_MS);
 
     return () => clearTimeout(pushTimerRef.current);
-  }, [sightings]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [sightings, configLoaded]); // eslint-disable-line react-hooks/exhaustive-deps
 
   const connect = async (token, existingGistId) => {
     let gistId = existingGistId.trim();
@@ -158,17 +157,17 @@ export function useGitHubSync(sightings, onMerge) {
     }
 
     const updated = { token, gistId, lastSyncedAt: null };
-    persistConfig(updated);
+    await persistSyncConfig(updated);
     setConfig(updated);
     await pull(token, gistId);
     return true;
   };
 
-  const disconnect = () => {
+  const disconnect = async () => {
     clearTimeout(pushTimerRef.current);
-    // Clear token from sessionStorage; keep gistId in localStorage for easy reconnect
-    sessionStorage.removeItem(SYNC_CONFIG_KEY);
+    await clearSyncToken();
     const cleared = { token: '', gistId: config.gistId, lastSyncedAt: null };
+    await persistSyncConfig(cleared);
     setConfig(cleared);
     setStatus('idle');
     setSyncError(null);
@@ -181,7 +180,10 @@ export function useGitHubSync(sightings, onMerge) {
   };
 
   return {
+    configLoaded,
     isConfigured: !!(config.token && config.gistId),
+    isNativeCredentialStorage: usesNativeCredentialStorage(),
+    credentialStorageLabel: credentialStorageLabel(),
     gistId: config.gistId,
     lastSyncedAt: config.lastSyncedAt ? new Date(config.lastSyncedAt) : null,
     status,

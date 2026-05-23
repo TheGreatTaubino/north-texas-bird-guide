@@ -80,13 +80,31 @@ function SyncStatusBadge({ status, syncError, lastSyncedAt, onSyncNow }) {
 }
 
 function SyncPanel({ sightings, onMerge }) {
-  const { isConfigured, gistId, lastSyncedAt, status, syncError, connect, disconnect, syncNow } =
+  const {
+    configLoaded,
+    isConfigured,
+    isNativeCredentialStorage,
+    credentialStorageLabel,
+    gistId,
+    lastSyncedAt,
+    status,
+    syncError,
+    connect,
+    disconnect,
+    syncNow,
+  } =
     useGitHubSync(sightings, onMerge);
 
   const [showSetup, setShowSetup] = useState(false);
   const [tokenInput, setTokenInput] = useState('');
   const [gistInput, setGistInput] = useState(
-    () => localStorage.getItem('northTexasBirdGuide.gistId.v1') || ''
+    () => {
+      try {
+        return localStorage.getItem('northTexasBirdGuide.gistId.v1') || '';
+      } catch {
+        return '';
+      }
+    }
   );
   const [connecting, setConnecting] = useState(false);
 
@@ -102,6 +120,22 @@ function SyncPanel({ sightings, onMerge }) {
     }
   };
 
+  const handleDisconnect = async () => {
+    if (!window.confirm('Disconnect GitHub Sync on this device? Your sighting history and Gist will not be deleted.')) {
+      return;
+    }
+    await disconnect();
+  };
+
+  if (!configLoaded) {
+    return (
+      <span className="flex items-center gap-1.5 text-xs text-blue-400">
+        <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse inline-block" />
+        Loading sync…
+      </span>
+    );
+  }
+
   if (isConfigured) {
     return (
       <div className="flex flex-col gap-1.5">
@@ -114,7 +148,7 @@ function SyncPanel({ sightings, onMerge }) {
             Sync now
           </button>
           <button
-            onClick={disconnect}
+            onClick={handleDisconnect}
             className="text-xs text-gray-600 hover:text-gray-400 transition-colors"
           >
             Disconnect
@@ -130,6 +164,9 @@ function SyncPanel({ sightings, onMerge }) {
           >
             {gistId.slice(0, 10)}…
           </a>
+        </p>
+        <p className={`text-xs ${isNativeCredentialStorage ? 'text-bird-green' : 'text-gray-600'}`}>
+          {credentialStorageLabel}
         </p>
       </div>
     );
@@ -153,7 +190,7 @@ function SyncPanel({ sightings, onMerge }) {
             <p className="text-xs text-gray-400">
               {gistInput
                 ? 'Paste your token to reconnect — your Gist ID was remembered.'
-                : 'Sightings sync automatically to a private GitHub Gist — survives app updates and works across devices.'}
+                : 'Sightings sync automatically to a private GitHub Gist and work across devices.'}
             </p>
           </div>
 
@@ -208,7 +245,7 @@ function SyncPanel({ sightings, onMerge }) {
           </div>
 
           <p className="text-xs text-gray-600">
-            Token stored locally on this device only.
+            {credentialStorageLabel}
           </p>
         </div>
       )}
