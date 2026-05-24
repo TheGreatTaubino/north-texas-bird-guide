@@ -79,6 +79,16 @@ npm run build:full
 
 The production build writes a single-file app to `dist/index.html`.
 
+## Android Build (Capacitor)
+
+A Capacitor Android project is scaffolded in `android/`. To rebuild and sync web assets into the Android project:
+
+```bash
+npm run build:android
+```
+
+Then open `android/` in Android Studio to run or generate a signed build.
+
 ## Sighting History
 
 Sightings are stored locally in the browser with `localStorage` under the key `northTexasBirdGuide.sightings.v1`.
