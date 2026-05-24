@@ -9,9 +9,13 @@
     "preview": "vite preview",
     "embed-images": "node scripts/embed-images.js",
     "build:full": "npm run embed-images && npm run build",
+    "build:android": "npm run embed-images && vite build && npx cap sync android",
     "test": "vitest run"
   },
   "dependencies": {
+    "@capacitor/android": "^8.3.4",
+    "@capacitor/cli": "^8.3.4",
+    "@capacitor/core": "^8.3.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },

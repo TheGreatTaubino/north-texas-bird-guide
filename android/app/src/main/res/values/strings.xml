@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">North Texas Bird Guide</string>
+    <string name="title_activity_main">North Texas Bird Guide</string>
+    <string name="package_name">com.alexataube.ntxbirdguide</string>
+    <string name="custom_url_scheme">com.alexataube.ntxbirdguide</string>
+</resources>
